@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore local gems on vendor/bundle
+/vendor/bundle
+
+# Ignore Gemfile.lock
+/Gemfile.lock
