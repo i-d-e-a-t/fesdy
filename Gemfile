@@ -7,3 +7,5 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'spring',        group: :development
+gem 'slim-rails'
+gem 'rspec-rails'
