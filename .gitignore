@@ -20,3 +20,6 @@
 
 # Ignore Gemfile.lock
 /Gemfile.lock
+
+# Ignore vi's swap file
+.*swp
