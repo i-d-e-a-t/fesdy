@@ -1,0 +1,37 @@
+//
+// 共通設定
+//
+// 推奨：各コントローラー向けscssの上部で@importすること
+//       @import "common";
+//
+
+// ------------------------------------------------------------------
+// 変数
+//
+
+// 幅
+$margin_normal: 3.0rem;
+$margin_narrow: 1.5rem;
+
+$padding_normal: 3.0rem;
+
+// 色
+$color_background: #fff;
+
+$color_text: #000;
+$color_text_righter: #777;
+$color_text_rightest: #ccc;
+$color_text_reversed: #fff;
+
+$color_accent_darker: #525;
+$color_accent: #747;
+$color_accent_righter: #faf;
+
+$color_base_darker:  #555;
+$color_base:         #777;
+$color_base_righter: #efefef;
+
+// ------------------------------------------------------------------
+// 共通スタイル
+//
+

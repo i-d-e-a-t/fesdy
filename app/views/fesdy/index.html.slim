@@ -1,2 +1,14 @@
-h1 Fesdy#index
-p Find me in app/views/fesdy/index.html.slim
+.container
+  .row.primary
+    .col-lg-8
+      .eyecatch
+        .lead eyecatch image
+    .col-lg-4
+      .information
+        p.title info is here
+        .description details
+  .row.secondory
+    - 20.times do |i|
+      .col-lg-2
+        .artist
+          = "artist#{i}"
