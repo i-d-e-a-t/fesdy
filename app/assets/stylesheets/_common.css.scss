@@ -17,19 +17,8 @@ $padding_normal: 3.0rem;
 
 // 色
 $color_background: #fff;
-
-$color_text: #000;
-$color_text_righter: #777;
-$color_text_rightest: #ccc;
-$color_text_reversed: #fff;
-
-$color_accent_darker: #525;
 $color_accent: #747;
-$color_accent_righter: #faf;
-
-$color_base_darker:  #555;
-$color_base:         #777;
-$color_base_righter: #efefef;
+$color_base: #000;
 
 // ------------------------------------------------------------------
 // 共通スタイル
@@ -56,12 +45,8 @@ a {
 
 // ここでフッターの高さを指定
 #footer {
-  background-color: $color_base_darker;
-  color: $color_text_reversed;
+  background-color: $color_base;
+  color: lighten($color_base, 90%);
   height: 6rem;
   padding: 2rem 0;
-
-  a {
-    color: $color_accent_righter;  
-  }
 }
