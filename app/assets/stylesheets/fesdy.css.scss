@@ -1,0 +1,44 @@
+// Place all the styles related to the fesdy controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "common";
+
+.row.primary {
+  margin-bottom: $margin_normal;
+
+  .eyecatch {
+    height: 30rem; // 75rem * 9/16
+    width: 100%; // 67.5*8 + 30*7 = 750px = 75rem
+    //XXX for dummy styles below
+    color: lighten( $color_base, 60% );
+    padding: 10rem;
+    background: lighten( $color_base, 30% );
+  }
+
+  .information {
+    padding: $padding_normal;
+
+    .title {
+      color: $color_base;
+    }
+
+    .description {
+      color: lighten( $color_base, 60% );
+    }
+  }
+}
+
+.row.secondory {
+  .artist {
+    background: lighten( $color_base, 95% );
+    margin-bottom: $margin_narrow;
+    padding: $padding_normal;
+    width: 100%;
+    //XXX for dummy styles below
+    border: 1px solid lighten( $color_base, 90%);
+  }
+  .artist:hover {
+    background: lighten( $color_base, 90%);
+  }
+}
