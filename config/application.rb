@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Fesdy
   class Application < Rails::Application
+    # UTC+09:00
+    config.time_zone = 'Tokyo'
     # japanese
     config.i18n.default_locale = :ja
   end
