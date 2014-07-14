@@ -21,16 +21,20 @@ html lang="en"
 
 
   body
-    .navbar.navbar-static-top
-        .container
-          a.navbar-brand href="#{fesdy_path}"
-            i.icon-music
-            | &nbsp;
-            span Fesdy
-    .container
-      .row
-        .col-lg-12
-          = bootstrap_flash
-          = yield
-      footer
-        p &copy; i-d-e-a-t 2014
+    #wrap
+      .navbar.navbar-static-top
+          .container
+            a.navbar-brand href="#{fesdy_path}"
+              i.icon-music
+              | &nbsp;
+              span Fesdy
+      .container
+        .row
+          .col-lg-12
+            = bootstrap_flash
+            = yield
+    #footer
+      .container
+        .row
+          .col-lg-12
+            p &copy;&nbsp; i-d-e-a-t 2014

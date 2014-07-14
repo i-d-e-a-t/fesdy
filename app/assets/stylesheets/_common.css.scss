@@ -35,3 +35,33 @@ $color_base_righter: #efefef;
 // 共通スタイル
 //
 
+html,
+body {
+  height: 100%;
+}
+
+a {
+  color: $color_accent;
+}
+
+// フッターを下部へ押しやるための、コンテンツのラッパー
+#wrap {
+  min-height: 100%;
+  height: auto;
+  // フッターの高さ分だけ、ネガティブインデントを指定
+  margin: 0 auto -6rem;
+  // フッターの高さ分だけ、パディングを指定
+  padding: 0 0 6rem;
+}
+
+// ここでフッターの高さを指定
+#footer {
+  background-color: $color_base_darker;
+  color: $color_text_reversed;
+  height: 6rem;
+  padding: 2rem 0;
+
+  a {
+    color: $color_accent_righter;  
+  }
+}
