@@ -18,5 +18,9 @@ module CommonHelper
     music = Music.create(
       artist_id: artist.id
     )
+    program = Program.create(
+      appearance_id: appearance.id,
+      music_id: music.id
+    )
   end
 end
