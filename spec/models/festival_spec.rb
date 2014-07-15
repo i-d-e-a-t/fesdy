@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Festival, :type => :model do
-  context "festival, artist, appearance がある場合" do
+  context "データがある場合" do
     before do
       help_create_models_for_relations
       @festival = Festival.last

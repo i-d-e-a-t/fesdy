@@ -15,5 +15,8 @@ module CommonHelper
       festival_id: festival.id,
       artist_id: artist.id
     )
+    music = Music.create(
+      artist_id: artist.id
+    )
   end
 end
