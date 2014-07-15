@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20140715130153) do
   end
 
   create_table "programs", force: true do |t|
-    t.integer  "setlist_id"
+    t.integer  "appearance_id"
     t.integer  "music_id"
     t.datetime "created_at"
     t.datetime "updated_at"

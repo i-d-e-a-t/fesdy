@@ -10,5 +10,6 @@ describe Festival, :type => :model do
     it "#artistsで出演するアーティストを取得できる" do
       expect(@festival.artists).to eq [@artist]
     end
+    it "#setlist(artist)でセットリストを取得できる"
   end
 end
