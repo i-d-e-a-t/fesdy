@@ -11,5 +11,6 @@ describe Artist, :type => :model do
     it "#festivalsで出演するフェスを取得できる" do
       expect(@artist.festivals).to eq [@festival]
     end
+    it "#musicsで曲を取得できる"
   end
 end
