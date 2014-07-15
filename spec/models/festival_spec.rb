@@ -3,15 +3,12 @@ require 'rails_helper'
 describe Festival, :type => :model do
   context "festival, artist, appearance がある場合" do
     before do
-      @fes = Festival.create()
-      @artist = Artist.create()
-      @appearance = Appearance.create(
-        festival_id: @fes.id,
-        artist_id: @artist.id
-      )
+      help_create_models_for_relations
+      @festival = Festival.last
+      @artist = Artist.last
     end
     it "#artistsで出演するアーティストを取得できる" do
-      expect(@fes.artists).to eq [@artist]
+      expect(@festival.artists).to eq [@artist]
     end
   end
 end
