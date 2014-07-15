@@ -7,7 +7,6 @@
 module CommonHelper
   
   # 最低限の情報をもつ各モデルを作成する。
-  # Festivalのオブジェクトは@festivalで利用可能
   def help_create_models_for_relations
     festival = Festival.create()
     artist = Artist.create()
