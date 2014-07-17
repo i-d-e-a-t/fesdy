@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715130153) do
+ActiveRecord::Schema.define(version: 20140715130149) do
 
   create_table "appearances", force: true do |t|
     t.integer  "festival_id"
@@ -26,19 +26,6 @@ ActiveRecord::Schema.define(version: 20140715130153) do
   end
 
   create_table "festivals", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "musics", force: true do |t|
-    t.integer  "artist_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "programs", force: true do |t|
-    t.integer  "appearance_id"
-    t.integer  "music_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
