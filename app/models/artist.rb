@@ -1,0 +1,5 @@
+# encoding: utf-8
+class Artist < ActiveRecord::Base
+  has_many :appearances
+  has_many :festivals, through: :appearances
+end
