@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'fesdy#index'
-  get 'fesdy' => 'fesdy#index'
+  resources :festivals, only: [:show]
+
+  get 'festivals/show'
+
+  root 'fesdy#index', as: :fesdy
 end

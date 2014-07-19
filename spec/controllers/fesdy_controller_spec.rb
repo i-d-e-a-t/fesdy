@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe FesdyController, :type => :controller do
+describe FesdyController, :type => :controller do
 
   describe "GET 'index'" do
     it "catches '/'" do
