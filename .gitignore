@@ -12,11 +12,9 @@
 # Ignore local gems on vendor/bundle
 /vendor/bundle
 
-# Ignore Gemfile.lock
-/Gemfile.lock
-
 # Ignore vi's swap files
 *.swp
+*.swo
 
 # Ignore emacs's swap files
 *~
