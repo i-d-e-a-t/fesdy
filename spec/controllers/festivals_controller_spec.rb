@@ -11,26 +11,25 @@ describe FestivalsController, :type => :controller do
       @not_exist_key = 'it-is-not-festivals-key'
     end
 
-    it "returns 200 with '/festivals/:exist_key'     request" do
-      expect(:get => "/festivals/#{@exist_key}").
-        to have_http_status(:ok)
+    it "success with '/festivals/:exist_key'" do
+      get :show, id: @exist_key
+      expect(response.status).to eq 200
+      expect(response).to render_template("show")
 
     end
 
-    it "returns 404 with '/festivals/:not_exist_key' request" do
-      expect(:get => "/festivals/#{@not_exist_key}").
-        to_have_http_status(:not_found)
+    it "returns 404 with '/festivals/:not_exist_key'" do
+      get :show, id: @not_exist_key
+      expect(response.status).to eq 404
 
     end
 
-    it "doesn't catch '/festivals/show' (like RPC)" do
-      expect(:get => "/festivals/show").not_to be_routable
-
-    end
-
-    it "returns http success" do
-      get 'show'
-      expect(response).to be_success
+    it "catches '/festivals/some-strings'" do
+      expect(get: "/festivals/some-strings").to route_to(
+        controller: "festivals",
+        action: "show",
+        id: "some-strings"
+      )
     end
 
   end
