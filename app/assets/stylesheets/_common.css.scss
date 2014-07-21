@@ -42,3 +42,12 @@ a {
   height: 6rem;
   padding: 2rem 0;
 }
+
+// ロゴの大きさ。
+// 縦横比は1:2
+img.logo {
+  height: 5rem;
+}
+.navbar-brand {
+  padding: 0;
+}
