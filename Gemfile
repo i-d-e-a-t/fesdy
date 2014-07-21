@@ -4,6 +4,7 @@ gem 'rails', '4.1.4'
 
 group :development do
   gem 'sqlite3'
+  gem 'nokogiri', require: false
 end
 
 gem 'sass-rails', '~> 4.0.3'
