@@ -1,7 +1,7 @@
 # encoding: utf-8
 #
 # サマソニ2014の出演者を取得するスクリプト。
-# ss2014.txt というファイルに1行１アーティストの形式で出力する。
+# summer-sonic-2014.artists というファイルに1行１アーティストの形式で出力する。
 #
 require "nokogiri"
 require "open-uri"
