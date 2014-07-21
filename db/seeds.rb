@@ -1,11 +1,16 @@
 # encoding: utf-8
 
+# 一旦削除
+Festival.destroy_all
+Artist.destroy_all
+Appearance.destroy_all
+
 # ------------------------------------------------------------
 #
 # サマソニ2014
 #
 
-festival = Festival.create(
+Festival.create(
   path_key: 'summer-sonic-2014',
   name: 'サマーソニック2014',
   start_date: DateTime.new(2014, 8, 16),
@@ -21,18 +26,25 @@ festival = Festival.create(
 
 File.open(Rails.root.to_s + '/summer-sonic-2014.artists') do |f|
   artist_id_count = 1
-  while name = f.gets
-    name.chomp!
-    a = name.split("\t")
-    artist = Artist.create(
-      name: a[0],
-      path_key: a[1]
-    )
-    # summer-sonic-2014に出演する
-    Appearance.create(
-      festival_id: 1,
-      artist_id: artist_id_count
-    )
-    artist_id_count += 1
+  path_key_list = []
+  while line = f.gets
+    line.chomp!
+    artist = line.split("\t")
+    # path_keyが等しい場合は登録しない
+    unless path_key_list.include? artist[1]
+      # 重複登録を避けるため、path_keyをリストに保持
+      path_key_list.push artist[1]
+      Artist.create(
+        name: artist[0],
+        path_key: artist[1]
+      )
+      # 「summer-sonic-2014に出演する」レコードを登録
+      # TODO: スクリプト内でIDを取得する方法があれば書き換えること
+      Appearance.create(
+        festival_id: 1,
+        artist_id: artist_id_count
+      )
+      artist_id_count += 1
+    end
   end
 end
