@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719235305) do
+ActiveRecord::Schema.define(version: 20140721040923) do
 
   create_table "appearances", force: true do |t|
     t.integer  "festival_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140719235305) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "path_key"
+    t.string   "name"
   end
 
 end
