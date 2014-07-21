@@ -11,7 +11,9 @@ module CommonHelper
     festival = Festival.create(
       path_key: 'awesome-festival-2014'
     )
-    artist = Artist.create()
+    artist = Artist.create(
+      path_key: 'awesome-artist-2014'
+    )
     appearance = Appearance.create(
       festival_id: festival.id,
       artist_id: artist.id

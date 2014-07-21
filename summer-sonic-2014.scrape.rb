@@ -7,6 +7,7 @@ require "nokogiri"
 require "open-uri"
 
 DEBUG=false
+OUTNAME="summer-sonic-2014.artists"
 
 class String
   def c n
@@ -63,7 +64,7 @@ if DEBUG
   scrape_artists osaka_url
 else
   # デバッグじゃない場合
-  File.open('ss2014.txt', 'w') do |f|
+  File.open(OUTNAME, 'w') do |f|
     scrape_artists tokyo_url, f
     scrape_artists osaka_url, f
   end
