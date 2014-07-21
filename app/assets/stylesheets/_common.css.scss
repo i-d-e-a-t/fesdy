@@ -47,7 +47,19 @@ a {
 // 縦横比は1:2
 img.logo {
   height: 5rem;
+  margin: auto 0;
 }
 .navbar-brand {
   padding: 0;
 }
+
+// トグルスイッチのスタイル調整
+/*
+.navbar-toggle {
+  height: 3.6rem;
+  width: 3.6rem;
+  margin: 0.7rem 0 0 0;
+  padding: 0;
+  font-size: 130%;
+}
+*/

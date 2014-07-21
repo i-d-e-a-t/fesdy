@@ -23,9 +23,22 @@ html lang="en"
   body
     #wrap
       .navbar.navbar-static-top
-          .container
+        .container
+          .navbar-header
             a.navbar-brand href="#{fesdy_path}"
               = image_tag "logo.png", class: [:logo], alt: "Fesdy"
+            button.navbar-toggle(type="button" data-toggle="collapse" data-target="#fesdy-contents-nav")
+              span.sr-only toggle navigation
+              i.icon-reorder
+          .collapse.navbar-collapse#fesdy-contents-nav
+            ul.nav.navbar-nav.navbar-right(role="navigation")
+              li.dropdown
+                a.dropdown-toggle(href="#" data-toggle="dropdown") フェス
+                ul.dropdown-menu
+                  - Festival.all.each do |festival|
+                    li
+                      a(href="#{festival_path(id: festival.path_key)}")
+                        = festival.name
       .container
         .row
           .col-lg-12
