@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# encoding: utf-8
+
+# ------------------------------------------------------------
 #
-# Examples:
+# サマソニ2014
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Festival.create(
+  path_key: 'summer-sonic-2014',
+  name: 'サマーソニック2014',
+  start_date: DateTime.new(2014, 8, 16),
+  end_date: DateTime.new(2014, 8, 17),
+  official_site: 'http://www.summersonic.com/2014/',
+  place:
+    '東京：QVCマリンフィールド＆幕張メッセ,大阪：舞洲サマーソニック大阪特設会場'
+)
+
+#
+# 出演者
+#
+
+
