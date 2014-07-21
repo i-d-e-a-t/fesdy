@@ -19,4 +19,13 @@ Festival.create(
 # 出演者
 #
 
-
+File.open(Rails.root.to_s + '/summer-sonic-2014.artists') do |f|
+  while name = f.gets
+    name.chomp!
+    artist = name.split("\t")
+    Artist.create(
+      name: artist[0],
+      path_key: artist[1]
+    )
+  end
+end

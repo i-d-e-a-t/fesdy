@@ -5,28 +5,30 @@
 #
 require "nokogiri"
 require "open-uri"
+# パスキー作成モジュールをインクルード
+require_relative 'lib/tasks/ask_path_key.rb'
 
-DEBUG=false
 OUTNAME="summer-sonic-2014.artists"
 
 class String
-  def c n
-    return "\e[#{n}m#{self}\e[0m"
-  end
-  def red; return self.c 31; end
-  def green; return self.c 32; end
-  def yellow; return self.c 33; end
+  def c n; "\e[#{n}m#{self}\e[0m"; end
+  def red; c 31; end
+  def green; c 32; end
+  def yellow; c 33; end
 end
 
+#######################################################################
+#
+# アーティストを抽出。
+#
 def scrape_artists url, file = nil
-  puts "url: #{url}".green if DEBUG
+  puts "url: #{url}".green
   begin
     doc = Nokogiri::HTML(open url)
-    puts "you got HTML".green if DEBUG
   rescue => e
-    puts "#{e.class}".red if DEBUG
-    puts e.message.red if DEBUG
-    return
+    puts "#{e.class}".red
+    puts e.message.red
+    exit 1
   end
 
   result = doc.css "#lineupList ul li:not([class*='ttl'])"
@@ -36,36 +38,31 @@ def scrape_artists url, file = nil
   result.each_with_index do |r|
     r = r.content
     if r == "" || nil
-      puts "** empty element".yellow if DEBUG
       next 
     end
     artists.push r
   end
+  # 全数を表示
+  puts "アーティスト数: #{artists.length}".yellow
   artists.each_with_index do |r, i|
-    if DEBUG
-      puts i.to_s.yellow + ": " + r.to_s.green
-    else
-      # デバッグじゃない場合
-      file.puts r.to_s
-    end
+    print "(#{i + 1}/#{artists.length}) ".yellow
+    name = r.to_s
+    # パスキーを調べる
+    result = AskPathKey.ask name, {'Opening Act' => ''}
+    # タブで区切ってファイルに出力
+    file.puts result[0] + "\t" + result[1]
   end
 end
 
+#######################################################################
+#
+# main
+#
 tokyo_url = "http://www.summersonic.com/2014/lineup/"
 osaka_url = "http://www.summersonic.com/2014/lineup/osaka.html"
-if DEBUG
-  puts ("-"*70).yellow
-  puts " "*20+"tokyo".yellow
-  puts ("-"*70).yellow
-  scrape_artists tokyo_url
-  puts ("-"*70).yellow
-  puts " "*20+"osaka".yellow
-  puts ("-"*70).yellow
-  scrape_artists osaka_url
-else
-  # デバッグじゃない場合
-  File.open(OUTNAME, 'w') do |f|
-    scrape_artists tokyo_url, f
-    scrape_artists osaka_url, f
-  end
+# ファイルに出力
+File.open(OUTNAME, 'w') do |f|
+  scrape_artists tokyo_url, f
+  scrape_artists osaka_url, f
 end
+
