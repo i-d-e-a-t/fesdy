@@ -1,2 +1,8 @@
-h1 Festivals#show
-p Find me in app/views/festivals/show.html.slim
+h1
+  | フェスティバル毎のページ for 
+  = @festival.name
+ul
+  h2 出演アーティスト
+  - @festival.artists.each do |artist|
+    li
+      = artist.name
