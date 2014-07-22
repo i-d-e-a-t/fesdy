@@ -1,9 +1,60 @@
 @import "common";
 
+.fes {
+  margin: 0 0 2rem 0;
+  .info-box {
+    margin: 0 0 2rem 0;
+    position: relative;
+    .name {
+      text-align: center;
+      // bootstrap's breakpoints... 768px, 992px, 1200px
+      @media screen and (min-width: 76.8rem) {
+        text-align: left;
+      }
+    }
+    .date {
+      color: lighten($color_base, 60%);
+      font-size: 2.4rem;
+      font-weight: lighter;
+      text-align: center;
+      @media screen and (min-width: 76.8rem) {
+        text-align: left;
+      }
+    }
+    .place {
+      color: lighten($color_base, 60%);
+      font-size: 1.2rem;
+      text-align: center;
+      @media screen and (min-width: 76.8rem) {
+        bottom: 0;
+        position: absolute;
+        right: 0;
+        text-align: right;
+      }
+    }
+  }
+  button.start {
+    background: $color_fesdy;
+    color: white;
+    font-size: 2.4rem;
+    font-weight: normal;
+  }
+  button.start:hover {
+    background: darken($color_fesdy, 10%);
+  }
+}
+
 .artists {
-  .artist {
+  margin: 0 0 2rem 0;
+  table {
+    margin: 0;
+  }
+  th {
     text-align: center;
+  }
+  td {
     color: lighten($color_base, 60%);
+    text-align: center;
   }
 }
 .to-top {

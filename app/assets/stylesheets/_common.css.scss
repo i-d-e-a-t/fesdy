@@ -13,7 +13,7 @@ $color_accent: magenta;
 $color_base: black;
 $color_fesdy: #8dc700;
 
-$radius: 0.5rem;
+$radius: 0.7rem;
 
 // ------------------------------------------------------------------
 // 共通スタイル
@@ -26,6 +26,11 @@ body {
 
 a {
   color: $color_accent;
+}
+
+// 修飾なし
+a.no-deco {
+  text-decoration: none;
 }
 
 // フッターを下部へ押しやるための、コンテンツのラッパー
@@ -55,14 +60,3 @@ img.logo {
 .navbar-brand {
   padding: 0;
 }
-
-// トグルスイッチのスタイル調整
-/*
-.navbar-toggle {
-  height: 3.6rem;
-  width: 3.6rem;
-  margin: 0.7rem 0 0 0;
-  padding: 0;
-  font-size: 130%;
-}
-*/

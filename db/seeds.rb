@@ -18,7 +18,7 @@ Festival.create do |festival|
   festival.end_date = DateTime.new(2014, 8, 17)
   festival.official_site = 'http://www.summersonic.com/2014/'
   festival.place =
-    '東京：QVCマリンフィールド＆幕張メッセ,大阪：舞洲サマーソニック大阪特設会場'
+    "東京：QVCマリンフィールド＆幕張メッセ\n大阪：舞洲サマーソニック大阪特設会場"
 end
 
 #
