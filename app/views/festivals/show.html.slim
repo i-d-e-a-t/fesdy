@@ -8,10 +8,11 @@
       = @festival.end_date.strftime(format)
     .place
       == @festival.place.gsub("\n", "<br />")
-  button.btn.btn-lg.btn-block.start
-    | 予習する
-    | &nbsp;&nbsp;
-    i.icon-play
+  a.no-deco(href="#{fesdy_path}")
+    button.btn.btn-lg.btn-block.start
+      | 予習する
+      | &nbsp;&nbsp;
+      i.icon-play
 
 .artists
   table.table
