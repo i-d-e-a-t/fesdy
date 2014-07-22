@@ -4,11 +4,12 @@ class FestivalsController < ApplicationController
     only: :show
 
   def show
+    # festivalが見つからない場合はnot foundを返却
+    render status: :not_found if @festival.nil?
     # 名前順でアーティストを表示する準備
     @artists = @festival.artists.sort do |a, b|
       a.path_key <=> b.path_key
     end
-    render status: :not_found if @festival.nil?
   end
 
   private
