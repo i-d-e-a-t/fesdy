@@ -1,2 +1,13 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+$(function() {
+  // 画面描画完了時の処理
+
+  // button.to-topをクリックすると上に戻る
+  $('button.to-top').click(function() {
+    $('body, html').animate(
+      {scrollTop: 0},
+      // 0.5秒
+      500
+    );
+    return false;
+  });
+});

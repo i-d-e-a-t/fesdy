@@ -1,3 +1,12 @@
-// Place all the styles related to the festivals controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "common";
+
+.artists {
+  .artist {
+    text-align: center;
+    color: lighten($color_base, 60%);
+  }
+}
+.to-top {
+  width: 100%;
+}
+
