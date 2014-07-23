@@ -23,5 +23,8 @@ a.no-deco(href="#{fesdy_path}")
       tr
         td.artist
           = artist.name
+    tr
+      td.official
+        = link_to "#{@festival.name} 公式サイト", @festival.official_site, class: 'no-deco'
 button.btn.btn-default.to-top(type="button")
   i.icon-arrow-up
