@@ -1,18 +1,21 @@
 .fes
+  .eye-catch
+    .filler
+    = image_tag "messe.jpg", alt: @festival.name
   .info-box
     h2.name
       = @festival.name
     .date
       - format = "%Y/%m/%d"
-      = @festival.start_date.strftime(format) + "〜"
+      = @festival.start_date.strftime(format) + "~"
       = @festival.end_date.strftime(format)
     .place
       == @festival.place.gsub("\n", "<br />")
-  a.no-deco(href="#{fesdy_path}")
-    button.btn.btn-lg.btn-block.start
-      | 予習する
-      | &nbsp;&nbsp;
-      i.icon-play
+a.no-deco(href="#{fesdy_path}")
+  button.btn.btn-lg.btn-block.start
+    | 予習する
+    | &nbsp;&nbsp;
+    i.icon-play
 
 .artists
   table.table
