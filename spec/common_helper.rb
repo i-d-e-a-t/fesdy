@@ -8,8 +8,12 @@ module CommonHelper
   
   # 最低限の情報をもつ各モデルを作成する。
   def help_create_models_for_relations
-    festival = Festival.create()
-    artist = Artist.create()
+    festival = Festival.create(
+      path_key: 'awesome-festival-2014'
+    )
+    artist = Artist.create(
+      path_key: 'awesome-artist-2014'
+    )
     appearance = Appearance.create(
       festival_id: festival.id,
       artist_id: artist.id

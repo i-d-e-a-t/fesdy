@@ -11,6 +11,9 @@
 
 $color_accent: magenta;
 $color_base: black;
+$color_fesdy: #8dc700;
+
+$radius: 0.7rem;
 
 // ------------------------------------------------------------------
 // 共通スタイル
@@ -24,6 +27,33 @@ body {
 a {
   color: $color_accent;
 }
+a:hover {
+  color: darken($color_accent, 10%);
+}
+
+// 修飾なし
+a.no-deco {
+  text-decoration: none;
+}
+
+// ------------------------------------------------------------------
+// ヘッダー
+//
+
+// ロゴの大きさ。
+// 縦横比は1:2
+img.logo {
+  height: 5rem;
+  margin: auto 0;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+// ------------------------------------------------------------------
+// フッター
+//
 
 // フッターを下部へ押しやるための、コンテンツのラッパー
 #wrap {
@@ -32,7 +62,7 @@ a {
   // フッターの高さ分だけ、ネガティブインデントを指定
   margin: 0 auto -6rem;
   // フッターの高さ分だけ、パディングを指定
-  padding: 0 0 6rem;
+  padding: 0 0 8rem;
 }
 
 // ここでフッターの高さを指定
@@ -41,13 +71,4 @@ a {
   color: lighten($color_base, 90%);
   height: 6rem;
   padding: 2rem 0;
-}
-
-// ロゴの大きさ。
-// 縦横比は1:2
-img.logo {
-  height: 5rem;
-}
-.navbar-brand {
-  padding: 0;
 }

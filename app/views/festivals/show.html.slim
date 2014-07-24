@@ -1,0 +1,38 @@
+/
+/ onload script
+/
+script(type="text/javascript")
+  | $(document).ready(ready_for_festival);
+/
+/ HTML contents from here
+/
+.fes
+  .eye-catch
+    .filler
+    = image_tag "messe.jpg", alt: @festival.name
+  .info-box
+    h2.name
+      = @festival.name
+    .date
+      - format = "%Y/%m/%d"
+      = @festival.start_date.strftime(format) + "~"
+      = @festival.end_date.strftime(format)
+    .place
+      == @festival.place.gsub("\n", "<br />")
+a.no-deco(href="#{fesdy_path}")
+  button.btn.btn-lg.btn-block.start
+    | 予習する
+    | &nbsp;&nbsp;
+    i.icon-play
+
+.artists
+  table.table
+    - @artists.each_with_index do |artist, i|
+      tr
+        td.artist
+          = artist.name
+    tr
+      td.official
+        = link_to "#{@festival.name} 公式サイト", @festival.official_site, class: 'no-deco'
+button.btn.btn-default.to-top(type="button")
+  i.icon-arrow-up

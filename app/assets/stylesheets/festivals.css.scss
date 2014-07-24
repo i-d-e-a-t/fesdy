@@ -1,0 +1,94 @@
+@import "common";
+
+.fes {
+  font-weight: lighter;
+  position: relative;
+  .eye-catch {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    // trimming
+    overflow: hidden;
+    .filler {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: -webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,0.3)),to(rgba(255,255,255,1)));
+      z-index: 9;
+    }
+    img {
+      width: 100%;
+      margin: -20% 0;
+      z-index: 1;
+    }
+  }
+  .info-box {
+    z-index: 9;
+    position: relative;
+    .name {
+      font-size: 4.0rem;
+      font-weight: lighter;
+      text-align: center;
+      border-bottom: 1px solid white;
+      // bootstrap's breakpoints... 768px, 992px, 1200px
+      @media screen and (min-width: 76.8rem) {
+        text-align: left;
+      }
+    }
+    .date {
+      color: $color_base;
+      font-size: 3.2rem;
+      text-align: center;
+      @media screen and (min-width: 76.8rem) {
+        text-align: left;
+      }
+    }
+    .place {
+      color: $color_base;
+      font-size: 1.8rem;
+      text-align: center;
+      @media screen and (min-width: 76.8rem) {
+        bottom: 0;
+        padding: 0 6rem 2rem 0;
+        position: absolute;
+        right: 0;
+        text-align: right;
+      }
+    }
+    padding: 2rem 0;
+    @media screen and (min-width: 76.8rem) {
+      padding: 2rem 6rem;
+    }
+  }
+}
+button.start {
+  background: $color_fesdy;
+  color: white;
+  font-size: 2.4rem;
+  font-weight: normal;
+  margin: 0 0 2rem 0;
+}
+button.start:hover {
+  color: white;
+  background: darken($color_fesdy, 10%);
+}
+
+.artists {
+  margin: 0 0 2rem 0;
+  table {
+    margin: 0;
+  }
+  th {
+    text-align: center;
+  }
+  td {
+    color: lighten($color_base, 60%);
+    text-align: center;
+  }
+}
+.to-top {
+  width: 100%;
+}
+
