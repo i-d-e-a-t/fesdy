@@ -36,6 +36,25 @@ a.no-deco {
   text-decoration: none;
 }
 
+// ------------------------------------------------------------------
+// ヘッダー
+//
+
+// ロゴの大きさ。
+// 縦横比は1:2
+img.logo {
+  height: 5rem;
+  margin: auto 0;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+// ------------------------------------------------------------------
+// フッター
+//
+
 // フッターを下部へ押しやるための、コンテンツのラッパー
 #wrap {
   min-height: 100%;
@@ -52,14 +71,4 @@ a.no-deco {
   color: lighten($color_base, 90%);
   height: 6rem;
   padding: 2rem 0;
-}
-
-// ロゴの大きさ。
-// 縦横比は1:2
-img.logo {
-  height: 5rem;
-  margin: auto 0;
-}
-.navbar-brand {
-  padding: 0;
 }

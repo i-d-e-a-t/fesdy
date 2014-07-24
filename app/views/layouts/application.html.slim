@@ -33,9 +33,10 @@ html lang="en"
           .collapse.navbar-collapse#fesdy-contents-nav
             ul.nav.navbar-nav.navbar-right(role="navigation")
               li.dropdown
-                a.dropdown-toggle(href="#" data-toggle="dropdown") フェス
-                ul.dropdown-menu
+                a.no-deco.dropdown-toggle(href="#" data-toggle="dropdown") メニュー
+                ul.dropdown-menu.pull-right(role="menu")
                   - Festival.all.each do |festival|
+                    li.dropdown-header フェス
                     li
                       a(href="#{festival_path(id: festival.path_key)}")
                         = festival.name
