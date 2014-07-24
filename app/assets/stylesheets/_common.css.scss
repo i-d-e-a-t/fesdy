@@ -72,3 +72,38 @@ img.logo {
   height: 6rem;
   padding: 2rem 0;
 }
+
+
+// ------------------------------------------------------------------
+// カード
+//
+
+.card {
+  display: inline-block;  
+  width: 100%;
+  border: 1px solid lighten($color_base, 90%);
+  background: $color_fesdy;
+
+  .card-contents {
+    color: rgba(255,255,255,0.7);
+    font-size: 2.4rem;
+    margin: 2rem 3rem;
+    position: relative;
+    font-weight: lighter;
+    .card-title {
+      color: white;
+      display: inline-block;
+      font-size: 6.4rem;
+    }
+    .card-close {
+      color: white;
+      opacity: 0.5;
+      top: 0;
+      right: 0;
+      position: absolute;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

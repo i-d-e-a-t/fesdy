@@ -1,2 +1,12 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+// onload script
+function ready_for_fesdy() {
+  // fade-in welcome-card
+  $('.card.welcome').animate({
+    "opacity": "0",
+    "margin-top"   : "-2rem"
+  }, 0);
+  $('.card.welcome').animate({
+    "opacity": "1",
+    "margin-top"   : "0rem"
+  }, 1000);
+};

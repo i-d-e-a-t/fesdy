@@ -1,7 +1,22 @@
+/
+/ onload script
+/
+script(type="text/javascript")
+  | $(document).ready(ready_for_fesdy);
+/
+/ HTML contents from here
+/
 .container
   .row
     .col-lg-12
-      .sorry
-        h1 I'm sorry! This service is under development
-        h1
-          | (´・ω・｀)
+      .card.welcome
+        .card-contents
+          .card-title Welcome to Fesdy !
+          a.no-deco.card-close
+            i.icon-remove
+          p
+            | ようこそ！Fesdyはフェス予習サイトです。
+            br
+            | まずは気になるフェスの「予習する」をクリック！
+            br
+            | 開催日ごとに予習できます。
