@@ -7,7 +7,7 @@ notifications:
 deploy:
   provider: heroku
   api_key:
-    secure: WjyvWOVNWuc/dVuViYcEEkmNNfaTDraTwMwnhxIJ85lM+8RuOC0updCVKcgzyk7DqqSynAwCXQCZCztT9aEKXpc+tDJnhzl3uOdlp/ASIWLiO2r2Mh6EwVhijjZFx2KRZJq74ls4JC7APnjHKcKQEKgoxO9iJ48YxiNDHEpd5ds=
+    secure: 5aa7c9c5-ce42-4345-86a8-6fce6e7ba318
   app: 
     master: fesdy-info
   on: 
