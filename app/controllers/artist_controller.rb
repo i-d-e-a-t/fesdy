@@ -1,7 +1,6 @@
 # encoding: utf-8
 class ArtistController < ApplicationController
 
-  require 'rubygems'
   require 'google/api_client'
   require 'trollop'
 
@@ -53,7 +52,7 @@ class ArtistController < ApplicationController
       end
     end
 
-    return yt_video_ids;
+    return yt_video_ids
   end
 
 
