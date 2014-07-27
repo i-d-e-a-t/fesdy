@@ -15,6 +15,9 @@ gem 'slim-rails'
 gem 'rspec-rails'
 gem 'twitter-bootstrap3-rails'
 
+gem 'google-api-client'
+gem 'trollop'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'

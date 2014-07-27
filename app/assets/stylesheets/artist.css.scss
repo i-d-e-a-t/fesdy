@@ -1,0 +1,34 @@
+@import "common";
+
+.artist-name {
+  .info-box {
+    position: relative;
+    .name {
+      font-size: 4.0rem;
+      font-weight: lighter;
+      text-align: center;
+      border-bottom: 1px solid white;
+      // bootstrap's breakpoints... 768px, 992px, 1200px
+      @media screen and (min-width: 76.8rem) {
+        text-align: left;
+      }
+    }
+  }
+}
+
+.artist-info {
+  margin: 0 0 2rem 0;
+  table {
+    margin: 0;
+  }
+  th {
+    text-align: center;
+  }
+  td {
+    color: lighten($color_base, 60%);
+    text-align: center;
+  }
+}
+
+
+
