@@ -1,0 +1,27 @@
+/
+/ onload script
+/
+script(type="text/javascript")
+  | $(document).ready(ready_for_artist);
+/
+/ HTML contents from here
+/
+
+.artist-name
+  .info-box
+    h2.name
+      = @artist.name
+
+
+.artist-info
+  table.table
+    tr 
+      td  #{@artist.name} の説明
+    - @yt_video_ids.each do | id |
+      tr
+        td
+          .video-container
+            iframe src="//www.youtube.com/embed/#{id}" frameborder="0" allowfullscreen
+
+
+
