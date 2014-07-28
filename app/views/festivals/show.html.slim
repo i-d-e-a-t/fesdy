@@ -36,21 +36,22 @@ a.no-deco(href="#{fesdy_path}")
   - @dates.each do |date|
     / lg --1200px-- md --992p-- sm --768px-- xs
     .col-lg-3.col-md-4.col-sm-6.col-xs-12
-      table.table.table-bordered
-        thead
+      table.table.table-condensed.table-hover.accordion-group
+        thead.accordion-heading.accordion-toggle data-toggle="collapse" data-parent=".artists" href="#artist_group_#{date.id}"
           tr
             th
               .date
                 | #{date.date.strftime(date_format)}
               .place
                 | #{date.place}
-        - @artists.each_with_index do |artist, i|
-          - if artist.festival_dates.include? date
-            tr
-              td.artist
-                a.no-deco href="#{artist_path(id: artist.path_key)}"
-                  = artist.name
-                  - last_date = date.date
+        tbody.accordion-body.collapse id="artist_group_#{date.id}"
+          - @artists.each_with_index do |artist, i|
+            - if artist.festival_dates.include? date
+              tr
+                td.artist
+                  a.no-deco href="#{artist_path(id: artist.path_key)}"
+                    = artist.name
+                    - last_date = date.date
 
 .row
   .col-md-6

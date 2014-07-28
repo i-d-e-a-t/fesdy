@@ -81,6 +81,9 @@ button.start:hover {
   table {
     margin: 0 0 1rem 0;
   }
+  thead:hover {
+    background: lighten($color_base, 90%);
+  }
   th {
     font-weight: lighter;
     color: lighten($color_base, 60%);
@@ -88,7 +91,7 @@ button.start:hover {
       font-size: 2.4rem;
     }
     .place {
-      font-size: 1.6rem;
+      font-size: 1.2rem;
     }
   }
   td {
