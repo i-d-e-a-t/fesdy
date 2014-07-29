@@ -22,11 +22,6 @@ class FestivalsController < ApplicationController
     @dates.each do |date|
       @places << date.place unless @places.include? date.place
     end
-
-    # 名前順でアーティストを表示する準備
-    @artists = @festival.artists.sort do |a, b|
-      a.path_key <=> b.path_key
-    end
   end
 
   private
