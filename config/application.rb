@@ -10,5 +10,9 @@ module Fesdy
   class Application < Rails::Application
     # UTC+09:00
     config.time_zone = 'Tokyo'
+    # Add the fonts path
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    # Add the fonts to precompile target
+    config.assets.precompile += %w( .otf )
   end
 end
