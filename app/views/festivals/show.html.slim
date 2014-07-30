@@ -31,7 +31,6 @@ a.no-deco(href="#{fesdy_path}")
 
 .artists.row
   / アーティストは、開催場所・日付で分けて表示する
-  / TODO: artistsを、事前にコントローラーで分けておく
   - last_date = DateTime.now(-100)
   - @dates.each do |date|
     / lg --1200px-- md --992p-- sm --768px-- xs
@@ -45,13 +44,12 @@ a.no-deco(href="#{fesdy_path}")
               .place
                 | #{date.place}
         tbody.accordion-body.collapse id="artist_group_#{date.id}"
-          - @artists.each_with_index do |artist, i|
-            - if artist.festival_dates.include? date
-              tr
-                td.artist
-                  a.no-deco href="#{artist_path(id: artist.path_key)}"
-                    = artist.name
-                    - last_date = date.date
+          - date.artists.sort{|a, b| a.path_key <=> b.path_key}.each do |artist|
+            tr
+              td.artist
+                a.no-deco href="#{artist_path(id: artist.path_key)}"
+                  = artist.name
+                  - last_date = date.date
 
 .row
   .col-md-6

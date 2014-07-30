@@ -2,5 +2,5 @@
 class FestivalDate < ActiveRecord::Base
   belongs_to :festival
   has_many :appearances
-  has_many :artists, through: :appearance
+  has_many :artists, through: :appearances
 end
