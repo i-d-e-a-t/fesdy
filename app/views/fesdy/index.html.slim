@@ -6,17 +6,21 @@ script(type="text/javascript")
 /
 / HTML contents from here
 /
-.container
-  .row
-    .col-lg-12
-      .card.welcome
-        .card-contents
-          .card-title Welcome to Fesdy !
-          a.no-deco.card-close
-            i.icon-remove
-          p
-            | ようこそ！Fesdyはフェス予習サイトです。
-            br
-            | まずは気になるフェスの「予習する」をクリック！
-            br
-            | 開催日ごとに予習できます。
+.row
+  / lg --1200px-- md --992p-- sm --768px-- xs
+  .col-lg-6.col-md-12
+    .card.welcome
+      .card-contents
+        .card-title Welcome to Fesdy !
+        a.no-deco.card-close
+          i.icon-remove
+        p
+          | Fesdyはフェス予習サイトです。
+          | まずは気になるフェスをクリック！
+
+  - @festivals.each do |f|
+    .col-lg-6.col-md-12
+      a.no-deco href="#{festival_path(id: f.path_key)}"
+        .card.festival
+          .card-contents
+            .card-title #{f.name}
