@@ -9,10 +9,8 @@
 // 変数
 //
 
-$color_accent: magenta;
 $color_base: black;
 $color_fesdy: #8dc700;
-
 $radius: 0.7rem;
 
 // ------------------------------------------------------------------
@@ -25,10 +23,10 @@ body {
 }
 
 a {
-  color: $color_accent;
+  color: $color_fesdy;
 }
 a:hover {
-  color: darken($color_accent, 10%);
+  color: darken($color_fesdy, 10%);
 }
 
 // 修飾なし
