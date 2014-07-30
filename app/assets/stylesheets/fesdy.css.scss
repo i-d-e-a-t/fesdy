@@ -61,6 +61,12 @@
   -moz-background-size:cover;
   background-size:cover;
 
+  // paddingで高さを調整
+  padding: 3rem 0;
+  @media screen and (min-width: 76.8rem) {
+    padding: 5rem 0;
+  }
+
   // カード内容
   .card-contents {
     text-align: center;
