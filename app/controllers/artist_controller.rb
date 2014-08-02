@@ -1,9 +1,6 @@
 # encoding: utf-8
 class ArtistController < ApplicationController
 
-  require 'google/api_client'
-  require 'trollop'
-
   #
   # Artistページ
   #
