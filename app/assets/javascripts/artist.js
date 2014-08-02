@@ -13,7 +13,6 @@ function ready_for_artist(){
 function onYouTubeIframeAPIReady() {
 
   var video_id = $('#video-frame').data('video-id');
-  console.log('video-id = ' + video_id)
 
   player = new YT.Player('video-frame', {
     height: '390',
