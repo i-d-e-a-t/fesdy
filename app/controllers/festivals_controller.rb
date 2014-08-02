@@ -6,9 +6,21 @@ class FestivalsController < ApplicationController
   def show
     # festivalが見つからない場合はnot foundを返却
     render status: :not_found and return if @festival.nil?
-    # 名前順でアーティストを表示する準備
-    @artists = @festival.artists.sort do |a, b|
-      a.path_key <=> b.path_key
+
+    # 開催情報を取得。日付の若い順に並べる。
+    @dates = @festival.festival_dates.sort do |a, b|
+      a.date <=> b.date
+    end
+
+    # 開始日、終了日を取得
+    @start_date = @dates.first
+    @end_date = @dates.last
+
+    # 開催場所を取得
+    # @datesには場所が重複して入っている場合があるので注意。
+    @places = []
+    @dates.each do |date|
+      @places << date.place unless @places.include? date.place
     end
   end
 

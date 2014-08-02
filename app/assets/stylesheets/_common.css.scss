@@ -9,26 +9,72 @@
 // 変数
 //
 
-$color_accent: magenta;
 $color_base: black;
 $color_fesdy: #8dc700;
-
 $radius: 0.7rem;
+
+// ------------------------------------------------------------------
+// フォント指定
+//
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSansJP-Thin.otf') format('opentype');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSansJP-Light.otf') format('opentype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSansJP-DemiLight.otf') format('opentype');
+  font-weight: 350;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSansJP-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSansJP-Medium.otf') format('opentype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSansJP-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSansJP-Black.otf') format('opentype');
+  font-weight: 900;
+}
 
 // ------------------------------------------------------------------
 // 共通スタイル
 //
 
+
 html,
 body {
   height: 100%;
+  font-family: 'Noto Sans';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Sans';
+  font-weight: 100;
 }
 
 a {
-  color: $color_accent;
+  color: $color_fesdy;
 }
+
 a:hover {
-  color: darken($color_accent, 10%);
+  color: darken($color_fesdy, 10%);
 }
 
 // 修飾なし

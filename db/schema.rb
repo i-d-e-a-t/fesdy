@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140721113418) do
+ActiveRecord::Schema.define(version: 20140727012807) do
 
   create_table "appearances", force: true do |t|
-    t.integer  "festival_id"
     t.integer  "artist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "festival_date_id"
   end
 
   create_table "artists", force: true do |t|
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20140721113418) do
     t.datetime "updated_at"
     t.string   "path_key"
     t.string   "name"
+  end
+
+  create_table "festival_dates", force: true do |t|
+    t.integer  "festival_id"
+    t.datetime "date"
+    t.string   "place"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "festivals", force: true do |t|

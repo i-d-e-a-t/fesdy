@@ -8,7 +8,6 @@ require "open-uri"
 # パスキー作成モジュールをインクルード
 require_relative 'lib/tasks/ask_path_key.rb'
 
-OUTNAME="summer-sonic-2014.artists"
 
 class String
   def c n; "\e[#{n}m#{self}\e[0m"; end
@@ -31,26 +30,46 @@ def scrape_artists url, file = nil
     exit 1
   end
 
-  result = doc.css "#lineupList ul li:not([class*='ttl'])"
-  result = result.css "li:not([class='blank'])"
+  result_816 = doc.css "#lineupList ul#list816 li:not([class*='ttl'])"
+  result_816 = result_816.css "li:not([class='blank'])"
 
-  artists = []
-  result.each_with_index do |r|
+  result_817 = doc.css "#lineupList ul#list817 li:not([class*='ttl'])"
+  result_817 = result_817.css "li:not([class='blank'])"
+
+  artists_816 = []
+  artists_817 = []
+  result_816.each_with_index do |r|
     r = r.content
     if r == "" || nil
       next 
     end
-    artists.push r
+    artists_816.push r
+  end
+  result_817.each_with_index do |r|
+    r = r.content
+    if r == "" || nil
+      next 
+    end
+    artists_817.push r
   end
   # 全数を表示
-  puts "アーティスト数: #{artists.length}".yellow
-  artists.each_with_index do |r, i|
-    print "(#{i + 1}/#{artists.length}) ".yellow
+  puts "2014/8/16アーティスト数: #{artists_816.length}".yellow
+  artists_816.each_with_index do |r, i|
+    print "(#{i + 1}/#{artists_816.length}) ".yellow
     name = r.to_s
     # パスキーを調べる
-    result = AskPathKey.ask name, {'Opening Act' => ''}
+    tmp = AskPathKey.ask name, {'Opening Act' => ''}
     # タブで区切ってファイルに出力
-    file.puts result[0] + "\t" + result[1]
+    file.puts tmp[0] + "\t" + tmp[1] + "\t" + "20140816"
+  end
+  puts "2014/8/17アーティスト数: #{artists_817.length}".yellow
+  artists_817.each_with_index do |r, i|
+    print "(#{i + 1}/#{artists_817.length}) ".yellow
+    name = r.to_s
+    # パスキーを調べる
+    tmp = AskPathKey.ask name, {'Opening Act' => ''}
+    # タブで区切ってファイルに出力
+    file.puts tmp[0] + "\t" + tmp[1] + "\t" + "20140817"
   end
 end
 
@@ -60,9 +79,12 @@ end
 #
 tokyo_url = "http://www.summersonic.com/2014/lineup/"
 osaka_url = "http://www.summersonic.com/2014/lineup/osaka.html"
+TOKYO_OUTNAME="summer-sonic-2014.artists.tokyo"
+OSAKA_OUTNAME="summer-sonic-2014.artists.osaka"
 # ファイルに出力
-File.open(OUTNAME, 'w') do |f|
+File.open(TOKYO_OUTNAME, 'w') do |f|
   scrape_artists tokyo_url, f
+end
+File.open(OSAKA_OUTNAME, 'w') do |f|
   scrape_artists osaka_url, f
 end
-
