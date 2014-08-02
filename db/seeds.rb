@@ -14,7 +14,7 @@ FestivalDate.destroy_all
 Festival.create do |festival|
   festival.id = 1
   festival.path_key = 'summer-sonic-2014'
-  festival.name = 'サマーソニック2014'
+  festival.name = 'SUMMER SONIC 2014'
   #festival.start_date = DateTime.new(2014, 8, 16)
   #festival.end_date = DateTime.new(2014, 8, 17)
   festival.official_site = 'http://www.summersonic.com/2014/'
