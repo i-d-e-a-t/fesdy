@@ -4,6 +4,13 @@
   font-weight: lighter;
   position: relative;
   .eye-catch {
+    // TODO: フェスが増えた時、CSSに頼らず背景画像設定
+    background-image: url(image_path('messe.jpg'));
+    background-position:center center;
+    background-repeat:no-repeat;
+    -moz-background-size:cover;
+    background-size:cover;
+
     position: absolute;
     top: 0;
     width: 100%;
@@ -17,11 +24,6 @@
       height: 100%;
       background: -webkit-gradient(linear,left top,right bottom,from(rgba(255,255,255,0.3)),to(rgba(255,255,255,1)));
       z-index: 9;
-    }
-    img {
-      width: 100%;
-      margin: -20% 0;
-      z-index: 1;
     }
   }
   .info-box {
