@@ -23,7 +23,7 @@ script(type="text/javascript")
         br
 a.no-deco(href="#{fesdy_path}")
   button.btn.btn-lg.btn-block.start
-    | 予習する
+    | Study!
     | &nbsp;&nbsp;
     i.icon-play
 
@@ -44,6 +44,9 @@ a.no-deco(href="#{fesdy_path}")
               .place
                 | #{date.place}
         tbody.accordion-body.collapse id="artist_group_#{date.id}"
+          tr
+            td.study
+              | Study!
           - date.artists.sort{|a, b| a.path_key <=> b.path_key}.each do |artist|
             tr
               td.artist

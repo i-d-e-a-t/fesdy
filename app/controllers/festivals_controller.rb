@@ -24,6 +24,20 @@ class FestivalsController < ApplicationController
     end
   end
 
+  #
+  # Studyページ
+  #
+=begin
+	def study
+    @artist_ary = Artist.where(path_key: params[:id] and ).shuffle
+    if @artist != nil
+      @yt_video_ids = get_yt_video_ids(@artist.name)
+    else
+      render status: :not_found and return
+    end
+	end
+=end
+
   private
   #
   # パスパラメーターidからfestivalを検索する
