@@ -19,7 +19,7 @@ gem 'trollop'
 
 group :test do
   gem 'rspec-rails'
-  gem 'simplecov'
+  gem 'simplecov', require: false
 end
 
 group :production do
