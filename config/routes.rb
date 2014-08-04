@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     member do
       get 'study'
     end
+
+    resources :festival_dates, path: :dates, as: :dates, only: [:show] do
+      get 'study' => 'festivals#study'
+    end
   end
 
   resources :artists, controller: :artist, only: [:show]

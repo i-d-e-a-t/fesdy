@@ -44,6 +44,14 @@ places.product(dates).each do |pd|
     festival_date.festival_id = 1
     festival_date.place = place
     festival_date.date = date
+    
+    # 日付と場所でパスキーを作成。絶対にもっといい書き方がある
+    if place.include?("東京") then
+      festival_date.path_key = "#{date.year}-#{date.month}-#{date.day}-tokyo"
+    elsif place.include?("大阪") then
+      festival_date.path_key = "#{date.year}-#{date.month}-#{date.day}-osaka"
+    end
+
   end
   fdid += 1
 end

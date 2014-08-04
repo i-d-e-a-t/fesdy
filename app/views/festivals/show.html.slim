@@ -21,7 +21,7 @@ script(type="text/javascript")
       - @places.each do |place|
         == place
         br
-a.no-deco(href="#{fesdy_path}")
+a.no-deco(href="#{study_festival_path(id: @festival.id)}")
   button.btn.btn-lg.btn-block.start
     | Study!
     | &nbsp;&nbsp;
@@ -46,7 +46,8 @@ a.no-deco(href="#{fesdy_path}")
         tbody.accordion-body.collapse id="artist_group_#{date.id}"
           tr
             td.study
-              | Study!
+              a href="#{festival_date_study_path(festival_id: @festival.path_key, date_id: date.path_key)}"
+                | Study!
           - date.artists.sort{|a, b| a.path_key <=> b.path_key}.each do |artist|
             tr
               td.artist
