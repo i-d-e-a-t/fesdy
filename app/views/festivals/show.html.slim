@@ -21,7 +21,7 @@ script(type="text/javascript")
       - @places.each do |place|
         == place
         br
-a.no-deco(href="#{study_festival_path(id: @festival.id)}")
+a.no-deco(href="#{study_festival_path(id: @festival.path_key)}")
   button.btn.btn-lg.btn-block.start
     | Study!
     | &nbsp;&nbsp;
