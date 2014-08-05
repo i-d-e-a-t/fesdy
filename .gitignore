@@ -5,6 +5,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/.bundle/install.log
 
 # Ignore local gems on vendor/bundle
 /vendor/bundle
