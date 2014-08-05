@@ -30,28 +30,34 @@
     z-index: 9;
     position: relative;
     .name {
-      font-size: 4.0rem;
+      font-size: 3.2rem;
       font-weight: lighter;
       text-align: center;
       border-bottom: 1px solid white;
       // bootstrap's breakpoints... 768px, 992px, 1200px
       @media screen and (min-width: 76.8rem) {
+        font-size: 4.0rem;
+        // 大きい時
         text-align: left;
       }
     }
     .date {
       color: $color_base;
-      font-size: 3.2rem;
+      font-size: 1.8rem;
       text-align: center;
       @media screen and (min-width: 76.8rem) {
+        // 大きい時
+        font-size: 3.2rem;
         text-align: left;
       }
     }
     .place {
       color: $color_base;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       text-align: center;
       @media screen and (min-width: 76.8rem) {
+        // 大きい時
+        font-size: 1.8rem;
         bottom: 0;
         padding: 0 6rem 2rem 0;
         position: absolute;
@@ -83,12 +89,21 @@ button.start:hover {
   table {
     margin: 0 0 1rem 0;
   }
-  thead:hover {
-    background: lighten($color_base, 90%);
+  thead {
+    &.collapsed {
+      background: transparent;
+      th {
+        color: lighten($color_base, 60%);
+      }
+    }
+    &:hover {
+      th {
+        color: $color_base;
+      }
+    }
   }
   th {
     font-weight: lighter;
-    color: lighten($color_base, 60%);
     .date {
       font-size: 2.4rem;
     }
