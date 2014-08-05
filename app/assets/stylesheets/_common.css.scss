@@ -86,6 +86,24 @@ a.no-deco {
 // ヘッダー
 //
 
+#header {
+  height: 5rem;
+  .navbar-toggle {
+    box-sizing: border-box;
+    margin: .1rem 0;
+    padding: 0;
+    height: 4.8rem;
+    width: 4.8rem;
+    font-size: 2.4rem;
+    border: 0;
+
+    &.collapsed {
+      color: $color_base;
+    }
+    color: $color_fesdy;
+  }
+}
+
 // ロゴの大きさ。
 // 縦横比は1:2
 img.logo {
