@@ -16,6 +16,9 @@
 # Ignore emacs's swap files
 *~
 
+# Ignore simplecov's coverage files
+/coverage
+
 # Ignore other unneeded files.
 doc/
 .DS_Store

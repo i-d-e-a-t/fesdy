@@ -12,11 +12,15 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'spring',        group: :development
 gem 'slim-rails'
-gem 'rspec-rails'
 gem 'twitter-bootstrap3-rails'
 
 gem 'google-api-client'
 gem 'trollop'
+
+group :test do
+  gem 'rspec-rails'
+  gem 'simplecov', require: false
+end
 
 group :production do
   gem 'pg'
