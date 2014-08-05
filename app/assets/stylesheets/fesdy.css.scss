@@ -1,5 +1,75 @@
 @import "common";
 
-.sorry {
-  color: #ccc;
+//
+// カード
+// 
+//  カード要素の共通設定。
+//  「#####」は種類を区別するためのクラス
+//
+//  .card.#####
+//    .card-contents
+//      .card-title
+//      .card-****
+//      .card-****
+//
+
+
+.card {
+  background: gray;
+  display: inline-block;  
+  width: 100%;
+  height: 100%;
+  margin: 0 0 2rem 0;
+  
+  .card-contents {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.8rem;
+    margin: 2rem 3rem;
+    position: relative;
+    font-weight: lighter;
+
+    .card-title {
+      color: white;
+      display: inline-block;
+      font-size: 3.6rem;
+    }
+  }
+}
+
+.card.welcome {
+  background: $color_fesdy;
+  .card-contents {
+    // ウェルカムカードを閉じるボタン
+    .card-close {
+      color: white;
+      opacity: 0.5;
+      right: 0;
+      top: 0;
+      position: absolute;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.card.festival {
+  // TODO: フェスが増えた時、CSSに頼らず背景画像設定
+  background-image: url(image_path('messe.jpg'));
+  background-position:center center;
+  background-repeat:no-repeat;
+  -moz-background-size:cover;
+  background-size:cover;
+
+  // paddingで高さを調整
+  padding: 3rem 0;
+  @media screen and (min-width: 76.8rem) {
+    padding: 5rem 0;
+  }
+
+  // カード内容
+  .card-contents {
+    text-align: center;
+    text-shadow: 0 0 .4rem black;
+  }
 }
