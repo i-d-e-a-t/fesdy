@@ -95,6 +95,16 @@ button.start:hover {
     }
   }
   td {
+    background: lighten($color_base, 98%);  
+  }
+  td.study {
+    padding: 0;
+    border: 0;
+    button.start {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: lighter;
+    }
   }
 }
 .to-official-site {
