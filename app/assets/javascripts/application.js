@@ -16,11 +16,6 @@
 //= require turbolinks
 //= require_tree .
 
-$(function() {
-  // for iPhone
-  $('thead').click(function() {});
-});
-
 function ready_for_ytpages() {
 
   var tag = document.createElement('script');
@@ -86,4 +81,3 @@ function onYouTubeIframeAPIReady() {
 */
 
 }
-
