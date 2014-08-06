@@ -2,7 +2,7 @@
 / onload script
 /
 script(type="text/javascript")
-  | $(document).ready(ready_for_artist);
+  | $(document).ready(ready_for_ytpages);
 /
 / HTML contents from here
 /
@@ -17,9 +17,9 @@ script(type="text/javascript")
 .artist-info
   table.table
     tr 
-    - @yt_video_ids.each do | id |
-      tr
-        td
-          .video-container
-            iframe src="//www.youtube.com/embed/#{id}" frameborder="0" allowfullscreen
+      td #{@artist.name}
+    tr
+      td
+        .video-container
+          #video-frame data-video-id="#{@yt_video_ids[0]}"
 
