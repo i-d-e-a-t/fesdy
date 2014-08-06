@@ -17,11 +17,19 @@ script(type="text/javascript")
   table.table
     tr 
       td  #{@artist.name} の説明
-    - @yt_video_ids.each do | id |
-      tr
-        td
-          .video-container
-            iframe src="//www.youtube.com/embed/#{id}" frameborder="0" allowfullscreen
+
+    tr
+      td
+        .video-container
+          #video-frame data-video-id="#{@yt_video_ids[0]}"
+
+/ 複数動画を表示してた時のコード
+/ デザインもYoutubeデフォルト
+/    - @yt_video_ids.each do | id |
+/      tr
+/        td
+/          .video-container
+/            iframe src="//www.youtube.com/embed/#{id}" frameborder="0" allowfullscreen
 
 
 

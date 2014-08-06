@@ -7,12 +7,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :prepare_for_header
+
   private
+  def prepare_for_header
+    @festivals = Festival.all
+  end
 
-  #
   # search_wordをキーにYoutube検索を行い、Video-Idを最大3件配列で返却
-  #
-
   DEVELOPER_KEY = "AIzaSyB8r2JlGrH-zL7Eh0S3O11134jzTv4HAeM"
   YOUTUBE_API_SERVICE_NAME = "youtube"
   YOUTUBE_API_VERSION = "v3"

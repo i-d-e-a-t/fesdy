@@ -9,7 +9,6 @@ script(type="text/javascript")
 .fes
   .eye-catch
     .filler
-    = image_tag "messe.jpg", alt: @festival.name
   .info-box
     h2.name
       = @festival.name
@@ -36,7 +35,7 @@ a.no-deco(href="#{study_festival_path(id: @festival.path_key)}")
     / lg --1200px-- md --992p-- sm --768px-- xs
     .col-lg-3.col-md-4.col-sm-6.col-xs-12
       table.table.table-condensed.table-hover.accordion-group
-        thead.accordion-heading.accordion-toggle data-toggle="collapse" data-parent=".artists" href="#artist_group_#{date.id}"
+        thead.accordion-heading.accordion-toggle.collapsed data-toggle="collapse" data-parent=".artists" href="#artist_group_#{date.id}"
           tr
             th
               .date

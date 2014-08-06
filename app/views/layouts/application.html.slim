@@ -3,7 +3,7 @@ html lang="en"
   head
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
-    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
     title= content_for?(:title) ? yield(:title) : "Fesdy"
     = csrf_meta_tags
 
@@ -24,22 +24,18 @@ html lang="en"
     #wrap
       .navbar.navbar-static-top
         .container
-          .navbar-header
+          #header.navbar-header
             a.navbar-brand href="#{fesdy_path}"
-              = image_tag "logo.png", class: [:logo], alt: "Fesdy"
-            button.navbar-toggle(type="button" data-toggle="collapse" data-target="#fesdy-contents-nav")
+              = image_tag "logo-mini.png", class: [:logo], alt: "Fesdy"
+            button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#fesdy-contents-nav")
               span.sr-only toggle navigation
               i.icon-reorder
           .collapse.navbar-collapse#fesdy-contents-nav
             ul.nav.navbar-nav.navbar-right(role="navigation")
-              li.dropdown
-                a.no-deco.dropdown-toggle(href="#" data-toggle="dropdown") メニュー
-                ul.dropdown-menu.pull-right(role="menu")
-                  - Festival.all.each do |festival|
-                    li.dropdown-header フェス
-                    li
-                      a(href="#{festival_path(id: festival.path_key)}")
-                        = festival.name
+              - @festivals.each do |festival|
+                li
+                  a(href="#{festival_path(id: festival.path_key)}")
+                    = festival.name
       .container
         .row
           .col-lg-12
