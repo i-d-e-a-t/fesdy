@@ -1,0 +1,25 @@
+/
+/ onload script
+/
+script(type="text/javascript")
+  | $(document).ready(ready_for_ytpages);
+/
+/ HTML contents from here
+/
+
+/TODO 再生が終わるたびにアーティスト名を書き換える
+.artist-name
+  .info-box
+    h2.name
+/      = @artist.name
+
+
+.artist-info
+  table.table
+    tr 
+      td #{@artist.name}
+    tr
+      td
+        .video-container
+          #video-frame data-video-id="#{@yt_video_ids[0]}"
+
