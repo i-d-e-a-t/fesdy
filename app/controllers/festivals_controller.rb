@@ -25,29 +25,26 @@ class FestivalsController < ApplicationController
   end
 
   def study
-    @artist_ary = []
-
-    if params[:festival_id]
-      Festival.where(path_key: params[:festival_id]).each do |fest|
-        fest.festival_dates.where(path_key: params[:date_id]).each do |dt|
-          @artist_ary += dt.artists.all.shuffle
-        end
-      end
-    elsif params[:id]
-      Festival.where(path_key: params[:id]).each do |fest|
-        @artist_ary += fest.artists.all.shuffle
-      end
-    end
-
-    if @artist_ary
-      @artist = @artist_ary.first
-      @yt_video_ids = get_yt_video_ids(@artist.name)
-    else
+    # フェスを探す
+    fest = Festival.where(path_key: params[:festival_id]).last ||
+           Festival.where(path_key: params[:id]).last
+    unless fest
+      # nilならnot found
       render status: :not_found and return
     end
+
+    # 次はdateを探す
+    date = fest.festival_dates.where(path_key: params[:date_id]).last
+
+    if date
+      @artist = date.artists.sample
+    else
+      @artist = fest.artists.sample
+    end
+
+    @yt_video_ids = get_yt_video_ids(@artist.name)
   end
 
-  @played_artist_ary = []
 
   def next_song
     # 今再生しているアーティスト再生済みにうつす
