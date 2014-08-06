@@ -14,8 +14,10 @@ module CommonHelper
     festival_date = FestivalDate.create(
       date: DateTime.now,
       festival_id: festival.id,
+      path_key: '2014-08-06-Chiba'
     )
     artist = Artist.create(
+      name: 'すごい奴らfeat.ヤバい奴ら',
       path_key: 'awesome-artist-2014'
     )
     appearance = Appearance.create(

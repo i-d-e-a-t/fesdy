@@ -1,7 +1,27 @@
-.container
-  .row
-    .col-lg-12
-      .sorry
-        h1 I'm sorry! This service is under development
-        h1
-          | (´・ω・｀)
+/
+/ onload script
+/
+script(type="text/javascript")
+  | $(document).ready(ready_for_fesdy);
+/
+/ HTML contents from here
+/
+.row
+  / lg --1200px-- md --992p-- sm --768px-- xs
+  #welcome.col-lg-6.col-md-12
+    .card.welcome
+      .card-contents
+        .card-title Welcome to Fesdy !
+        /TODO: クリックしたらこのカードを二度と表示しないようにする
+        /a.no-deco.card-close
+          i.icon-remove
+        p
+          | Fesdyはフェス予習サイトです。
+          | まずは気になるフェスをクリック！
+
+  - @festivals.each do |f|
+    .col-lg-6.col-md-12
+      a.no-deco href="#{festival_path(id: f.path_key)}"
+        .card.festival
+          .card-contents
+            .card-title #{f.name}
