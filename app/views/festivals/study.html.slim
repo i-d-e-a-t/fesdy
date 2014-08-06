@@ -1,2 +1,25 @@
-h1 Festivals#study
-p Find me in app/views/festivals/study.html.slim
+/
+/ onload script
+/
+script(type="text/javascript")
+  | $(document).ready(ready_for_artist);
+/
+/ HTML contents from here
+/
+
+/TODO 再生が終わるたびにアーティスト名を書き換える
+.artist-name
+  .info-box
+    h2.name
+/      = @artist.name
+
+
+.artist-info
+  table.table
+    tr 
+    - @yt_video_ids.each do | id |
+      tr
+        td
+          .video-container
+            iframe src="//www.youtube.com/embed/#{id}" frameborder="0" allowfullscreen
+
