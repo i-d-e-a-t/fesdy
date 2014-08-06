@@ -1,5 +1,10 @@
 // onload script
 function ready_for_festival() {
+  // for iPhone
+  // TODO なぜかクリックイベントを登録しないと、
+  // 別画面から遷移した時リンクが効かない。
+  $('thead').click(function() {});
+
   // fade-in eyecatch image
   $('.eye-catch').fadeOut(0).fadeIn('slow');
   // fade-in & slide-in festival information
