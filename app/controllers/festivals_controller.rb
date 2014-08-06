@@ -24,35 +24,41 @@ class FestivalsController < ApplicationController
     end
   end
 
-  #
-  # Studyページ
-  #
   def study
     @artist_ary = []
 
-    #URIで指定されたfes名と合致するfesをまず探す
-    Festival.where(path_key: params[:festival_id]).each do |fest|
-      #日付なしで飛んできたものはアーティストを詰め込む
-      if params[:date_id].nil?
-        @artist_ary += fest.artists.all.shuffle
-      # 日付ありで飛んできた場合はさらに日付と合致するアーティストを詰め込む
-      elsif
+    if params[:festival_id]
+      Festival.where(path_key: params[:festival_id]).each do |fest|
         fest.festival_dates.where(path_key: params[:date_id]).each do |dt|
           @artist_ary += dt.artists.all.shuffle
         end
       end
-
+    elsif params[:id]
+      Festival.where(path_key: params[:id]).each do |fest|
+        @artist_ary += fest.artists.all.shuffle
+      end
     end
 
     if @artist_ary
-      play_yt_seequence
+      @artist = @artist_ary.first
+      @yt_video_ids = get_yt_video_ids(@artist.name)
     else
       render status: :not_found and return
     end
   end
 
-  def play_yt_seequence
-    @yt_video_ids = get_yt_video_ids(@artist_ary.first.name)
+  @played_artist_ary = []
+
+  def next_song
+    # 今再生しているアーティスト再生済みにうつす
+    @played_artist_ary << @artist_ary.first
+    @artist_ary = @artist_ary.drop(1)
+
+    # 全アーティスト一周したらシャッフルしてやりなおし
+    @artist_ary = @played_artist_ary.shuffle! if @artist_ary.empty?
+
+    @artist = @artist_ary.first
+    @yt_video_ids = get_yt_video_ids(@artist.name)
   end
 
   private
