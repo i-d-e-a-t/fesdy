@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   private
 
   #
-  # Artist名をキーにYoutube検索を行い、Video-Idを最大3件配列で返却
+  # search_wordをキーにYoutube検索を行い、Video-Idを最大3件配列で返却
   #
 
   DEVELOPER_KEY = "AIzaSyB8r2JlGrH-zL7Eh0S3O11134jzTv4HAeM"
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   YOUTUBE_API_VERSION = "v3"
   NUM_OF_LIST = 3
 
-  def get_yt_video_ids(artist_name)
+  def get_yt_video_ids(search_word)
     # clientの設定
     client = Google::APIClient.new(:key => DEVELOPER_KEY,
                                    :authorization => nil)
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     
     # Optionの設定(検索キーワード/取得数)
     opts = Trollop::options do
-      opt :q, 'Search term', :type => String, :default => artist_name
+      opt :q, 'Search term', :type => String, :default => search_word
       opt :maxResults, 'Max results', :type => :int, :default => NUM_OF_LIST
     end
 
