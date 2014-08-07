@@ -85,42 +85,33 @@ button.start:hover {
 }
 
 .artists {
-  margin: 0 0 2rem 0;
-  table {
-    margin: 0 0 1rem 0;
-  }
-  thead {
-    &.collapsed {
-      background: transparent;
-      th {
-        color: lighten($color_base, 60%);
-      }
-    }
-    &:hover {
-      th {
-        color: $color_base;
-      }
-    }
-  }
-  th {
-    font-weight: lighter;
-    .date {
-      font-size: 2.4rem;
-    }
-    .place {
-      font-size: 1.2rem;
-    }
-  }
-  td {
-    background: lighten($color_base, 98%);  
-  }
-  td.study {
-    padding: 0;
-    border: 0;
-    button.start {
-      margin: 0;
-      font-size: 1.8rem;
+  .festival-date {
+    .info {
       font-weight: lighter;
+      .date {
+        font-size: 2.4rem;
+      }
+      .place {
+        font-size: 1.2rem;
+      }
+    }
+    .study {
+      padding: 0;
+      border: 0;
+      button.start {
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: lighter;
+      }
+    }
+  }
+  margin: 0 0 2rem 0;
+  th.toggle-date {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: lighter;
+    &:hover {
+      background: lighten($color_base, 90%);
     }
   }
 }

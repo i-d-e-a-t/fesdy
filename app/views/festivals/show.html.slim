@@ -31,22 +31,26 @@ a.no-deco(href="#{study_festival_path(id: @festival.path_key)}")
   - @dates.each do |date|
     / lg --1200px-- md --992p-- sm --768px-- xs
     .col-lg-3.col-md-4.col-sm-6.col-xs-12
+      .festival-date
+        .info
+          .date
+            | #{date.date.strftime(date_format)}
+          .place
+            | #{date.place}
+        .study
+          a.no-deco href="#{festival_date_study_path(festival_id: @festival.path_key, date_id: date.path_key)}"
+            button.btn.btn-block.start
+              | Study!
+              | &nbsp;&nbsp;
+              i.icon-play
       table.table.table-condensed.table-hover.accordion-group
         thead.accordion-heading.accordion-toggle.collapsed data-toggle="collapse" data-parent=".artists" href="#artist_group_#{date.id}"
           tr
-            th
-              .date
-                | #{date.date.strftime(date_format)}
-              .place
-                | #{date.place}
+            th.toggle-date
+              | Artists
+              | &nbsp;&nbsp;
+              i.icon-reorder
         tbody.accordion-body.collapse id="artist_group_#{date.id}"
-          tr
-            td.study
-              a.no-deco href="#{festival_date_study_path(festival_id: @festival.path_key, date_id: date.path_key)}"
-                button.btn.btn-block.start
-                  | Study!
-                  | &nbsp;&nbsp;
-                  i.icon-play
           - date.artists.sort{|a, b| a.path_key <=> b.path_key}.each do |artist|
             tr
               td.artist
