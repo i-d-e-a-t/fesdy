@@ -86,8 +86,11 @@ button.start:hover {
 
 .artists {
   .festival-date {
+    border: 1px solid $color_fesdy;
+    text-align: center;
     .info {
-      font-weight: lighter;
+      padding: 2rem 0 0 0;
+      font-weight: normal;
       .date {
         font-size: 2.4rem;
       }
@@ -96,12 +99,18 @@ button.start:hover {
       }
     }
     .study {
-      padding: 0;
+      padding: 2rem 0;
       border: 0;
-      button.start {
-        margin: 0;
-        font-size: 1.8rem;
-        font-weight: lighter;
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: lighter;
+      background: transparent;
+      color: $color_fesdy;
+    }
+    &:hover {
+      color: darken($color_fesdy, 10%);
+      .study {
+        color: darken($color_fesdy, 10%);
       }
     }
   }
@@ -110,8 +119,11 @@ button.start:hover {
     text-align: center;
     font-size: 1.8rem;
     font-weight: lighter;
+    padding: 2rem 0;
+    color: lighten($color_base, 70%);
     &:hover {
       background: lighten($color_base, 90%);
+      color: $color_base;
     }
   }
 }
@@ -119,10 +131,12 @@ button.start:hover {
   width: 100%;
   margin: 0 0 2rem 0;
   padding: 1rem;
+  border-radius: 0;
 }
 .to-top {
   width: 100%;
   margin: 0 0 2rem 0;
   padding: 1rem;
+  border-radius: 0;
 }
 
