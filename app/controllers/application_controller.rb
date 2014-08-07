@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   # search_wordをキーにYoutube検索を行い、Video-Idを最大3件配列で返却
-  DEVELOPER_KEY = "AIzaSyB8r2JlGrH-zL7Eh0S3O11134jzTv4HAeM"
+  DEVELOPER_KEY = Rails.application.secrets.youtube
   YOUTUBE_API_SERVICE_NAME = "youtube"
   YOUTUBE_API_VERSION = "v3"
   NUM_OF_LIST = 3
