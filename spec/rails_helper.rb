@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
@@ -40,4 +42,10 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  # Travisやローカルでのテスト時に、
+  # Railsの環境を標準出力に出すためのコード。
+  puts "===================="
+  puts "  ENV: #{Rails.env}"
+  puts "===================="
 end
