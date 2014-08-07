@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 2.0.0-p353
+script: 
+  - bundle exec rake assets:precompile
 notifications:
   webhooks:
     - https://idobata.io/hook/travis_ci/bfa5e14b-6330-40f0-bdb8-36e1ef75ef50
@@ -12,3 +14,5 @@ deploy:
     master: fesdy-info
   on: 
     repo: i-d-e-a-t/fesdy
+after_success:
+  - heroku run rake db:migrate
