@@ -1,4 +1,6 @@
+# encoding: utf-8
 class ApplicationController < ActionController::Base
+  extend SecretKeeper
 
   require 'google/api_client'
   require 'trollop'
@@ -15,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   # search_wordをキーにYoutube検索を行い、Video-Idを最大3件配列で返却
-  DEVELOPER_KEY = Rails.application.secrets.youtube
+  DEVELOPER_KEY = secret :youtube_apikey
   YOUTUBE_API_SERVICE_NAME = "youtube"
   YOUTUBE_API_VERSION = "v3"
   NUM_OF_LIST = 3

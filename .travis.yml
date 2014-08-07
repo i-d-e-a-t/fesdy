@@ -12,3 +12,6 @@ deploy:
     master: fesdy-info
   on: 
     repo: i-d-e-a-t/fesdy
+env:
+  grobal:
+    secure: 
