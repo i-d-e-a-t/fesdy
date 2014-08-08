@@ -13,5 +13,4 @@ deploy:
   on: 
     repo: i-d-e-a-t/fesdy
 env:
-  grobal:
-    secure: "psZAmsGwDzYS3j8W1TZ8utX/EgvGWbokqvinf1la+Hy+M5o7NkbR3A6WZoTm5V3d6RO2FxyCcl3QkmrMz8/PZ6yZklsV4Ikz4wgEgS/cpu/6zvApLTgvwJfQbPRfNpE258fNEzquyolc1eRQaVQvEnRBBcJYo6/OtZBN0ddEitM="
+  secure: "psZAmsGwDzYS3j8W1TZ8utX/EgvGWbokqvinf1la+Hy+M5o7NkbR3A6WZoTm5V3d6RO2FxyCcl3QkmrMz8/PZ6yZklsV4Ikz4wgEgS/cpu/6zvApLTgvwJfQbPRfNpE258fNEzquyolc1eRQaVQvEnRBBcJYo6/OtZBN0ddEitM="
