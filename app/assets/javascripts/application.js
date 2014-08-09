@@ -18,11 +18,13 @@
 
 function ready_for_ytpages() {
 
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  var player;
+  // youtube API が作成したjsをリセット
+  YT = null;
+
+  // youtube API のロード
+  var ytIframeApiUrl  = "https://www.youtube.com/iframe_api";
+  var tag = $('<script>', {id: 'youtube-iframe-api', src: ytIframeApiUrl});
+  $('head').append(tag);
 
 }
 
@@ -30,7 +32,7 @@ function onYouTubeIframeAPIReady() {
 
   var video_id = $('#video-frame').data('video-id');
 
-  player = new YT.Player('video-frame', {
+  var player = new YT.Player('video-frame', {
     height: '390',
     width: '640',
     videoId: video_id,
