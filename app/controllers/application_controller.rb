@@ -17,7 +17,11 @@ class ApplicationController < ActionController::Base
   end
 
   # search_wordをキーにYoutube検索を行い、Video-Idを最大3件配列で返却
-  DEVELOPER_KEY = secret :youtube_apikey
+  if RAILS_ENV == "production"
+    DEVELOPER_KEY = ENV["DEVELOPER_KEY"]
+  else
+    DEVELOPER_KEY = secret :youtube_apikey
+  end
   YOUTUBE_API_SERVICE_NAME = "youtube"
   YOUTUBE_API_VERSION = "v3"
   NUM_OF_LIST = 3
