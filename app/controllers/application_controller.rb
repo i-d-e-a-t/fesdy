@@ -21,11 +21,15 @@ class ApplicationController < ActionController::Base
   YOUTUBE_API_SERVICE_NAME = "youtube"
   YOUTUBE_API_VERSION = "v3"
   NUM_OF_LIST = 3
+  APPLICATION_NAME = "Fesdy"
+  APPLICATION_VERSION = "0.01"
 
   def get_yt_video_ids(search_word)
     # clientの設定
     client = Google::APIClient.new(:key => DEVELOPER_KEY,
-                                   :authorization => nil)
+                                   :authorization => nil,
+                                   :application_name => APPLICATION_NAME,
+                                   :application_version => APPLICATION_VERSION)
     youtube = client.discovered_api(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION)
     
     # Optionの設定(検索キーワード/取得数)
