@@ -32,6 +32,8 @@ class ApplicationController < ActionController::Base
     opts = Trollop::options do
       opt :q, 'Search term', :type => String, :default => search_word
       opt :maxResults, 'Max results', :type => :int, :default => NUM_OF_LIST
+      # TODO heroku環境で-pオプションが付加されてしまうので受け皿設定
+      opt :p, '** dummy for heroku **', :type => :string, :default => ""
     end
 
     # 検索実行
