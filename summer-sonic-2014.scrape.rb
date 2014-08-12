@@ -113,7 +113,7 @@ exceptions = {
   '(from Korea)' => '',
   '(from Taiwan)' => '',
 }
-apk = AskPathKey.new old_files, exceptions
+apk = AskPathKey.new exceptions
 # 履歴を登録
 old_files.each { |of| apk.load_history of }
 
