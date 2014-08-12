@@ -5,6 +5,7 @@
 #
 require "nokogiri"
 require "open-uri"
+
 # パスキー作成モジュールをインクルード
 require_relative 'lib/tasks/ask_path_key.rb'
 
@@ -21,6 +22,26 @@ end
 # アーティストを抽出。
 #
 def scrape_artists url, file = nil
+
+  old_file = nil
+  # 昔のファイルは存在するか？
+  if File.exists? file
+    old_file = file + '.old'
+    # ファイル名にoldをつけて退避する。
+    raise "ファイルコピーに失敗: #{file}" if File.copy(file, old_file)
+  end
+
+  # 履歴管理用のインスタンスを生成
+  exceptions = {
+    'Opening Act' => '',
+    '(from China)' => '',
+    '(from Thailand)' => '',
+    '(from Malaysia)' => '',
+    '(from Korea)' => '',
+    '(from Taiwan)' => '',
+  }
+  apk = AskPathKey.new old_file, exceptions
+
   puts "url: #{url}".green
   begin
     doc = Nokogiri::HTML(open url)
@@ -52,13 +73,14 @@ def scrape_artists url, file = nil
     end
     artists_817.push r
   end
+
   # 全数を表示
   puts "2014/8/16アーティスト数: #{artists_816.length}".yellow
   artists_816.each_with_index do |r, i|
     print "(#{i + 1}/#{artists_816.length}) ".yellow
     name = r.to_s
     # パスキーを調べる
-    tmp = AskPathKey.ask name, {'Opening Act' => ''}
+    tmp = apk.ask name
     # タブで区切ってファイルに出力
     file.puts tmp[0] + "\t" + tmp[1] + "\t" + "20140816"
   end
@@ -67,7 +89,7 @@ def scrape_artists url, file = nil
     print "(#{i + 1}/#{artists_817.length}) ".yellow
     name = r.to_s
     # パスキーを調べる
-    tmp = AskPathKey.ask name, {'Opening Act' => ''}
+    tmp = apk.ask name
     # タブで区切ってファイルに出力
     file.puts tmp[0] + "\t" + tmp[1] + "\t" + "20140817"
   end

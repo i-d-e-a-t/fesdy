@@ -1,5 +1,13 @@
 # encoding: utf-8
 
+#
+# アーティスト名を渡すと、
+# アーティスト名をpath_keyに変換する。
+#
+# ただし、AskPathKeyの初期化時に
+# 例外的な変換ルールと
+# 既存の返還後ファイルを渡すこと。
+#
 class AskPathKey
 
   SPECIALS = ("- /.,:;&" +
@@ -14,6 +22,28 @@ class AskPathKey
     ('０'..'９').to_a,
     SPECIALS
   ].flatten
+
+  # ex: 例外的に変換するルールの設定
+  def initialize ex={}, old_file=nil
+    @ex = ex
+    # 昔のファイルから、すでに変換済みのアーティストを識別するために
+    # ぱーすする。
+    @histories = self.parse_file(old_file)
+  end
+
+  def self.parse_file filename
+    return {} unless filename
+    h = {}
+    File.open(filename) do |f|
+      while line f.gets.chomp
+        # タブで分割
+        name, path_key, date = line.split("\t")
+        h[name] = path_key
+      end
+    end
+    return h
+  end
+
   # 文字列を入力すると、１文字でも以下のルールに当てはまらない時
   # パスキーを質問する。
   #   英数字である（半角、全角、大文字、小文字)
@@ -24,9 +54,13 @@ class AskPathKey
   #
   # 返り値は、特別変換を適用したクエリと
   # パスキーの配列。
-  def self.ask query, ex={}
+  def ask query
+    # 履歴にないか？あれば返す
+    if @histories[query]
+      puts "\e[32m#{query} ---> #{path_key} by history\e[0m"
+    end
     # 特別変換する文字列の変換
-    ex.each do |k, v|
+    @ex.each do |k, v|
       query.gsub!(k, v)
     end
     qs = query.split ''
