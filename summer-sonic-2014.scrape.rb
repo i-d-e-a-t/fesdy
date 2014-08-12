@@ -47,7 +47,6 @@ def scrape_artists apk, url, file = nil
   result_816.each_with_index do |r|
     # 特設ステージへのリンクはスキップ
     next unless r.css("a > img")
-    exit
     r = r.content
     if r == "" || nil
       next 
