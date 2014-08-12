@@ -17,6 +17,8 @@ gem 'twitter-bootstrap3-rails'
 gem 'google-api-client'
 gem 'trollop'
 
+gem 'newrelic_rpm'
+
 group :test do
   gem 'rspec-rails'
   gem 'simplecov', require: false
