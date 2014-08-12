@@ -45,6 +45,8 @@ def scrape_artists apk, url, file = nil
   artists_816 = []
   artists_817 = []
   result_816.each_with_index do |r|
+    # 特設ステージへのリンクはスキップ
+    next if r.css("a > img").empty?
     r = r.content
     if r == "" || nil
       next 
@@ -52,6 +54,8 @@ def scrape_artists apk, url, file = nil
     artists_816.push r
   end
   result_817.each_with_index do |r|
+    # 特設ステージへのリンクはスキップ
+    next if r.css("a > img").empty?
     r = r.content
     if r == "" || nil
       next 
