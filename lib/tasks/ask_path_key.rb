@@ -24,24 +24,20 @@ class AskPathKey
   ].flatten
 
   # ex: 例外的に変換するルールの設定
-  def initialize ex={}, old_file=nil
+  def initialize ex={}
     @ex = ex
-    # 昔のファイルから、すでに変換済みのアーティストを識別するために
-    # ぱーすする。
-    @histories = self.parse_file(old_file)
+    @histories = {}
   end
 
-  def self.parse_file filename
-    return {} unless filename
-    h = {}
+  def load_history filename
+    return @histories unless filename
     File.open(filename) do |f|
-      while line f.gets.chomp
+      while line = f.gets
         # タブで分割
         name, path_key, date = line.split("\t")
-        h[name] = path_key
+        @histories[name] = path_key
       end
     end
-    return h
   end
 
   # 文字列を入力すると、１文字でも以下のルールに当てはまらない時
@@ -57,7 +53,8 @@ class AskPathKey
   def ask query
     # 履歴にないか？あれば返す
     if @histories[query]
-      puts "\e[32m#{query} ---> #{path_key} by history\e[0m"
+      puts "\e[32m#{query} ---> #{@histories[query]} by history\e[0m"
+      return @histories[query]
     end
     # 特別変換する文字列の変換
     @ex.each do |k, v|
@@ -84,7 +81,7 @@ class AskPathKey
     return [query, path_key]
   end
 
-  def self.make_path_key query
+  def make_path_key query
     zenkaku = [('Ａ'..'Ｚ').to_a, ('ａ'..'ｚ').to_a, ('０'..'９').to_a]
     zenkaku.flatten!
     hankaku = [('A'..'Z').to_a, ('a'..'z').to_a, ('0'..'9').to_a]
