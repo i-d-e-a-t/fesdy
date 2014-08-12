@@ -31,6 +31,9 @@ def scrape_artists url, file = nil
     raise "ファイルコピーに失敗: #{file}" if File.copy(file, old_file)
   end
 
+  # 出力用ファイルをオープン
+  f = File.open(file, 'a')
+
   # 履歴管理用のインスタンスを生成
   exceptions = {
     'Opening Act' => '',
@@ -82,7 +85,7 @@ def scrape_artists url, file = nil
     # パスキーを調べる
     tmp = apk.ask name
     # タブで区切ってファイルに出力
-    file.puts tmp[0] + "\t" + tmp[1] + "\t" + "20140816"
+    f.puts tmp[0] + "\t" + tmp[1] + "\t" + "20140816"
   end
   puts "2014/8/17アーティスト数: #{artists_817.length}".yellow
   artists_817.each_with_index do |r, i|
@@ -91,8 +94,14 @@ def scrape_artists url, file = nil
     # パスキーを調べる
     tmp = apk.ask name
     # タブで区切ってファイルに出力
-    file.puts tmp[0] + "\t" + tmp[1] + "\t" + "20140817"
+    f.puts tmp[0] + "\t" + tmp[1] + "\t" + "20140817"
   end
+
+  # ファイルクローズ
+  f.close
+
+  # 退避したファイルを削除
+  File.delete old_file if old_file && File.exists? old_file
 end
 
 #######################################################################
@@ -104,9 +113,5 @@ osaka_url = "http://www.summersonic.com/2014/lineup/osaka.html"
 TOKYO_OUTNAME="summer-sonic-2014.artists.tokyo"
 OSAKA_OUTNAME="summer-sonic-2014.artists.osaka"
 # ファイルに出力
-File.open(TOKYO_OUTNAME, 'w') do |f|
-  scrape_artists tokyo_url, f
-end
-File.open(OSAKA_OUTNAME, 'w') do |f|
-  scrape_artists osaka_url, f
-end
+scrape_artists tokyo_url, TOKYO_OUTNAME
+scrape_artists osaka_url, OSAKA_OUTNAME
