@@ -54,7 +54,7 @@ class AskPathKey
     # 履歴にないか？あれば返す
     if @histories[query]
       puts "\e[32m#{query} ---> #{@histories[query]} by history\e[0m"
-      return @histories[query]
+      return [query, @histories[query]]
     end
     # 特別変換する文字列の変換
     @ex.each do |k, v|
