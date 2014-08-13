@@ -24,24 +24,32 @@ class FestivalsController < ApplicationController
     end
   end
 
+  #
+  # 予習画面
+  #     fes指定のみの場合:　フェス予習
+  #     fes & date指定の場合:  フェス開催別予習
+  #
   def study
     # フェスを探す
-    fest = Festival.where(path_key: params[:festival_id]).last ||
-           Festival.where(path_key: params[:id]).last
-    unless fest
+    # prepare_...を使わないのは、
+    # idにdateのpath_keyが設定されている可能性があるため。
+    @fest = Festival.where(path_key: params[:festival_id]).last ||
+            Festival.where(path_key: params[:id]).last
+    unless @fest
       # nilならnot found
       render status: :not_found and return
     end
 
     # 次はdateを探す
-    date = fest.festival_dates.where(path_key: params[:date_id]).last
+    @date = @fest.festival_dates.where(path_key: params[:date_id]).last
 
-    if date
-      @artist = date.artists.sample
-    else
-      @artist = fest.artists.sample
-    end
+    # 予習ターゲットを判別
+    target = @date ? @date : @fest
 
+    # アーティストを取得(すでに予習中のときはsessionから取得)
+    @artist = lets_study target
+
+    # TODO 1件にする
     @yt_video_ids = get_yt_video_ids(@artist.name)
   end
 
@@ -67,6 +75,44 @@ class FestivalsController < ApplicationController
     fs = Festival.where(path_key: params[:id])
     # 検索結果0件の場合はnilになる。
     @festival = fs.last
+  end
+
+  #
+  # 予習用ハッシュがnilの場合、予習スタート。
+  # アーティストのオブジェクトを返却する
+  # フェス開催日別と、フェス全体の二種類の挙動がある。
+  #
+  def lets_study it
+    puts it.class
+    key = :study_list
+    study_id_key = :study_id
+    expected_study_id = it.path_key
+    # 1. 違うstudy_idで予習中
+    # 2. すでに予習中
+    # 3. 不正な値
+    #
+    # 以上３つのいずれかに当てはまる場合、新しく予習開始
+    # TODO 空の配列の時、すり抜けてしまう
+    new_study = (
+      session[study_id_key] != expected_study_id ||
+      session[key].nil? ||
+      session[key].class != Array
+    )
+
+    if new_study
+      # 予習の識別子を保持
+      session[study_id_key] = expected_study_id
+      # 予習開始なので、まずはDB検索。
+      # TODO 10件
+      # シャッフルして取得。
+      targets = it.artists.pluck(:id).shuffle!.pop 10
+      # セッションに格納
+      session[key] = targets
+    end
+    # 最初にシャッフルしているので、そのままpop
+    aid = session[key].shuffle!.pop
+    # アーティストを返却
+    return Artist.find(aid)
   end
 
 end
