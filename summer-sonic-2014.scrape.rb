@@ -25,7 +25,7 @@ end
 def scrape_artists apk, url, file = nil
 
   # 出力用ファイルをオープン
-  f = File.open(file, 'a')
+  f = File.open(file, 'w')
 
   puts "url: #{url}".green
   begin
