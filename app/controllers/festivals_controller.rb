@@ -43,6 +43,11 @@ class FestivalsController < ApplicationController
     # 次はdateを探す
     @date = @fest.festival_dates.where(path_key: params[:date_id]).last
 
+    if params[:festival_id] && params[:date_id] && @date.nil?
+      # フェス開催ごとの予習をさすURLなのに、@dateがnilの場合、not found
+      render status: :not_found and return
+    end
+
     # 予習ターゲットを判別
     target = @date ? @date : @fest
 
@@ -83,19 +88,19 @@ class FestivalsController < ApplicationController
   # フェス開催日別と、フェス全体の二種類の挙動がある。
   #
   def lets_study it
-    puts it.class
     key = :study_list
     study_id_key = :study_id
     expected_study_id = it.path_key
     # 1. 違うstudy_idで予習中
-    # 2. すでに予習中
-    # 3. 不正な値
+    # 2. 予習してない
+    # 3. 予習が終わったところ
+    # 4. 不正な値
     #
-    # 以上３つのいずれかに当てはまる場合、新しく予習開始
-    # TODO 空の配列の時、すり抜けてしまう
+    # 以上のいずれかに当てはまる場合、新しく予習開始
     new_study = (
       session[study_id_key] != expected_study_id ||
       session[key].nil? ||
+      session[key].empty? ||
       session[key].class != Array
     )
 
