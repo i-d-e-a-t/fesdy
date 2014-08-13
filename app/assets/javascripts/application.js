@@ -31,12 +31,21 @@ function ready_for_ytpages() {
 function onYouTubeIframeAPIReady() {
 
   var video_id = $('#video-frame').data('video-id');
+  
+  // autoplayするかどうかは<input id="autoplay" type="hidden" name="autoplay">に保持。
+  //   yes...自動再生
+  //   それ以外...自動再生しない
+  var autoplay = 0;
+  if ($('#autoplay').val() == "yes") {
+    autoplay = 1;
+  }
 
   var player = new YT.Player('video-frame', {
     height: '390',
     width: '640',
     videoId: video_id,
     playerVars:{
+      autoplay: autoplay,
       autohide: 0,
       controls: 1,
       showinfo: 0,
@@ -47,39 +56,27 @@ function onYouTubeIframeAPIReady() {
     },  
     events: {
       'onReady': onPlayerReady,
-     // 'onStateChange': onPlayerStateChange
+      'onStateChange': onPlayerStateChange,
     }   
   }); 
   
   function onPlayerReady(event) {
     // event.target.playVideo();
   }
-/*
- * このコメントアウトを外すとyoutubeも読み込まれなくなった
- *
+
   function onPlayerStateChange(e) {
-    if (e.data == YT.PlayerState.ENDED) {
-      playEnd();
-    }
-    if (e.data == YT.PlayerState.PLAYING) {
-      playBtn.hide();
+    // 再生終了時にリロード
+    // TODO: ajax
+    state = e.data;
+    if (state == 0) {
+      movieEnd();
     }
   }
 
-  function playEnd() {
-    //再生が終わったら次の曲のidを調べる
-    function() {
-      $.ajax({
-        url: "next_song",
-        type: "GET",
-        dataType: "html"
-      });
-    }
-    layer.clearVideo();
-    
-    player.loadVideoById($('#video-frame').data('video-id'));
-    player.playVide();
+  // 再生完了時の処理
+  function movieEnd() {
+    // リロード
+    location.reload();
   }
-*/
 
 }

@@ -22,7 +22,12 @@ script(type="text/javascript")
       td
         .video-container
           #video-frame data-video-id="#{@yt_video_ids[0]}"
-- keys = %i| study_list study_id |
+          h1 loading ...
+
+
+input#autoplay type="hidden" value="#{session[:study_autoplay]}"
+
+- keys = %i| study_list study_id study_autoplay|
 - keys.each do |key|
   p
     b #{key}:&nbsp

@@ -91,6 +91,7 @@ class FestivalsController < ApplicationController
     key = :study_list
     study_id_key = :study_id
     expected_study_id = it.path_key
+    autoplay_key = :study_autoplay
     # 1. 違うstudy_idで予習中
     # 2. 予習してない
     # 3. 予習が終わったところ
@@ -107,12 +108,17 @@ class FestivalsController < ApplicationController
     if new_study
       # 予習の識別子を保持
       session[study_id_key] = expected_study_id
+      # 自動再生はしない
+      session[autoplay_key] = 'no'
       # 予習開始なので、まずはDB検索。
       # TODO 10件
       # シャッフルして取得。
       targets = it.artists.pluck(:id).shuffle!.pop 10
       # セッションに格納
       session[key] = targets
+    else
+      # 予習開始後の次の画面なので、autoplayを有効化
+      session[autoplay_key] = 'yes'
     end
     # 最初にシャッフルしているので、そのままpop
     aid = session[key].shuffle!.pop
