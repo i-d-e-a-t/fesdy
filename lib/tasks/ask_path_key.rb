@@ -51,14 +51,14 @@ class AskPathKey
   # 返り値は、特別変換を適用したクエリと
   # パスキーの配列。
   def ask query
+    # 特別変換する文字列の変換
+    @ex.each do |k, v|
+      query.gsub!(k, v)
+    end
     # 履歴にないか？あれば返す
     if @histories[query]
       puts "\e[32m#{query} ---> #{@histories[query]} by history\e[0m"
       return [query, @histories[query]]
-    end
-    # 特別変換する文字列の変換
-    @ex.each do |k, v|
-      query.gsub!(k, v)
     end
     qs = query.split ''
     qs.each do |c|
