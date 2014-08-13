@@ -106,10 +106,13 @@ class FestivalsController < ApplicationController
     )
 
     if new_study
+      # 識別子が同じ場合、自動再生設定を引き継ぐ
+      unless session[study_id_key] == expected_study_id
+        # 自動再生はしない
+        session[autoplay_key] = 'no'
+      end
       # 予習の識別子を保持
       session[study_id_key] = expected_study_id
-      # 自動再生はしない
-      session[autoplay_key] = 'no'
       # 予習開始なので、まずはDB検索。
       # TODO 10件
       # シャッフルして取得。
