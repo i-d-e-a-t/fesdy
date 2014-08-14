@@ -75,8 +75,14 @@ function onYouTubeIframeAPIReady() {
 
   // 再生完了時の処理
   function movieEnd() {
-    // リロード
-    location.reload();
+    // 次の曲へ
+    nextStudy();
   }
 
+}
+
+function nextStudy() {
+  // 次の曲へ。
+  // TODO 今はリロードだが、ajax化したい
+  location.reload();
 }

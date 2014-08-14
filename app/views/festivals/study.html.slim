@@ -7,7 +7,7 @@ script(type="text/javascript")
 / HTML contents from here
 /
 
-/TODO 再生が終わるたびにアーティスト名を書き換える
+/TODO 動画名を表示
 .artist-name
   .info-box
     h2.name
@@ -22,7 +22,12 @@ script(type="text/javascript")
       td
         .video-container
           #video-frame data-video-id="#{@yt_video_ids[0]}"
-          h1 loading ...
+            h1 loading ...
+.row.study-control
+  .col-sm-offset-3.col-sm-6.col-xs-12
+    button.btn.btn-lg.control onclick="nextStudy()"
+      |Next&nbsp;
+      i.icon-forward
 
 
 input#autoplay type="hidden" value="#{session[:study_autoplay]}"

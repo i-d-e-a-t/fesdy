@@ -46,4 +46,16 @@
     width: 100%;
     height: 100%;
   }
+
+}
+.study-control {
+  button {
+    font-weight: normal;
+    height: 12rem;
+    width: 100%;
+    border-radius: 0;
+    @media screen and (max-width: 76.8rem) {
+      height: 9rem;
+    }
+  }
 }
