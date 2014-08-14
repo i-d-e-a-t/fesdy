@@ -25,9 +25,17 @@ script(type="text/javascript")
             h1 loading ...
 .row.study-control
   .col-sm-offset-3.col-sm-6.col-xs-12
-    button.btn.btn-lg.control onclick="nextStudy()"
-      |Next&nbsp;
-      i.icon-forward
+    - if next_artist = session[:study_next_artist]
+      button.btn.btn-lg.control onclick="nextStudy()"
+        | Next:&nbsp;
+        = session[:study_next_artist]
+        | &nbsp;
+        i.icon-forward
+    - else
+      button.btn.btn-lg.control onclick="nextStudy()"
+        | Restart&nbsp;
+        i.icon-refresh
+
 
 
 input#autoplay type="hidden" value="#{session[:study_autoplay]}"

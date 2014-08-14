@@ -119,7 +119,7 @@ class FestivalsController < ApplicationController
     if session[key].empty?
       session[next_artist_key] = nil
     else
-      session[next_artist_key] = Artist.find(session[key].first).name
+      session[next_artist_key] = Artist.find(session[key].last).name
     end
 
     # アーティストを返却
