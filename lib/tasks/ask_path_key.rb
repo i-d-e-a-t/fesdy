@@ -1,6 +1,3 @@
-# encoding: utf-8
-
-#
 # アーティスト名を渡すと、
 # アーティスト名をpath_keyに変換する。
 #
@@ -23,12 +20,14 @@ class AskPathKey
     SPECIALS
   ].flatten
 
-  # ex: 例外的に変換するルールの設定
-  def initialize ex={}
-    @ex = ex
+  # rules: 変換ルールの追加
+  def initialize rules={}
+    @additional_rules = rules
     @histories = {}
   end
 
+  # アーティストファイルを読み込む。
+  # 過去に生成したpath_keyを使いまわせるようになる。
   def load_history filename
     return @histories unless filename
     File.open(filename) do |f|
@@ -52,7 +51,7 @@ class AskPathKey
   # パスキーの配列。
   def ask query
     # 特別変換する文字列の変換
-    @ex.each do |k, v|
+    @additional_rules.each do |k, v|
       query.gsub!(k, v)
     end
     # 履歴にないか？あれば返す

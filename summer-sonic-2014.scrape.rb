@@ -115,7 +115,7 @@ files.each do |fn|
     raise "ファイルコピーに失敗: #{file}" if FileUtils.cp(fn, of)
   end
 end
-exceptions = {
+additional_rules = {
   'Opening Act' => '',
   '(from China)' => '',
   '(from Thailand)' => '',
@@ -123,7 +123,7 @@ exceptions = {
   '(from Korea)' => '',
   '(from Taiwan)' => '',
 }
-apk = AskPathKey.new exceptions
+apk = AskPathKey.new additional_rules
 # 履歴を登録
 old_files.each { |of| apk.load_history of }
 
