@@ -66,11 +66,14 @@ describe FestivalsController, :type => :controller do
         end
         it "セッションに予習情報をセットする" do
           get :study, id: @exist_key
-          expect(response.status).to eq 200
-          expect(response).to render_template("study")
           expect(session[:study_id]).to eq @exist_key.to_s
-          # このテストでは１件だけなので、sessionにはから配列が入る
-          expect(session[:study_list]).to eq []
+          expected_length = @festival.artists.count < 10 ? @festival.artists.count - 1 : 9
+          expect(session[:study_list].length).to eq expected_length
+        end
+        it "セッションに次のアーティストの名前が入っている" do
+          pending # TODO
+          get :study, id: @exist_key
+          expect(@festival.artists.all.pluck(:name)).to include session[:study_next_artist]
         end
       end
       context "最後の１アーティストの場合、" do
@@ -91,11 +94,14 @@ describe FestivalsController, :type => :controller do
         end
         it "セッションにあらたな予習情報をセットする" do
           get :study, id: @exist_key
-          expect(response.status).to eq 200
-          expect(response).to render_template("study")
           expect(session[:study_id]).to eq @exist_key.to_s
-          # このテストでは１件だけなので、sessionにはから配列が入る
-          expect(session[:study_list]).to eq []
+          expected_length = @festival.artists.count < 10 ? @festival.artists.count - 1 : 9
+          expect(session[:study_list].length).to eq expected_length
+        end
+        it "セッションに次のアーティストの名前が入っている" do
+          pending # TODO
+          get :study, id: @exist_key
+          expect(@festival.artists.all.pluck(:name)).to include session[:study_next_artist]
         end
       end
     end
@@ -128,11 +134,14 @@ describe FestivalsController, :type => :controller do
         end
         it "セッションに予習情報をセットする" do
           get :study, festival_id: @exist_key, date_id: @exist_date_key
-          expect(response.status).to eq 200
-          expect(response).to render_template("study")
           expect(session[:study_id]).to eq @exist_date_key.to_s
-          # このテストでは１件だけなので、sessionにはから配列が入る
-          expect(session[:study_list]).to eq []
+          expected_length = @date.artists.count < 10 ? @date.artists.count - 1 : 9
+          expect(session[:study_list].length).to eq expected_length
+        end
+        it "セッションに次のアーティストの名前が入っている" do
+          pending # TODO
+          get :study, festival_id: @exist_key, date_id: @exist_date_key
+          expect(@date.artists.all.pluck(:name)).to include session[:study_next_artist]
         end
       end
       context "最後の１アーティストの場合、" do
@@ -159,11 +168,14 @@ describe FestivalsController, :type => :controller do
         end
         it "セッションに予習情報をセットする" do
           get :study, festival_id: @exist_key, date_id: @exist_date_key
-          expect(response.status).to eq 200
-          expect(response).to render_template("study")
           expect(session[:study_id]).to eq @exist_date_key.to_s
-          # このテストでは１件だけなので、sessionにはから配列が入る
-          expect(session[:study_list]).to eq []
+          expected_length = @date.artists.count < 10 ? @date.artists.count - 1 : 9
+          expect(session[:study_list].length).to eq expected_length
+        end
+        it "セッションに次のアーティストの名前が入っている" do
+          pending # TODO
+          get :study, festival_id: @exist_key, date_id: @exist_date_key
+          expect(@date.artists.all.pluck(:name)).to include session[:study_next_artist]
         end
       end
     end
