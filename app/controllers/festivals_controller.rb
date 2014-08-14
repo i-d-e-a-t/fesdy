@@ -58,19 +58,6 @@ class FestivalsController < ApplicationController
     @yt_video_ids = get_yt_video_ids(@artist.name)
   end
 
-
-  def next_song
-    # 今再生しているアーティスト再生済みにうつす
-    @played_artist_ary << @artist_ary.first
-    @artist_ary = @artist_ary.drop(1)
-
-    # 全アーティスト一周したらシャッフルしてやりなおし
-    @artist_ary = @played_artist_ary.shuffle! if @artist_ary.empty?
-
-    @artist = @artist_ary.first
-    @yt_video_ids = get_yt_video_ids(@artist.name)
-  end
-
   private
 
   #
@@ -92,6 +79,7 @@ class FestivalsController < ApplicationController
     study_id_key = :study_id
     expected_study_id = it.path_key
     autoplay_key = :study_autoplay
+    next_artist_key = :study_next_artist
     # 1. 違うstudy_idで予習中
     # 2. 予習してない
     # 3. 予習が終わったところ
@@ -124,7 +112,16 @@ class FestivalsController < ApplicationController
       session[autoplay_key] = 'yes'
     end
     # 最初にシャッフルしているので、そのままpop
-    aid = session[key].shuffle!.pop
+    aid = session[key].pop
+
+    # 次のアーティストの名前をセット
+    # これが最後の予習ならnil
+    if session[key].empty?
+      session[next_artist_key] = nil
+    else
+      session[next_artist_key] = Artist.find(session[key].first).name
+    end
+
     # アーティストを返却
     return Artist.find(aid)
   end

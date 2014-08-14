@@ -71,7 +71,6 @@ describe FestivalsController, :type => :controller do
           expect(session[:study_list].length).to eq expected_length
         end
         it "セッションに次のアーティストの名前が入っている" do
-          pending # TODO
           get :study, id: @exist_key
           expect(@festival.artists.all.pluck(:name)).to include session[:study_next_artist]
         end
@@ -99,7 +98,6 @@ describe FestivalsController, :type => :controller do
           expect(session[:study_list].length).to eq expected_length
         end
         it "セッションに次のアーティストの名前が入っている" do
-          pending # TODO
           get :study, id: @exist_key
           expect(@festival.artists.all.pluck(:name)).to include session[:study_next_artist]
         end
@@ -139,7 +137,6 @@ describe FestivalsController, :type => :controller do
           expect(session[:study_list].length).to eq expected_length
         end
         it "セッションに次のアーティストの名前が入っている" do
-          pending # TODO
           get :study, festival_id: @exist_key, date_id: @exist_date_key
           expect(@date.artists.all.pluck(:name)).to include session[:study_next_artist]
         end
@@ -173,7 +170,6 @@ describe FestivalsController, :type => :controller do
           expect(session[:study_list].length).to eq expected_length
         end
         it "セッションに次のアーティストの名前が入っている" do
-          pending # TODO
           get :study, festival_id: @exist_key, date_id: @exist_date_key
           expect(@date.artists.all.pluck(:name)).to include session[:study_next_artist]
         end

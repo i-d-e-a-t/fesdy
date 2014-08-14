@@ -9,7 +9,7 @@ describe Festival, :type => :model do
       @artist = Artist.last
     end
     it "#artistsで出演するアーティストを取得できる" do
-      expect(@festival.artists).to eq [@artist]
+      expect(@festival.artists).to eq Artist.all.to_a
     end
     it "can create" do
       result = Festival.create(path_key: 'awesome-fes').save
