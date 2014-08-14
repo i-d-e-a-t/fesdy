@@ -1,5 +1,10 @@
-# encoding: utf-8
-
+# アーティスト名を渡すと、
+# アーティスト名をpath_keyに変換する。
+#
+# ただし、AskPathKeyの初期化時に
+# 例外的な変換ルールと
+# 既存の変換後ファイルを渡すこと。
+#
 class AskPathKey
 
   SPECIALS = ("- /.,:;&" +
@@ -14,6 +19,26 @@ class AskPathKey
     ('０'..'９').to_a,
     SPECIALS
   ].flatten
+
+  # rules: 変換ルールの追加
+  def initialize rules={}
+    @additional_rules = rules
+    @histories = {}
+  end
+
+  # アーティストファイルを読み込む。
+  # 過去に生成したpath_keyを使いまわせるようになる。
+  def load_history filename
+    return @histories unless filename
+    File.open(filename) do |f|
+      while line = f.gets
+        # タブで分割
+        name, path_key, date = line.split("\t")
+        @histories[name] = path_key
+      end
+    end
+  end
+
   # 文字列を入力すると、１文字でも以下のルールに当てはまらない時
   # パスキーを質問する。
   #   英数字である（半角、全角、大文字、小文字)
@@ -24,10 +49,15 @@ class AskPathKey
   #
   # 返り値は、特別変換を適用したクエリと
   # パスキーの配列。
-  def self.ask query, ex={}
+  def ask query
     # 特別変換する文字列の変換
-    ex.each do |k, v|
+    @additional_rules.each do |k, v|
       query.gsub!(k, v)
+    end
+    # 履歴にないか？あれば返す
+    if @histories[query]
+      puts "\e[32m#{query} ---> #{@histories[query]} by history\e[0m"
+      return [query, @histories[query]]
     end
     qs = query.split ''
     qs.each do |c|
@@ -50,7 +80,7 @@ class AskPathKey
     return [query, path_key]
   end
 
-  def self.make_path_key query
+  def make_path_key query
     zenkaku = [('Ａ'..'Ｚ').to_a, ('ａ'..'ｚ').to_a, ('０'..'９').to_a]
     zenkaku.flatten!
     hankaku = [('A'..'Z').to_a, ('a'..'z').to_a, ('0'..'9').to_a]
