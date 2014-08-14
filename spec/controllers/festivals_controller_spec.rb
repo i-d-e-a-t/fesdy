@@ -34,7 +34,7 @@ describe FestivalsController, :type => :controller do
 
   end
 
-  describe "GET study" do
+  describe "#study" do
     before do
       help_create_models_for_relations
       @festival = Festival.last
@@ -47,6 +47,8 @@ describe FestivalsController, :type => :controller do
     end
 
     # 共通テスト
+    #
+    # study_target: 予習対象のフェス、またはフェス開催
     shared_examples_for 'start study' do
       it "成功" do
         expect(response.status).to eq 200
@@ -55,14 +57,14 @@ describe FestivalsController, :type => :controller do
         expect(response).to render_template("study")
       end
       it "セッションに予習IDをセットする" do
-        expect(session[:study_id]).to eq @exist_key.to_s
+        expect(session[:study_id]).to eq study_target.path_key.to_s
       end
       it "セッションに予習リストをセットする" do
-        expected_length = @festival.artists.count < 10 ? @festival.artists.count - 1 : 9
+        expected_length = study_target.artists.count < 10 ? study_target.artists.count - 1 : 9
         expect(session[:study_list].length).to eq expected_length
       end
       it "セッションに次のアーティストの名前が入っている" do
-        expect(@festival.artists.all.pluck(:name)).to include session[:study_next_artist]
+        expect(study_target.artists.all.pluck(:name)).to include session[:study_next_artist]
       end
     end
     shared_examples_for 'start study failed' do
@@ -106,6 +108,7 @@ describe FestivalsController, :type => :controller do
           before do
             get :study, id: @exist_key
           end
+          let(:study_target) { @festival }
           it_behaves_like 'start study'
         end
         context "存在しないフェスにリクエストを送ると" do
@@ -128,6 +131,7 @@ describe FestivalsController, :type => :controller do
           before do
             get :study, id: @exist_key
           end
+          let(:study_target) { @festival }
           it_behaves_like 'start study'
         end
         context "存在しないフェスにリクエストを送ると" do
@@ -148,10 +152,12 @@ describe FestivalsController, :type => :controller do
           session.each { |k, v| session[k] = nil }
         end
 
-        it "success with '/festivals/:exist_key/dates/:exist_date_key/study'" do
-          get :study, festival_id: @exist_key, date_id: @exist_date_key
-          expect(response.status).to eq 200
-          expect(response).to render_template("study")
+        context "存在するフェス開催にリクエストを送ると" do
+          before do
+            get :study, festival_id: @exist_key, date_id: @exist_date_key
+          end
+          let(:study_target) { @date }
+          it_behaves_like 'start study'
         end
         it "returns 404 with '/festivals/:not_exist_key/dates/:exist_date_key/study'" do
           get :study, festival_id: @not_exist_key, date_id: @exist_date_key
