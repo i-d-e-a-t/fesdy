@@ -51,6 +51,9 @@ class FestivalsController < ApplicationController
     # 予習ターゲットを判別
     target = @date ? @date : @fest
 
+    # 予習ターゲットの表示名を準備
+    @target_title = target.to_title
+
     # アーティストを取得(すでに予習中のときはsessionから取得)
     @artist = lets_study target
 
