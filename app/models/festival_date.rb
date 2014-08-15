@@ -5,11 +5,16 @@ class FestivalDate < ActiveRecord::Base
 
   # 画面に表示しても違和感のない、このフェスを表す文字列を返却。
   def to_title
+    festival.to_title
+  end
+
+  # フェス開催の場合は詳細を出す。
+  # 互換性のためnilを返却
+  def to_detail_for_title
     [
-      festival.to_title,
       date.strftime("%Y/%m/%d"),
       place
-    ].join ' '
+    ].join "  "
   end
 
 end

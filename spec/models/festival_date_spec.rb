@@ -16,11 +16,18 @@ describe FestivalDate, :type => :model do
     include_context 'データがある場合'
     subject { @date.to_title }
     let(:fes_name) { @festival.name }
+    it { should eq fes_name }
+  end
+  
+  describe '#to_detail_for_title' do
+    include_context 'データがある場合'
+    subject { @date.to_detail_for_title }
+    let(:fes_name) { @festival.name }
     let(:year)     { @date.date.year.to_s }
     let(:month)    { @date.date.month.to_s }
     let(:day)      { @date.date.day.to_s }
     let(:place)    { @date.place }
-    it { should include fes_name }
+    it { should_not include fes_name }
     it { should include year }
     it { should include month }
     it { should include day }

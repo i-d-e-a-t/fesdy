@@ -19,6 +19,12 @@ describe Festival, :type => :model do
     it { should eq fes_name }
   end
 
+  describe '#to_detail_for_title' do
+    include_context 'データがある場合'
+    subject { @festival.to_detail_for_title }
+    it { should be nil }
+  end
+
   describe '#artists' do
     include_context 'データがある場合'
     it "#artistsで出演するアーティストを取得できる" do

@@ -12,7 +12,10 @@ script(type="text/javascript")
 .artist-name
   .info-box
     h2.name
-      = @target_title
+      = @target.to_title
+    - if detail = @target.to_detail_for_title
+      h4.detail
+        = detail
 
 
 .artist-info

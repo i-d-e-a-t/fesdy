@@ -49,13 +49,10 @@ class FestivalsController < ApplicationController
     end
 
     # 予習ターゲットを判別
-    target = @date ? @date : @fest
-
-    # 予習ターゲットの表示名を準備
-    @target_title = target.to_title
+    @target = @date ? @date : @fest
 
     # アーティストを取得(すでに予習中のときはsessionから取得)
-    @artist = lets_study target
+    @artist = lets_study @target
 
     # TODO 1件にする
     @yt_video_ids = get_yt_video_ids(@artist.name)

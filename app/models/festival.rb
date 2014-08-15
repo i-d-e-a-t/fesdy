@@ -8,6 +8,10 @@ class Festival < ActiveRecord::Base
     name
   end
 
+  # フェス開催の場合は詳細を出す。
+  # 互換性のためnilを返却
+  def to_detail_for_title; end
+
   # 同じpath_keyは登録不可
   validates :path_key,
     presence: true,
