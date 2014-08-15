@@ -1,4 +1,3 @@
-# encoding: utf-8
 class Festival < ActiveRecord::Base
   has_many :festival_dates
   has_many :appearances, through: :festival_dates
