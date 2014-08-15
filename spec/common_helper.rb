@@ -13,6 +13,7 @@ module CommonHelper
       path_key: 'awesome-festival-2014'
     )
     festival_date = FestivalDate.create(
+      place: 'すごいメッセ',
       date: DateTime.now,
       festival_id: festival.id,
       path_key: '2014-08-06-Chiba'
