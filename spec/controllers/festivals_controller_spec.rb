@@ -68,7 +68,7 @@ describe FestivalsController, :type => :controller do
         expect(session[:study_initial_list].length).to eq expected_length
       end
       it "セッションに次のアーティストの名前が入っている" do
-        expect(session[:next_study_artist]).to eq Artist.find(session[:study_list].pop).name
+        expect(session[:study_next_artist]).to eq Artist.find(session[:study_list].last).name
       end
       it "セッションに今のアーティストのidが入っている" do
         expect(study_target.artists.all.pluck(:id)).to include session[:study_artist_id]
@@ -123,8 +123,11 @@ describe FestivalsController, :type => :controller do
       session[:study_id] = study_id
       session[:study_list] = []
       session[:study_next_artist] = nil
-      session[:study_artist_id] = 1
-      session[:study_initial_list] = [1, 2]
+      # 最後にpopされるもの
+      target = Festival.where(path_key: study_id).last ||
+               FestivalDate.where(path_key: study_id).last
+      session[:study_initial_list] = target.artists.pluck(:id).slice(1,10)
+      session[:study_artist_id] = session[:study_initial_list].first
     end
 
     #
