@@ -77,10 +77,12 @@ class FestivalsController < ApplicationController
   #
   def lets_study it
     key = :study_list
+    initial_key = :study_initial_list
     study_id_key = :study_id
     expected_study_id = it.path_key
     autoplay_key = :study_autoplay
     next_artist_key = :study_next_artist
+    artist_id_key = :study_artist_id
     # 1. 違うstudy_idで予習中
     # 2. 予習してない
     # 3. 予習が終わったところ
@@ -103,11 +105,12 @@ class FestivalsController < ApplicationController
       # 予習の識別子を保持
       session[study_id_key] = expected_study_id
       # 予習開始なので、まずはDB検索。
-      # TODO 10件
+      # TODO 10件でいいのか？
       # シャッフルして取得。
       targets = it.artists.pluck(:id).shuffle!.pop 10
       # セッションに格納
       session[key] = targets
+      session[initial_key] = targets.dup
     else
       # 予習開始後の次の画面なので、autoplayを有効化
       session[autoplay_key] = 'yes'
@@ -123,6 +126,8 @@ class FestivalsController < ApplicationController
       session[next_artist_key] = Artist.find(session[key].last).name
     end
 
+    # 予習しているアーティストのidを保持
+    session[:study_artist_id] = aid
     # アーティストを返却
     return Artist.find(aid)
   end

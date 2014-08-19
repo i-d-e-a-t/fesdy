@@ -63,8 +63,15 @@ describe FestivalsController, :type => :controller do
         expected_length = study_target.artists.count < 10 ? study_target.artists.count - 1 : 9
         expect(session[:study_list].length).to eq expected_length
       end
+      it "セッションに保存版の予習リストをセットする" do
+        expected_length = study_target.artists.count < 10 ? study_target.artists.count : 10
+        expect(session[:study_initial_list].length).to eq expected_length
+      end
       it "セッションに次のアーティストの名前が入っている" do
-        expect(study_target.artists.all.pluck(:name)).to include session[:study_next_artist]
+        expect(session[:next_study_artist]).to eq Artist.find(session[:study_list].pop).name
+      end
+      it "セッションに今のアーティストのidが入っている" do
+        expect(study_target.artists.all.pluck(:id)).to include session[:study_artist_id]
       end
     end
     shared_examples_for '[予習スタート失敗]' do
@@ -77,8 +84,14 @@ describe FestivalsController, :type => :controller do
       it "セッションに予習リストをセットしない" do
         expect(session[:study_list]).to be nil
       end
+      it "セッションに保存版の予習リストをセットしない" do
+        expect(session[:study_initial_list]).to be nil
+      end
       it "セッションに次のアーティストの名前が入っていない" do
         expect(session[:study_next_artist]).to be nil
+      end
+      it "セッションに今のアーティストのidが入っていない" do
+        expect(session[:study_artist_id]).to be nil
       end
     end
     shared_examples_for '[予習再開失敗]' do
@@ -91,8 +104,14 @@ describe FestivalsController, :type => :controller do
       it "セッションの予習リストが変化しない" do
         expect(session[:study_list]).to eq @last_session[:study_list]
       end
+      it "セッションの保存版の予習リストを変化させない" do
+        expect(session[:study_initial_list]).to eq @last_session[:study_initial_list]
+      end
       it "セッションの次のアーティストの名前が変化しない" do
         expect(session[:study_next_artist]).to eq @last_session[:study_next_artist]
+      end
+      it "セッションの今のアーティストのidが変化していない" do
+        expect(session[:study_artist_id]).to eq @last_session[:study_artist_id]
       end
     end
 
@@ -104,6 +123,8 @@ describe FestivalsController, :type => :controller do
       session[:study_id] = study_id
       session[:study_list] = []
       session[:study_next_artist] = nil
+      session[:study_artist_id] = 1
+      session[:study_initial_list] = [1, 2]
     end
 
     #

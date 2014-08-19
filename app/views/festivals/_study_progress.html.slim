@@ -1,5 +1,8 @@
-.row.study-progress
-  .col-md-12
-    - if targets = session[:study_list]
+.row
+  .col-md-12.study-progress
+    - if targets = session[:study_initial_list]
       - targets.each do |target|
-        .progress
+        - if target == session[:study_artist_id]
+          .progress.now
+        - else
+          .progress
