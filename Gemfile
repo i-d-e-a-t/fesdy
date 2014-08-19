@@ -19,7 +19,7 @@ gem 'trollop'
 
 gem 'newrelic_rpm'
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov', require: false
 end
