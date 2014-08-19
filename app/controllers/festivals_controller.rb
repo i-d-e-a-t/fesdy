@@ -1,5 +1,6 @@
 # encoding: utf-8
 class FestivalsController < ApplicationController
+
   before_filter :prepare_festival,
     only: :show
 

@@ -1,0 +1,5 @@
+.row.study-progress
+  .col-md-12
+    - if targets = session[:study_list]
+      - targets.each do |target|
+        .progress

@@ -27,6 +27,7 @@ script(type="text/javascript")
         .video-container
           #video-frame data-video-id="#{@yt_video_ids[0]}"
             h1 loading ...
+= render 'study_progress'
 .row.study-control
   .col-sm-offset-3.col-sm-6.col-xs-12
     - if next_artist = session[:study_next_artist]
