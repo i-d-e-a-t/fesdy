@@ -25,8 +25,6 @@ describe ApplicationController, :type => :controller, :youtube => true do
         its(:class) { should eq Array }
         its(:length) { should be <= max }
         it { is_expected.not_to eq @ids }
-        its(:first) { is_expected.not_to eq @ids.first }
-        its(:last) { is_expected.not_to eq @ids.last }
       end
     end
   end
