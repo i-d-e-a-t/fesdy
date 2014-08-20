@@ -1,6 +1,6 @@
 .row
   .col-md-12.study-progress
-    - if targets = session[:study_initial_list]
+    - if targets = session[:study_initial_list].reverse
       - targets.each do |target|
         - if target == session[:study_artist_id]
           .progress.now
