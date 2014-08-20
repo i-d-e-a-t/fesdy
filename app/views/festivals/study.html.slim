@@ -44,9 +44,3 @@ script(type="text/javascript")
 
 
 input#autoplay type="hidden" value="#{session[:study_autoplay]}"
-
-- keys = %i| study_list study_id study_autoplay|
-- keys.each do |key|
-  p
-    b #{key}:&nbsp
-    = session[key]
