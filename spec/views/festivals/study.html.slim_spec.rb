@@ -11,6 +11,7 @@ describe "festivals/study.html.slim", :type => :view do
     assign(:target, fes)
     assign(:artist, artist)
     assign(:yt_video_ids, [1,2,3])
+    session[:study_initial_list] = []
   end
 
   it "no error" do
