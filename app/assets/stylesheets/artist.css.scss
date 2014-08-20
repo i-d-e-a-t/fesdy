@@ -8,10 +8,6 @@
       font-weight: lighter;
       text-align: center;
       border-bottom: 1px solid white;
-      // bootstrap's breakpoints... 768px, 992px, 1200px
-      @media screen and (min-width: 76.8rem) {
-        text-align: left;
-      }
     }
     .detail {
       text-align: center;
