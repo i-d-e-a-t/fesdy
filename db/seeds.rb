@@ -66,6 +66,8 @@ files = {
 artist_id = 1
 # 使用済みpath_keyのキャッシュ
 path_key_list = []
+# path_key_listと同じ並びで、アーティストidをキャッシュ
+artist_id_list = []
 files.each do |place, file|
   File.open(Rails.root.to_s + file) do |f|
     # 各行に対して繰り返し
@@ -73,29 +75,39 @@ files.each do |place, file|
     while line = f.gets
       line.chomp!
       artist_data = line.split("\t")
-      # path_keyが等しい場合は登録しない
+      # festival_dateのidを判定
+      fdid = 1
+      if place == :tokyo
+        fdid = artist_data[2] == "20140816" ? 1 : 2
+      else
+        fdid = artist_data[2] == "20140816" ? 3 : 4
+      end
+      # path_keyが等しい場合は「Artistは」登録しない
       unless path_key_list.include? artist_data[1]
         # 重複登録を避けるため、path_keyをリストに保持
         path_key_list.push artist_data[1]
+        artist_id_list.push artist_id
         Artist.create do |artist|
           artist.id = artist_id
           artist.name = artist_data[0]
           artist.path_key = artist_data[1]
         end
-        # festival_dateのidを判定
-        fdid = 1
-        if place == :tokyo
-          fdid = artist_data[2] == "20140816" ? 1 : 2
-        else
-          fdid = artist_data[2] == "20140816" ? 3 : 4
-        end
-        # 「summer-sonic-2014に出演する」レコードを登録
-        Appearance.create(
-          festival_date_id: fdid,
-          artist_id: artist_id
-        )
-        artist_id += 1
+        # appearance作成のためのartist_id
+        # 新規作成なのでそのまま使う
+        tmp_aid = artist_id
+      else
+        # appearance作成のためのartist_id
+        # path_key_listにある、つまりすでに存在するArtistの場合、
+        # IDは既存のものから取得する。
+        tmp_aid = artist_id_list[path_key_list.index(artist_data[1])]
       end
+      # 注意：すでに登録されているアーティストであっても、appearanceは登録
+      # 「summer-sonic-2014に出演する」レコードを登録
+      Appearance.create(
+        festival_date_id: fdid,
+        artist_id: tmp_aid
+      )
+      artist_id += 1
     end
   end
 end

@@ -37,10 +37,15 @@ def scrape_artists apk, url, file = nil
   end
 
   result_816 = doc.css "#lineupList ul#list816 li:not([class*='ttl'])"
+  puts "length: #{result_816.length}"
   result_816 = result_816.css "li:not([class='blank'])"
+  puts "length: #{result_816.length}"
 
   result_817 = doc.css "#lineupList ul#list817 li:not([class*='ttl'])"
+  puts "length: #{result_817.length}"
   result_817 = result_817.css "li:not([class='blank'])"
+  puts "length: #{result_817.length}"
+
 
   artists_816 = []
   artists_817 = []
@@ -68,6 +73,9 @@ def scrape_artists apk, url, file = nil
     end
     artists_817.push r
   end
+
+  puts "artist 816: #{artists_816.length}"
+  puts "artist 817: #{artists_817.length}"
 
   # 全数を表示
   puts "2014/8/16アーティスト数: #{artists_816.length}".yellow
