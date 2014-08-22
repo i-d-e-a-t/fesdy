@@ -107,8 +107,8 @@ end
 #
 tokyo_url = "http://www.summersonic.com/2014/lineup/"
 osaka_url = "http://www.summersonic.com/2014/lineup/osaka.html"
-TOKYO_OUTNAME="summer-sonic-2014.artists.tokyo"
-OSAKA_OUTNAME="summer-sonic-2014.artists.osaka"
+TOKYO_OUTNAME = "./summer-sonic-2014.artists.tokyo"
+OSAKA_OUTNAME = "./summer-sonic-2014.artists.osaka"
 
 files = [TOKYO_OUTNAME, OSAKA_OUTNAME]
 
