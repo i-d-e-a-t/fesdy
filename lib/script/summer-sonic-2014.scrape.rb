@@ -8,7 +8,7 @@ require "open-uri"
 require "FileUtils"
 
 # パスキー作成モジュールをインクルード
-require_relative 'lib/tasks/ask_path_key.rb'
+require_relative '../tasks/ask_path_key.rb'
 
 
 class String
