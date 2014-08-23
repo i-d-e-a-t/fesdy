@@ -8,7 +8,7 @@ require "open-uri"
 require "FileUtils"
 
 # パスキー作成モジュールをインクルード
-require_relative 'lib/tasks/ask_path_key.rb'
+require_relative '../tasks/ask_path_key.rb'
 
 
 class String
@@ -107,8 +107,8 @@ end
 #
 tokyo_url = "http://www.summersonic.com/2014/lineup/"
 osaka_url = "http://www.summersonic.com/2014/lineup/osaka.html"
-TOKYO_OUTNAME="summer-sonic-2014.artists.tokyo"
-OSAKA_OUTNAME="summer-sonic-2014.artists.osaka"
+TOKYO_OUTNAME = "./summer-sonic-2014.artists.tokyo"
+OSAKA_OUTNAME = "./summer-sonic-2014.artists.osaka"
 
 files = [TOKYO_OUTNAME, OSAKA_OUTNAME]
 
