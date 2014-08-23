@@ -5,8 +5,8 @@ http://www.fesdy.info
 fes + study = **Fesdy**
 
 ## Fesdyとは
-音楽フェスの予習を行うWebサービスです。登録されている音楽フェスの情報をもとに、出場するアーティストのYoutube動画を再生することができます。
-現在登録されている音楽フェスの情報以外に、どんどん情報を追加していく予定です。
+音楽フェスの予習を行うWebサービスです。登録されている音楽フェスの情報をもとに、出場するアーティストのYoutube動画を再生することができます。  
+現在登録されている音楽フェスの情報以外に、どんどん情報を追加していく予定です。  
 サービスはRuby on Railsで作られており、Herokuで動いています。
 
 ## 使い方
@@ -17,6 +17,6 @@ fes + study = **Fesdy**
 1. Let's study :smile:
 
 ## 作ってる人
-@craftpaperbag
-@nakasonogithub
+@craftpaperbag  
+@nakasonogithub  
 @highwide
