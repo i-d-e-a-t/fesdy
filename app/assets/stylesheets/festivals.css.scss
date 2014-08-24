@@ -4,12 +4,13 @@
   font-weight: lighter;
   position: relative;
   .eye-catch {
-    // TODO: フェスが増えた時、CSSに頼らず背景画像設定
-    background-image: url(image_path('messe.jpg'));
-    background-position:center center;
-    background-repeat:no-repeat;
-    -moz-background-size:cover;
-    background-size:cover;
+    // TODO: アイキャッチ画像を廃止
+    // background-image: url(image_path('messe.jpg'));
+    // background-position:center center;
+    // background-repeat:no-repeat;
+    // -moz-background-size:cover;
+    // background-size:cover;
+    background: gray;
 
     position: absolute;
     top: 0;
