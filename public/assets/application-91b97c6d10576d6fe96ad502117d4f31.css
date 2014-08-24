@@ -2,35 +2,33 @@
 html,
 body {
   height: 100%;
-  font-family: 'Noto Sans';
 }
 
-/* line 27, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 26, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans';
   font-weight: 100;
 }
 
-/* line 32, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 30, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a {
   color: #8dc700;
 }
 
-/* line 36, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 34, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a:hover {
   color: #699400;
 }
 
-/* line 41, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 39, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a.no-deco {
   text-decoration: none;
 }
 
-/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 47, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header {
   height: 5rem;
 }
-/* line 51, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle {
   box-sizing: border-box;
   margin: .1rem 0;
@@ -41,23 +39,23 @@ a.no-deco {
   border: 0;
   color: #8dc700;
 }
-/* line 60, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 58, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle.collapsed {
   color: black;
 }
 
-/* line 69, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 67, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 img.logo {
   height: 5rem;
   margin: auto 0;
 }
 
-/* line 74, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 72, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 .navbar-brand {
   padding: 0;
 }
 
-/* line 83, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 81, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #wrap {
   min-height: 100%;
   height: auto;
@@ -65,7 +63,7 @@ img.logo {
   padding: 0 0 8rem;
 }
 
-/* line 93, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 91, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #footer {
   background-color: black;
   color: #e6e6e6;
@@ -76,35 +74,33 @@ img.logo {
 html,
 body {
   height: 100%;
-  font-family: 'Noto Sans';
 }
 
-/* line 27, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 26, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans';
   font-weight: 100;
 }
 
-/* line 32, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 30, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a {
   color: #8dc700;
 }
 
-/* line 36, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 34, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a:hover {
   color: #699400;
 }
 
-/* line 41, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 39, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a.no-deco {
   text-decoration: none;
 }
 
-/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 47, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header {
   height: 5rem;
 }
-/* line 51, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle {
   box-sizing: border-box;
   margin: .1rem 0;
@@ -115,23 +111,23 @@ a.no-deco {
   border: 0;
   color: #8dc700;
 }
-/* line 60, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 58, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle.collapsed {
   color: black;
 }
 
-/* line 69, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 67, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 img.logo {
   height: 5rem;
   margin: auto 0;
 }
 
-/* line 74, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 72, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 .navbar-brand {
   padding: 0;
 }
 
-/* line 83, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 81, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #wrap {
   min-height: 100%;
   height: auto;
@@ -139,7 +135,7 @@ img.logo {
   padding: 0 0 8rem;
 }
 
-/* line 93, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 91, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #footer {
   background-color: black;
   color: #e6e6e6;
@@ -158,39 +154,40 @@ img.logo {
   text-align: center;
   border-bottom: 1px solid white;
 }
-@media screen and (min-width: 76.8rem) {
-  /* line 6, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
-  .artist-name .info-box .name {
-    text-align: left;
-  }
+/* line 12, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+.artist-name .info-box .detail {
+  text-align: center;
 }
 
 /* line 19, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
-.artist-info {
-  margin: 0 0 2rem 0;
-}
-/* line 21, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
 .artist-info table {
   margin: 0;
 }
-/* line 24, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+/* line 22, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
 .artist-info th {
   text-align: center;
 }
-/* line 27, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+/* line 25, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
 .artist-info td {
   color: #999999;
   text-align: center;
 }
-/* line 32, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+/* line 30, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
 .artist-info .video-container {
   position: relative;
   padding-bottom: 56.25%;
-  padding-top: 30px;
   height: 0;
   overflow: hidden;
 }
-/* line 42, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+@media screen and (min-width: 768px) {
+  /* line 30, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+  .artist-info .video-container {
+    margin: 0 auto;
+    max-width: 76.8rem;
+    padding-bottom: 43.2rem;
+  }
+}
+/* line 46, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
 .artist-info .video-container iframe,
 .artist-info .video-container object,
 .artist-info .video-container embed {
@@ -199,6 +196,29 @@ img.logo {
   left: 0;
   width: 100%;
   height: 100%;
+}
+@media screen and (min-width: 768px) {
+  /* line 46, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+  .artist-info .video-container iframe,
+  .artist-info .video-container object,
+  .artist-info .video-container embed {
+    max-width: 76.8rem;
+    max-height: 43.2rem;
+  }
+}
+
+/* line 62, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+.study-control button {
+  font-weight: normal;
+  height: 12rem;
+  width: 100%;
+  border-radius: 0;
+}
+@media screen and (max-width: 76.8rem) {
+  /* line 62, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+  .study-control button {
+    height: 9rem;
+  }
 }
 /*!
  * Bootstrap v3.0.0
@@ -6579,35 +6599,33 @@ a [class^="icon-"],a [class*=" icon-"]{cursor:pointer;}
 html,
 body {
   height: 100%;
-  font-family: 'Noto Sans';
 }
 
-/* line 27, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 26, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans';
   font-weight: 100;
 }
 
-/* line 32, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 30, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a {
   color: #8dc700;
 }
 
-/* line 36, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 34, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a:hover {
   color: #699400;
 }
 
-/* line 41, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 39, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a.no-deco {
   text-decoration: none;
 }
 
-/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 47, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header {
   height: 5rem;
 }
-/* line 51, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle {
   box-sizing: border-box;
   margin: .1rem 0;
@@ -6618,23 +6636,23 @@ a.no-deco {
   border: 0;
   color: #8dc700;
 }
-/* line 60, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 58, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle.collapsed {
   color: black;
 }
 
-/* line 69, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 67, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 img.logo {
   height: 5rem;
   margin: auto 0;
 }
 
-/* line 74, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 72, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 .navbar-brand {
   padding: 0;
 }
 
-/* line 83, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 81, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #wrap {
   min-height: 100%;
   height: auto;
@@ -6642,7 +6660,7 @@ img.logo {
   padding: 0 0 8rem;
 }
 
-/* line 93, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 91, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #footer {
   background-color: black;
   color: #e6e6e6;
@@ -6714,35 +6732,33 @@ img.logo {
 html,
 body {
   height: 100%;
-  font-family: 'Noto Sans';
 }
 
-/* line 27, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 26, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans';
   font-weight: 100;
 }
 
-/* line 32, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 30, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a {
   color: #8dc700;
 }
 
-/* line 36, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 34, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a:hover {
   color: #699400;
 }
 
-/* line 41, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 39, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a.no-deco {
   text-decoration: none;
 }
 
-/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 47, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header {
   height: 5rem;
 }
-/* line 51, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle {
   box-sizing: border-box;
   margin: .1rem 0;
@@ -6753,23 +6769,23 @@ a.no-deco {
   border: 0;
   color: #8dc700;
 }
-/* line 60, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 58, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle.collapsed {
   color: black;
 }
 
-/* line 69, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 67, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 img.logo {
   height: 5rem;
   margin: auto 0;
 }
 
-/* line 74, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 72, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 .navbar-brand {
   padding: 0;
 }
 
-/* line 83, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 81, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #wrap {
   min-height: 100%;
   height: auto;
@@ -6777,7 +6793,7 @@ img.logo {
   padding: 0 0 8rem;
 }
 
-/* line 93, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 91, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #footer {
   background-color: black;
   color: #e6e6e6;
@@ -6953,6 +6969,102 @@ button.start:hover {
   margin: 0 0 2rem 0;
   padding: 1rem;
   border-radius: 0;
+}
+/* line 22, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 26, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+/* line 30, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+a {
+  color: #8dc700;
+}
+
+/* line 34, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+a:hover {
+  color: #699400;
+}
+
+/* line 39, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+a.no-deco {
+  text-decoration: none;
+}
+
+/* line 47, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+#header {
+  height: 5rem;
+}
+/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+#header .navbar-toggle {
+  box-sizing: border-box;
+  margin: .1rem 0;
+  padding: 0;
+  height: 4.8rem;
+  width: 4.8rem;
+  font-size: 2.4rem;
+  border: 0;
+  color: #8dc700;
+}
+/* line 58, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+#header .navbar-toggle.collapsed {
+  color: black;
+}
+
+/* line 67, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+img.logo {
+  height: 5rem;
+  margin: auto 0;
+}
+
+/* line 72, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+.navbar-brand {
+  padding: 0;
+}
+
+/* line 81, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -6rem;
+  padding: 0 0 8rem;
+}
+
+/* line 91, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+#footer {
+  background-color: black;
+  color: #e6e6e6;
+  height: 6rem;
+  padding: 2rem 0;
+}
+
+/* line 3, /Users/kazu/fesdy/app/assets/stylesheets/study_progress.css.scss */
+.study-progress {
+  text-align: center;
+  margin: 2rem 0 2rem 0;
+}
+/* line 6, /Users/kazu/fesdy/app/assets/stylesheets/study_progress.css.scss */
+.study-progress .progress {
+  display: inline-block;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0 0 1rem;
+  background: #ddd;
+}
+/* line 13, /Users/kazu/fesdy/app/assets/stylesheets/study_progress.css.scss */
+.study-progress .progress:first-child {
+  margin: 0;
+}
+/* line 17, /Users/kazu/fesdy/app/assets/stylesheets/study_progress.css.scss */
+.study-progress .progress.now {
+  background: #9bdb00;
 }
 /*
 
