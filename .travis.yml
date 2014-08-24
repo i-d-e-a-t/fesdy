@@ -4,6 +4,8 @@ rvm:
 notifications:
   webhooks:
   - https://idobata.io/hook/travis_ci/bfa5e14b-6330-40f0-bdb8-36e1ef75ef50
+  slack:
+    secure: CcN+jR1wDuYiOVWjUqfOy4Y3KFb8i1eMyy8AsBB5x2qyJ2OQrG1vfuxIiivVYBtPjsIfYfGc8VdUwnFg9XmWWlwdeatnncDeM25Lc/nkFZ0l7LVEzThIgf8TozHMVdiWu0GPskjH6S1hVJj2buprjiQXZT/qhDyVmuDataxcXF8=
 deploy:
   provider: heroku
   api_key:

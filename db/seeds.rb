@@ -58,8 +58,8 @@ end
 #
 
 files = {
-  tokyo: '/summer-sonic-2014.artists.tokyo',
-  osaka: '/summer-sonic-2014.artists.osaka',
+  tokyo: '/lib/script/summer-sonic-2014.artists.tokyo',
+  osaka: '/lib/script/summer-sonic-2014.artists.osaka',
 }
 
 # idは連番
