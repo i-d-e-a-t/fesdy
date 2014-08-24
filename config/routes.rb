@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       get 'study'
     end
 
-    resources :festival_dates, path: :dates, as: :dates, only: [] do
+    resources :festival_dates, path: :dates, as: :dates, only: [:show] do
       get 'study' => 'festivals#study'
     end
   end

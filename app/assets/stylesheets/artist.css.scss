@@ -8,14 +8,16 @@
       font-weight: lighter;
       text-align: center;
       border-bottom: 1px solid white;
-    }
-    .detail {
-      text-align: center;
+      // bootstrap's breakpoints... 768px, 992px, 1200px
+      @media screen and (min-width: 76.8rem) {
+        text-align: left;
+      }
     }
   }
 }
 
 .artist-info {
+  margin: 0 0 2rem 0;
   table {
     margin: 0;
   }
@@ -30,15 +32,9 @@
   .video-container {
     position: relative;
     padding-bottom: 56.25%;
+    padding-top: 30px;
     height: 0;
     overflow: hidden;
-    // 768はbootstrapのブレークポイントの１つ
-    @media screen and (min-width: 768px) {
-      margin: 0 auto;
-      max-width: 76.8rem;
-      // 16:9となるように高さ指定
-      padding-bottom: 43.2rem;
-    }
   }
 
   .video-container iframe,
@@ -49,23 +45,5 @@
     left: 0;
     width: 100%;
     height: 100%;
-    // 768はbootstrapのブレークポイントの１つ
-    @media screen and (min-width: 768px) {
-      max-width: 76.8rem;
-      // 16:9となるように高さ指定
-      max-height: 43.2rem;
-    }
-  }
-
-}
-.study-control {
-  button {
-    font-weight: normal;
-    height: 12rem;
-    width: 100%;
-    border-radius: 0;
-    @media screen and (max-width: 76.8rem) {
-      height: 9rem;
-    }
   }
 }
