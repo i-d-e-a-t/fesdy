@@ -8,8 +8,7 @@ class FestivalDate < ActiveRecord::Base
     festival.to_title
   end
 
-  # フェス開催の場合は詳細を出す。
-  # 互換性のためnilを返却
+  # 画面上でフェス開催をあらわす文字列を返却する。
   def to_detail_for_title
     [
       date.strftime("%Y/%m/%d"),
