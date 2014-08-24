@@ -7,15 +7,11 @@ script(type="text/javascript")
 / HTML contents from here
 /
 
-/TODO 動画名を表示、どうやる？youtubeのAPIで見つからなかった
-/ 予習対象を表示
+/TODO 再生が終わるたびにアーティスト名を書き換える
 .artist-name
   .info-box
     h2.name
-      = @target.to_title
-    - if detail = @target.to_detail_for_title
-      h4.detail
-        = detail
+/      = @artist.name
 
 
 .artist-info
@@ -26,21 +22,4 @@ script(type="text/javascript")
       td
         .video-container
           #video-frame data-video-id="#{@yt_video_ids[0]}"
-            h1 loading ...
-= render 'study_progress'
-.row.study-control
-  .col-sm-offset-3.col-sm-6.col-xs-12
-    - if next_artist = session[:study_next_artist]
-      button.btn.btn-lg.control onclick="nextStudy()"
-        | Next:&nbsp;
-        = session[:study_next_artist]
-        | &nbsp;
-        i.icon-forward
-    - else
-      button.btn.btn-lg.control onclick="nextStudy()"
-        | Restart&nbsp;
-        i.icon-refresh
 
-
-
-input#autoplay type="hidden" value="#{session[:study_autoplay]}"

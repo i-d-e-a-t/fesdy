@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ApplicationController < ActionController::Base
   extend SecretKeeper
 
@@ -15,25 +16,22 @@ class ApplicationController < ActionController::Base
     @festivals = Festival.all
   end
 
-  # search_wordをキーにYoutube検索を行い、Video-Idを最大NUM_OF_MAX件配列で返却
+  # search_wordをキーにYoutube検索を行い、Video-Idを最大3件配列で返却
   DEVELOPER_KEY = secret :youtube_apikey
   YOUTUBE_API_SERVICE_NAME = "youtube"
   YOUTUBE_API_VERSION = "v3"
-  NUM_OF_MAX = 10
   NUM_OF_LIST = 3
 
   def get_yt_video_ids(search_word)
     # clientの設定
     client = Google::APIClient.new(:key => DEVELOPER_KEY,
-                                   :authorization => nil,
-                                   :application_name => 'fesdy',
-                                  )
+                                   :authorization => nil)
     youtube = client.discovered_api(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION)
     
     # Optionの設定(検索キーワード/取得数)
     opts = Trollop::options do
       opt :q, 'Search term', :type => String, :default => search_word
-      opt :maxResults, 'Max results', :type => :int, :default => NUM_OF_MAX
+      opt :maxResults, 'Max results', :type => :int, :default => NUM_OF_LIST
     end
 
     # 検索実行
@@ -51,7 +49,7 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    return yt_video_ids.shuffle.slice(0, NUM_OF_LIST)
+    return yt_video_ids
   end
 
 end
