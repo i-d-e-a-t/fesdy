@@ -31,10 +31,12 @@ function ready_for_ytpages() {
 function onYouTubeIframeAPIReady() {
 
   var video_id = $('#video-frame').data('video-id');
-  
+ 
   // autoplayするかどうかは<input id="autoplay" type="hidden" name="autoplay">に保持。
   //   yes...自動再生
   //   それ以外...自動再生しない
+  // 1曲目再生時は自動再生を行わない。
+  // 2曲目以降は自動再生を行う。
   var autoplay = 0;
   if ($('#autoplay').val() == "yes") {
     autoplay = 1;
