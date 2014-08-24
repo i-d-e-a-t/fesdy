@@ -2,6 +2,7 @@
 require 'rails_helper'
 
 describe FestivalsController, :type => :controller do
+
   describe "GET 'show'" do
     before do
       help_create_models_for_relations
