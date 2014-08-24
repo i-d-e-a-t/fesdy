@@ -1,113 +1,171 @@
 # encoding: utf-8
 
+# ------------------------------------------------------------
+# Config投入
+
+festivals = []
+
+# TODO: 本当はJSONとかで別ファイルに切り出したほうがいいと思う。
+
+# 以下のテンプレートに追加したいフェスの情報を書いて、増やしていく
+#festivals << {
+#  name: ,
+#  path_key: ,
+#  official_site: ,
+#  daily_info: [
+#    {
+#      place: ,
+#      date:  , #=> yyyyddmm形式で
+#      file:  , #=> [Artist名 path_key yyyymmdd形式の出演日]がタブ区切りで
+#                 書かれているファイルのパスを渡す
+#    },
+#    {
+#      place: ,
+#      date:  ,
+#      file:  
+#    }
+#}
+
+# SUMMER SONIC 2014
+festivals << {
+  path_key: 'summer-sonic-2014',
+  name: 'SUMMER SONIC 2014',
+  official_site: 'http://www.summersonic.com/2014/',
+  daily_info: [
+    {
+      place: '東京：QVCマリンフィールド＆幕張メッセ',
+      place_key: 'tokyo',
+      date: '20140816',
+      file: '/lib/script/summer-sonic-2014.artists.tokyo'
+    },
+    {
+      place: '東京：QVCマリンフィールド＆幕張メッセ',
+      place_key: 'tokyo',
+      date: '20140817',
+      file: '/lib/script/summer-sonic-2014.artists.tokyo'
+    },
+    {
+      place: '大阪：舞洲サマーソニック大阪特設会場',
+      place_key: 'osaka',
+      date: '20140816',
+      file: '/lib/script/summer-sonic-2014.artists.osaka'
+    },
+    {
+      place: '大阪：舞洲サマーソニック大阪特設会場',
+      place_key: 'osaka',
+      date: '20140817',
+      file: '/lib/script/summer-sonic-2014.artists.osaka'
+    }
+  ]
+}
+
+# a-nation 2014
+festivals << {
+  path_key: 'a-nation-2014',
+  name: 'a-nation 2014',
+  official_site: 'http://a-nation.net/',
+  daily_info: [
+    {
+      place: '東京：味の素スタジアム',
+      place_key: 'tokyo',
+      date: '20140829',
+      file: '/lib/script/a-nation-2014.artists'
+    },
+    {
+      place: '東京：味の素スタジアム',
+      place_key: 'tokyo',
+      date: '20140830',
+      file: '/lib/script/a-nation-2014.artists'
+    },
+    {
+      place: '東京：味の素スタジアム',
+      place_key: 'tokyo',
+      date: '20140831',
+      file: '/lib/script/a-nation-2014.artists'
+    }
+  ]
+}
+
+# ------------------------------------------------------------
+# 登録処理
+
 # 一旦削除
 Festival.destroy_all
 Artist.destroy_all
 Appearance.destroy_all
 FestivalDate.destroy_all
 
-# ------------------------------------------------------------
-#
-# サマソニ2014
-#
 
-Festival.create do |festival|
-  festival.id = 1
-  festival.path_key = 'summer-sonic-2014'
-  festival.name = 'SUMMER SONIC 2014'
-  #festival.start_date = DateTime.new(2014, 8, 16)
-  #festival.end_date = DateTime.new(2014, 8, 17)
-  festival.official_site = 'http://www.summersonic.com/2014/'
-  #festival.place =
-  #  "東京：QVCマリンフィールド＆幕張メッセ\n大阪：舞洲サマーソニック大阪特設会場"
-end
-
-festival = Festival.last
-places = ["東京：QVCマリンフィールド＆幕張メッセ",
-          "大阪：舞洲サマーソニック大阪特設会場"]
-dates = (DateTime.new(2014, 8, 16)..DateTime.new(2014, 8, 17)).to_a
-
-#
-# 日時、場所の登録
-#
-# 1: tokyo 816
-# 2: tokyo 817
-# 3: osaka 816
-# 4: osaka 817
-
-fdid = 1
-
-places.product(dates).each do |pd|
-  place, date = pd
-  FestivalDate.create do |festival_date|
-    festival_date.id = fdid
-    festival_date.festival_id = 1
-    festival_date.place = place
-    festival_date.date = date
-    
-    # 日付と場所でパスキーを作成。
-    place_key = place.include?("東京") ? "tokyo" : "osaka"
-    festival_date.path_key = "#{date.year}-#{date.month}-#{date.day}-#{place_key}"
-
-  end
-  fdid += 1
-end
-
-#
-# 出演者の登録
-#
-
-files = {
-  tokyo: '/lib/script/summer-sonic-2014.artists.tokyo',
-  osaka: '/lib/script/summer-sonic-2014.artists.osaka',
-}
-
-# idは連番
+# 各モデルのIDは連番にする
+festival_id = 1
+festival_date_id = 1
+appearance_id = 1  
 artist_id = 1
-# 使用済みpath_keyのキャッシュ
-path_key_list = []
-# path_key_listと同じ並びで、アーティストidをキャッシュ
-artist_id_list = []
-files.each do |place, file|
-  File.open(Rails.root.to_s + file) do |f|
-    # 各行に対して繰り返し
-    # アーティスト名、パスキー、日付（yyyymmdd）のタブ区切り
-    while line = f.gets
-      line.chomp!
-      artist_data = line.split("\t")
-      # festival_dateのidを判定
-      fdid = 1
-      if place == :tokyo
-        fdid = artist_data[2] == "20140816" ? 1 : 2
-      else
-        fdid = artist_data[2] == "20140816" ? 3 : 4
-      end
-      # path_keyが等しい場合は「Artistは」登録しない
-      unless path_key_list.include? artist_data[1]
-        # 重複登録を避けるため、path_keyをリストに保持
-        path_key_list.push artist_data[1]
-        artist_id_list.push artist_id
-        Artist.create do |artist|
-          artist.id = artist_id
-          artist.name = artist_data[0]
-          artist.path_key = artist_data[1]
-        end
-        # appearance作成のためのartist_id
-        # 新規作成なのでそのまま使う
-        tmp_aid = artist_id
-      else
-        # appearance作成のためのartist_id
-        # path_key_listにある、つまりすでに存在するArtistの場合、
-        # IDは既存のものから取得する。
-        tmp_aid = artist_id_list[path_key_list.index(artist_data[1])]
-      end
-      # 注意：すでに登録されているアーティストであっても、appearanceは登録
-      # 「summer-sonic-2014に出演する」レコードを登録
-      Appearance.create(
-        festival_date_id: fdid,
-        artist_id: tmp_aid
-      )
-      artist_id += 1
-    end
+
+
+# Configで設定したfes情報を1件ずつ登録していく
+festivals.each do | festival |
+
+  # "フェス単位の情報"を登録
+  # Festivalsテーブル(フェス名、オフィシャルサイトURL)
+  puts "insert #{festival[:name]}"
+  Festival.create do | f |
+    f.id = festival_id
+    f.name = festival[:name]
+    f.path_key = festival[:path_key]
+    f.official_site = festival[:official_site]
   end
+
+  # "日付単位の情報"を登録
+  festival[:daily_info].each do | festival_daily |
+    puts "  #{festival_daily[:date]}"
+
+    # FestivalDatesテーブル(日時、場所)
+    year  = festival_daily[:date].slice(0..3).to_i
+    month = festival_daily[:date].slice(4..5).to_i
+    day   = festival_daily[:date].slice(6..7).to_i
+
+    FestivalDate.create do | fd |
+      fd.id = festival_date_id
+      fd.festival_id = festival_id
+      fd.place = festival_daily[:place]
+      fd.date = DateTime.new(year, month, day)
+      fd.path_key = "#{year}-#{month}-#{day}-#{festival_daily[:place_key]}"
+    end
+
+    # Appearancesテーブル(登録されていない場合はArtistテーブルも)
+    File.open(Rails.root.to_s + festival_daily[:file]) do | f |
+      # 1行ずつファイルを読み出し
+      f.each do | line |
+        line.chomp!
+        artist_data = line.split("\t")
+        # 日付が一致したものだけ処理を行う
+        if festival_daily[:date] == artist_data[2]
+          # Artistが既に登録されていない場合は、登録を行う
+          tmp_artist = Artist.where(path_key: artist_data[1]).last
+          unless tmp_artist
+            Artist.create do | artist |
+              artist.id = artist_id
+              artist.name = artist_data[0]
+              artist.path_key = artist_data[0]
+            end
+            tmp_artist_id = artist_id
+          else
+            tmp_artist_id = tmp_artist.id
+          end
+
+          # Appearanceはどっちにしろ登録
+          Appearance.create do | ap |
+            ap.festival_date_id = festival_date_id
+            ap.artist_id = tmp_artist_id
+          end
+          artist_id += 1
+        end
+      end
+    end
+    festival_date_id += 1
+  end
+
+  festival_id += 1
 end
+
