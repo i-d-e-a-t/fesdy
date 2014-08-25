@@ -11,12 +11,10 @@ deploy:
   api_key:
     secure: dcBR0IoMcDR+FuKnxDyFTk3kcnk0EUZi2v3x/C35UdYehVbUusr6l/L4X0cJ80gJaDD9jssAjARcxvfJQJiYfOLnpZkgS2vO3GEd/3kTa9mVrCEc8Hr3XTAhUvbyB3tD/NUUrWBh+hPG2bp+wvD7W2nUmWn4mKWYL+aRiBgZUdE=
   run:
-    - "rake hello"
     - "rake db:setup"
     - "rake assets:precompile"
   app:
     master: fesdy-info
-    deploy-with-assets-compile: fesdy-info-staging
   on:
     repo: i-d-e-a-t/fesdy
 env:
