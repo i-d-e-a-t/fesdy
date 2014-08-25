@@ -1,78 +1,34 @@
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Thin.otf") format("opentype");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Light.otf") format("opentype");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-DemiLight.otf") format("opentype");
-  font-weight: 350;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Regular.otf") format("opentype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Medium.otf") format("opentype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Bold.otf") format("opentype");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Black.otf") format("opentype");
-  font-weight: 900;
-}
-
-/* line 62, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 22, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 html,
 body {
   height: 100%;
-  font-family: 'Noto Sans';
 }
 
-/* line 67, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 26, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans';
   font-weight: 100;
 }
 
-/* line 72, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 30, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a {
   color: #8dc700;
 }
 
-/* line 76, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 34, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a:hover {
   color: #699400;
 }
 
-/* line 81, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 39, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a.no-deco {
   text-decoration: none;
 }
 
-/* line 89, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 47, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header {
   height: 5rem;
 }
-/* line 91, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle {
   box-sizing: border-box;
   margin: .1rem 0;
@@ -83,23 +39,23 @@ a.no-deco {
   border: 0;
   color: #8dc700;
 }
-/* line 100, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 58, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle.collapsed {
   color: black;
 }
 
-/* line 109, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 67, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 img.logo {
   height: 5rem;
   margin: auto 0;
 }
 
-/* line 114, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 72, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 .navbar-brand {
   padding: 0;
 }
 
-/* line 123, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 81, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #wrap {
   min-height: 100%;
   height: auto;
@@ -107,88 +63,44 @@ img.logo {
   padding: 0 0 8rem;
 }
 
-/* line 133, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 91, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #footer {
   background-color: black;
   color: #e6e6e6;
   height: 6rem;
   padding: 2rem 0;
 }
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Thin.otf") format("opentype");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Light.otf") format("opentype");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-DemiLight.otf") format("opentype");
-  font-weight: 350;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Regular.otf") format("opentype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Medium.otf") format("opentype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Bold.otf") format("opentype");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Black.otf") format("opentype");
-  font-weight: 900;
-}
-
-/* line 62, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 22, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 html,
 body {
   height: 100%;
-  font-family: 'Noto Sans';
 }
 
-/* line 67, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 26, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans';
   font-weight: 100;
 }
 
-/* line 72, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 30, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a {
   color: #8dc700;
 }
 
-/* line 76, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 34, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a:hover {
   color: #699400;
 }
 
-/* line 81, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 39, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a.no-deco {
   text-decoration: none;
 }
 
-/* line 89, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 47, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header {
   height: 5rem;
 }
-/* line 91, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle {
   box-sizing: border-box;
   margin: .1rem 0;
@@ -199,23 +111,23 @@ a.no-deco {
   border: 0;
   color: #8dc700;
 }
-/* line 100, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 58, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle.collapsed {
   color: black;
 }
 
-/* line 109, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 67, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 img.logo {
   height: 5rem;
   margin: auto 0;
 }
 
-/* line 114, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 72, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 .navbar-brand {
   padding: 0;
 }
 
-/* line 123, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 81, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #wrap {
   min-height: 100%;
   height: auto;
@@ -223,7 +135,7 @@ img.logo {
   padding: 0 0 8rem;
 }
 
-/* line 133, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 91, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #footer {
   background-color: black;
   color: #e6e6e6;
@@ -231,50 +143,51 @@ img.logo {
   padding: 2rem 0;
 }
 
-/* line 4, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/artist.css.scss */
+/* line 4, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
 .artist-name .info-box {
   position: relative;
 }
-/* line 6, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/artist.css.scss */
+/* line 6, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
 .artist-name .info-box .name {
   font-size: 4.0rem;
   font-weight: lighter;
   text-align: center;
   border-bottom: 1px solid white;
 }
-@media screen and (min-width: 76.8rem) {
-  /* line 6, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/artist.css.scss */
-  .artist-name .info-box .name {
-    text-align: left;
-  }
+/* line 12, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+.artist-name .info-box .detail {
+  text-align: center;
 }
 
-/* line 19, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/artist.css.scss */
-.artist-info {
-  margin: 0 0 2rem 0;
-}
-/* line 21, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/artist.css.scss */
+/* line 19, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
 .artist-info table {
   margin: 0;
 }
-/* line 24, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/artist.css.scss */
+/* line 22, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
 .artist-info th {
   text-align: center;
 }
-/* line 27, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/artist.css.scss */
+/* line 25, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
 .artist-info td {
   color: #999999;
   text-align: center;
 }
-/* line 32, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/artist.css.scss */
+/* line 30, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
 .artist-info .video-container {
   position: relative;
   padding-bottom: 56.25%;
-  padding-top: 30px;
   height: 0;
   overflow: hidden;
 }
-/* line 42, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/artist.css.scss */
+@media screen and (min-width: 768px) {
+  /* line 30, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+  .artist-info .video-container {
+    margin: 0 auto;
+    max-width: 76.8rem;
+    padding-bottom: 43.2rem;
+  }
+}
+/* line 46, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
 .artist-info .video-container iframe,
 .artist-info .video-container object,
 .artist-info .video-container embed {
@@ -283,6 +196,29 @@ img.logo {
   left: 0;
   width: 100%;
   height: 100%;
+}
+@media screen and (min-width: 768px) {
+  /* line 46, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+  .artist-info .video-container iframe,
+  .artist-info .video-container object,
+  .artist-info .video-container embed {
+    max-width: 76.8rem;
+    max-height: 43.2rem;
+  }
+}
+
+/* line 62, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+.study-control button {
+  font-weight: normal;
+  height: 12rem;
+  width: 100%;
+  border-radius: 0;
+}
+@media screen and (max-width: 76.8rem) {
+  /* line 62, /Users/kazu/fesdy/app/assets/stylesheets/artist.css.scss */
+  .study-control button {
+    height: 9rem;
+  }
 }
 /*!
  * Bootstrap v3.0.0
@@ -6659,81 +6595,37 @@ a [class^="icon-"],a [class*=" icon-"]{cursor:pointer;}
 
   */
 
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Thin.otf") format("opentype");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Light.otf") format("opentype");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-DemiLight.otf") format("opentype");
-  font-weight: 350;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Regular.otf") format("opentype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Medium.otf") format("opentype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Bold.otf") format("opentype");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Black.otf") format("opentype");
-  font-weight: 900;
-}
-
-/* line 62, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 22, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 html,
 body {
   height: 100%;
-  font-family: 'Noto Sans';
 }
 
-/* line 67, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 26, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans';
   font-weight: 100;
 }
 
-/* line 72, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 30, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a {
   color: #8dc700;
 }
 
-/* line 76, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 34, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a:hover {
   color: #699400;
 }
 
-/* line 81, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 39, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a.no-deco {
   text-decoration: none;
 }
 
-/* line 89, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 47, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header {
   height: 5rem;
 }
-/* line 91, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle {
   box-sizing: border-box;
   margin: .1rem 0;
@@ -6744,23 +6636,23 @@ a.no-deco {
   border: 0;
   color: #8dc700;
 }
-/* line 100, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 58, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle.collapsed {
   color: black;
 }
 
-/* line 109, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 67, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 img.logo {
   height: 5rem;
   margin: auto 0;
 }
 
-/* line 114, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 72, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 .navbar-brand {
   padding: 0;
 }
 
-/* line 123, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 81, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #wrap {
   min-height: 100%;
   height: auto;
@@ -6768,7 +6660,7 @@ img.logo {
   padding: 0 0 8rem;
 }
 
-/* line 133, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 91, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #footer {
   background-color: black;
   color: #e6e6e6;
@@ -6776,7 +6668,7 @@ img.logo {
   padding: 2rem 0;
 }
 
-/* line 17, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/fesdy.css.scss */
+/* line 17, /Users/kazu/fesdy/app/assets/stylesheets/fesdy.css.scss */
 .card {
   background: gray;
   display: inline-block;
@@ -6784,7 +6676,7 @@ img.logo {
   height: 100%;
   margin: 0 0 2rem 0;
 }
-/* line 24, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/fesdy.css.scss */
+/* line 24, /Users/kazu/fesdy/app/assets/stylesheets/fesdy.css.scss */
 .card .card-contents {
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.8rem;
@@ -6792,17 +6684,17 @@ img.logo {
   position: relative;
   font-weight: lighter;
 }
-/* line 31, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/fesdy.css.scss */
+/* line 31, /Users/kazu/fesdy/app/assets/stylesheets/fesdy.css.scss */
 .card .card-contents .card-title {
   display: inline-block;
   font-size: 3.6rem;
 }
 
-/* line 38, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/fesdy.css.scss */
+/* line 38, /Users/kazu/fesdy/app/assets/stylesheets/fesdy.css.scss */
 .card.welcome {
   background: #8dc700;
 }
-/* line 42, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/fesdy.css.scss */
+/* line 42, /Users/kazu/fesdy/app/assets/stylesheets/fesdy.css.scss */
 .card.welcome .card-contents .card-close {
   color: white;
   opacity: 0.5;
@@ -6810,107 +6702,63 @@ img.logo {
   top: 0;
   position: absolute;
 }
-/* line 48, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/fesdy.css.scss */
+/* line 48, /Users/kazu/fesdy/app/assets/stylesheets/fesdy.css.scss */
 .card.welcome .card-contents .card-close:hover {
   opacity: 1;
 }
 
-/* line 55, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/fesdy.css.scss */
+/* line 55, /Users/kazu/fesdy/app/assets/stylesheets/fesdy.css.scss */
 .card.festival {
   background: white;
   border: 1px solid #8dc700;
   padding: 3rem 0;
 }
 @media screen and (min-width: 76.8rem) {
-  /* line 55, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/fesdy.css.scss */
+  /* line 55, /Users/kazu/fesdy/app/assets/stylesheets/fesdy.css.scss */
   .card.festival {
     padding: 5rem 0;
   }
 }
-/* line 72, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/fesdy.css.scss */
+/* line 72, /Users/kazu/fesdy/app/assets/stylesheets/fesdy.css.scss */
 .card.festival .card-contents {
   color: #8dc700;
   text-align: center;
 }
-/* line 76, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/fesdy.css.scss */
+/* line 76, /Users/kazu/fesdy/app/assets/stylesheets/fesdy.css.scss */
 .card.festival:hover .card-contents {
   text-shadow: 0 0 0.4rem #8dc700;
 }
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Thin.otf") format("opentype");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Light.otf") format("opentype");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-DemiLight.otf") format("opentype");
-  font-weight: 350;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Regular.otf") format("opentype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Medium.otf") format("opentype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Bold.otf") format("opentype");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: 'Noto Sans';
-  src: url("NotoSansJP-Black.otf") format("opentype");
-  font-weight: 900;
-}
-
-/* line 62, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 22, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 html,
 body {
   height: 100%;
-  font-family: 'Noto Sans';
 }
 
-/* line 67, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 26, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans';
   font-weight: 100;
 }
 
-/* line 72, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 30, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a {
   color: #8dc700;
 }
 
-/* line 76, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 34, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a:hover {
   color: #699400;
 }
 
-/* line 81, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 39, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 a.no-deco {
   text-decoration: none;
 }
 
-/* line 89, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 47, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header {
   height: 5rem;
 }
-/* line 91, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle {
   box-sizing: border-box;
   margin: .1rem 0;
@@ -6921,23 +6769,23 @@ a.no-deco {
   border: 0;
   color: #8dc700;
 }
-/* line 100, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 58, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #header .navbar-toggle.collapsed {
   color: black;
 }
 
-/* line 109, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 67, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 img.logo {
   height: 5rem;
   margin: auto 0;
 }
 
-/* line 114, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 72, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 .navbar-brand {
   padding: 0;
 }
 
-/* line 123, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 81, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #wrap {
   min-height: 100%;
   height: auto;
@@ -6945,7 +6793,7 @@ img.logo {
   padding: 0 0 8rem;
 }
 
-/* line 133, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/_common.css.scss */
+/* line 91, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
 #footer {
   background-color: black;
   color: #e6e6e6;
@@ -6953,12 +6801,12 @@ img.logo {
   padding: 2rem 0;
 }
 
-/* line 3, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 3, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .fes {
   font-weight: lighter;
   position: relative;
 }
-/* line 6, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 6, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .fes .eye-catch {
   background: white;
   border: 1px solid #8dc700;
@@ -6968,7 +6816,7 @@ img.logo {
   height: 100%;
   overflow: hidden;
 }
-/* line 22, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 22, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .fes .eye-catch .filler {
   position: absolute;
   top: 0;
@@ -6976,13 +6824,13 @@ img.logo {
   height: 100%;
   z-index: 9;
 }
-/* line 31, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 31, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .fes .info-box {
   z-index: 9;
   position: relative;
   padding: 2rem 0;
 }
-/* line 34, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 34, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .fes .info-box .name {
   font-size: 3.2rem;
   font-weight: lighter;
@@ -6990,33 +6838,33 @@ img.logo {
   border-bottom: 1px solid white;
 }
 @media screen and (min-width: 76.8rem) {
-  /* line 34, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+  /* line 34, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
   .fes .info-box .name {
     font-size: 4.0rem;
     text-align: left;
   }
 }
-/* line 46, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 46, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .fes .info-box .date {
   color: black;
   font-size: 1.8rem;
   text-align: center;
 }
 @media screen and (min-width: 76.8rem) {
-  /* line 46, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+  /* line 46, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
   .fes .info-box .date {
     font-size: 3.2rem;
     text-align: left;
   }
 }
-/* line 56, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 56, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .fes .info-box .place {
   color: black;
   font-size: 1.6rem;
   text-align: center;
 }
 @media screen and (min-width: 76.8rem) {
-  /* line 56, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+  /* line 56, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
   .fes .info-box .place {
     font-size: 1.8rem;
     bottom: 0;
@@ -7027,13 +6875,13 @@ img.logo {
   }
 }
 @media screen and (min-width: 76.8rem) {
-  /* line 31, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+  /* line 31, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
   .fes .info-box {
     padding: 2rem 6rem;
   }
 }
 
-/* line 76, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 76, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 button.start {
   background: #8dc700;
   border-radius: 0;
@@ -7043,35 +6891,35 @@ button.start {
   margin: 0 0 2rem 0;
 }
 
-/* line 84, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 84, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 button.start:hover {
   color: white;
   background: #699400;
 }
 
-/* line 89, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 89, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .artists {
   margin: 0 0 2rem 0;
 }
-/* line 90, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 90, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .artists .festival-date {
   border: 1px solid #8dc700;
   text-align: center;
 }
-/* line 93, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 93, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .artists .festival-date .info {
   padding: 2rem 0 0 0;
   font-weight: normal;
 }
-/* line 96, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 96, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .artists .festival-date .info .date {
   font-size: 2.4rem;
 }
-/* line 99, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 99, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .artists .festival-date .info .place {
   font-size: 1.2rem;
 }
-/* line 103, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 103, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .artists .festival-date .study {
   padding: 2rem 0;
   border: 0;
@@ -7081,15 +6929,15 @@ button.start:hover {
   background: transparent;
   color: #8dc700;
 }
-/* line 112, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 112, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .artists .festival-date:hover {
   color: #699400;
 }
-/* line 114, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 114, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .artists .festival-date:hover .study {
   color: #699400;
 }
-/* line 120, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 120, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .artists th.toggle-date {
   text-align: center;
   font-size: 1.8rem;
@@ -7097,13 +6945,13 @@ button.start:hover {
   padding: 2rem 0;
   color: #b3b3b3;
 }
-/* line 126, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 126, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .artists th.toggle-date:hover {
   background: #e6e6e6;
   color: black;
 }
 
-/* line 132, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 132, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .to-official-site {
   width: 100%;
   margin: 0 0 2rem 0;
@@ -7111,12 +6959,108 @@ button.start:hover {
   border-radius: 0;
 }
 
-/* line 138, /Users/nakamurasousuke/work/ideat/fesdy/app/assets/stylesheets/festivals.css.scss */
+/* line 138, /Users/kazu/fesdy/app/assets/stylesheets/festivals.css.scss */
 .to-top {
   width: 100%;
   margin: 0 0 2rem 0;
   padding: 1rem;
   border-radius: 0;
+}
+/* line 22, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 26, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+/* line 30, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+a {
+  color: #8dc700;
+}
+
+/* line 34, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+a:hover {
+  color: #699400;
+}
+
+/* line 39, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+a.no-deco {
+  text-decoration: none;
+}
+
+/* line 47, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+#header {
+  height: 5rem;
+}
+/* line 49, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+#header .navbar-toggle {
+  box-sizing: border-box;
+  margin: .1rem 0;
+  padding: 0;
+  height: 4.8rem;
+  width: 4.8rem;
+  font-size: 2.4rem;
+  border: 0;
+  color: #8dc700;
+}
+/* line 58, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+#header .navbar-toggle.collapsed {
+  color: black;
+}
+
+/* line 67, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+img.logo {
+  height: 5rem;
+  margin: auto 0;
+}
+
+/* line 72, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+.navbar-brand {
+  padding: 0;
+}
+
+/* line 81, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -6rem;
+  padding: 0 0 8rem;
+}
+
+/* line 91, /Users/kazu/fesdy/app/assets/stylesheets/_common.css.scss */
+#footer {
+  background-color: black;
+  color: #e6e6e6;
+  height: 6rem;
+  padding: 2rem 0;
+}
+
+/* line 3, /Users/kazu/fesdy/app/assets/stylesheets/study_progress.css.scss */
+.study-progress {
+  text-align: center;
+  margin: 2rem 0 2rem 0;
+}
+/* line 6, /Users/kazu/fesdy/app/assets/stylesheets/study_progress.css.scss */
+.study-progress .progress {
+  display: inline-block;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0 0 1rem;
+  background: #ddd;
+}
+/* line 13, /Users/kazu/fesdy/app/assets/stylesheets/study_progress.css.scss */
+.study-progress .progress:first-child {
+  margin: 0;
+}
+/* line 17, /Users/kazu/fesdy/app/assets/stylesheets/study_progress.css.scss */
+.study-progress .progress.now {
+  background: #9bdb00;
 }
 /*
 
