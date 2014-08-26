@@ -1,7 +1,9 @@
 # encoding: utf-8
 require_relative './common_helper'
 require 'simplecov'
+require 'coveralls'
 
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do
   add_filter 'spec'
   add_filter 'vendor/bundle'
