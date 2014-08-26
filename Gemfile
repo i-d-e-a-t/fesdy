@@ -22,10 +22,14 @@ gem 'trollop'
 
 gem 'newrelic_rpm'
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov', require: false
   gem 'coveralls', require: false
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-debugger'
+  gem 'pry-doc'
 end
 
 group :production do
