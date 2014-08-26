@@ -28,7 +28,6 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'pry'
   gem 'pry-rails'
-  gem 'pry-debugger'
   gem 'pry-doc'
 end
 
