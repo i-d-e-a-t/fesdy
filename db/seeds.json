@@ -10,25 +10,25 @@
           "place"     : "東京：QVCマリンフィールド＆幕張メッセ",
           "place_key" : "tokyo",
           "date"      : "20140816",
-          "file       : "/lib/script/summer-sonic-2014.artists.tokyo"
+          "file"      : "/lib/script/summer-sonic-2014.artists.tokyo"
         },
         {
           "place"     : "東京：QVCマリンフィールド＆幕張メッセ",
           "place_key" : "tokyo",
           "date"      : "20140817",
-          "file       : "/lib/script/summer-sonic-2014.artists.tokyo"
+          "file"      : "/lib/script/summer-sonic-2014.artists.tokyo"
         },
         {
           "place"     : "大阪：舞洲サマーソニック大阪特設会場",
           "place_key" : "osaka",
           "date"      : "20140816",
-          "file       : "/lib/script/summer-sonic-2014.artists.osaka"
+          "file"      : "/lib/script/summer-sonic-2014.artists.osaka"
         },
         {
           "place"     : "大阪：舞洲サマーソニック大阪特設会場",
           "place_key" : "osaka",
           "date"      : "20140817",
-          "file       : "/lib/script/summer-sonic-2014.artists.osaka"
+          "file"      : "/lib/script/summer-sonic-2014.artists.osaka"
         }
       ]
     },
@@ -40,22 +40,22 @@
       "official_site" : "http://a-nation.net/",
       "daily_info"    : [
         {
-          "place"     : "東京：味の素スタジアム"
+          "place"     : "東京：味の素スタジアム",
           "place_key" : "tokyo",
           "date"      : "20140829",
-          "file       : "/lib/script/a-nation-2014.artists"
+          "file"      : "/lib/script/a-nation-2014.artists"
         },
         {
-          "place"     : "東京：味の素スタジアム"
+          "place"     : "東京：味の素スタジアム",
           "place_key" : "tokyo",
           "date"      : "20140830",
-          "file       : "/lib/script/a-nation-2014.artists"
+          "file"      : "/lib/script/a-nation-2014.artists"
         },
         {
-          "place"     : "東京：味の素スタジアム"
+          "place"     : "東京：味の素スタジアム",
           "place_key" : "tokyo",
           "date"      : "20140831",
-          "file       : "/lib/script/a-nation-2014.artists"
+          "file"      : "/lib/script/a-nation-2014.artists"
         }
       ]
     }
