@@ -33,8 +33,8 @@ def scrape_artists apk, url, file = nil
     exit 1
   end
 
+  # HTMLからartist名を取得
   result_829 = doc.css '#sec01 ul.profList.btn li'
-  puts "length: #{result_829.length}"
 
   # test
   p result_829
@@ -48,7 +48,21 @@ end
 #
 love_shower_url = 'http://www.sweetloveshower.com/artist/index.html'
 
-LOVE_SHOWER_OUTNAME = '/love-shower-2014.artists'
+LOVE_SHOWER_OUTNAME = './love-shower-2014.artists'
+
+files = [LOVE_SHOWER_OUTNAME]
+
+# 履歴管理用のインスタンスを生成
+old_files = []
+# 昔のファイルは存在するか？
+files.each do |fn|
+  if File.exists? fn
+    of = fn + '.old'
+    old_files << of 
+    # ファイル名にoldをつけて退避する。
+    railse "ファイルコピーに失敗: #{file}" if FileUtils.cp(fn, of)
+  end
+end
 
 additional_rules = {
 }
