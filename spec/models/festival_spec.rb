@@ -12,7 +12,7 @@ describe Festival, :type => :model do
     end
   end
 
-  shared_context "複数のフェスがある場合" do
+  shared_context "開始日の異なる5つのフェスがある場合" do
     before do
       help_fes_order 5, 5 # 5フェス、各5日程
     end
@@ -21,11 +21,11 @@ describe Festival, :type => :model do
   describe "#sort" do
     context '引数なしのとき、' do
       context do
-        include_context "複数のフェスがある場合"
+        include_context "開始日の異なる5つのフェスがある場合"
         subject { Festival.sort }
         its(:length) { should eq Festival.count }
         it "開始日が新しい順に並んでいる" do
-          subject.should eq Festival.all.reverse
+          should eq Festival.all.reverse
         end
       end
       context 'fesが0件の時' do
