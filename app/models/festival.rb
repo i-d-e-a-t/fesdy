@@ -11,11 +11,11 @@ class Festival < ActiveRecord::Base
   # 新しい順に並べたフェスを返す。
   # フェスの開始日を元に並べる。
   def self.sort
-    old_first_list = Festival.all.sort_by do |fes|
+    old_fes_list = Festival.all.sort_by do |fes|
       fes.festival_dates.order(:date).pluck(:date).first.to_i
     end
 
-    return old_first_list.reverse
+    return old_fes_list.reverse
   end
 
   # フェス開催の場合は詳細を出す。
