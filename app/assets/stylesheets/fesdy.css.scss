@@ -53,17 +53,10 @@
 }
 
 .card.festival {
-  // TODO: アイキャッチを廃止、代わりのコンテンツがほしい
-  // background-image: url(image_path('messe.jpg'));
-  // background-position:center center;
-  // background-repeat:no-repeat;
-  // -moz-background-size:cover;
-  // background-size:cover;
   background: white;
   border: 1px solid $color_fesdy;
-
   // paddingで高さを調整
-  padding: 3rem 0;
+  padding: 2.5rem 0;
   @media screen and (min-width: 76.8rem) {
     padding: 5rem 0;
   }
@@ -73,7 +66,24 @@
     color: $color_fesdy;
     text-align: center;
   }
+  &:hover {
+    background: #efefef;
+    .card-contents {
+      color: darken($color_fesdy, 10%);
+    }
+  }
+}
+
+// 完了したフェス
+.card.festival.finished {
+  background: #efefef;
+  border: none;
+
+  // カード内容
+  .card-contents {
+    color: #d0d0d0;
+  }
   &:hover .card-contents {
-    text-shadow: 0 0 .4rem $color_fesdy;
+    color: gray;
   }
 }

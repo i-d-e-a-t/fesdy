@@ -19,6 +19,11 @@ script(type="text/javascript")
   - @festivals.each do |f|
     .col-lg-6.col-md-12
       a.no-deco href="#{festival_path(id: f.path_key)}"
-        .card.festival
-          .card-contents
-            .card-title #{f.name}
+        - if f.finished?
+          .card.festival.finished
+            .card-contents
+              .card-title #{f.name}
+        - else
+          .card.festival
+            .card-contents
+              .card-title #{f.name}
