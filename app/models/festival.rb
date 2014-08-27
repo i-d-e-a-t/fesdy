@@ -26,4 +26,14 @@ class Festival < ActiveRecord::Base
   # フェス開催の場合は詳細を出す。
   # 互換性のためnilを返却
   def to_detail_for_title; end
+
+  # 完了したフェスの場合はtrueを返す。
+  # festival_datesの各日付から判断する。
+  def finished?
+    today = DateTime.now
+    festival_dates.pluck(:date).each do |date|
+      return false if date >= today
+    end
+    return true
+  end
 end

@@ -8,7 +8,7 @@ module CommonHelper
   
   class Options
     def initialize data={}
-      @data = {}
+      @data = data
     end
     def self.load data={}
       self.new data
