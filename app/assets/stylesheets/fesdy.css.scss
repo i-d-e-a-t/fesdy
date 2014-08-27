@@ -29,7 +29,6 @@
     font-weight: lighter;
 
     .card-title {
-      color: white;
       display: inline-block;
       font-size: 3.6rem;
     }
@@ -54,12 +53,14 @@
 }
 
 .card.festival {
-  // TODO: フェスが増えた時、CSSに頼らず背景画像設定
-  background-image: url(image_path('messe.jpg'));
-  background-position:center center;
-  background-repeat:no-repeat;
-  -moz-background-size:cover;
-  background-size:cover;
+  // TODO: アイキャッチを廃止、代わりのコンテンツがほしい
+  // background-image: url(image_path('messe.jpg'));
+  // background-position:center center;
+  // background-repeat:no-repeat;
+  // -moz-background-size:cover;
+  // background-size:cover;
+  background: white;
+  border: 1px solid $color_fesdy;
 
   // paddingで高さを調整
   padding: 3rem 0;
@@ -69,7 +70,10 @@
 
   // カード内容
   .card-contents {
+    color: $color_fesdy;
     text-align: center;
-    text-shadow: 0 0 .4rem black;
+  }
+  &:hover .card-contents {
+    text-shadow: 0 0 .4rem $color_fesdy;
   }
 }
