@@ -18,6 +18,16 @@ describe Festival, :type => :model do
     end
   end
 
+  shared_context "完了しているフェスがある場合" do
+    before do
+      help_finished_fes_with_date 5
+    end
+  end
+
+  #
+  # テストケース
+  #
+
   describe "#sort" do
     context '引数なしのとき、' do
       context do
@@ -34,6 +44,21 @@ describe Festival, :type => :model do
       end
     end
   end
+
+  describe "#finished?" do
+    context do
+      include_context "完了しているフェスがある場合"
+      context '完了しているフェスについて' do
+        subject { Festival.where(path_key: 'finished_0').last }
+        its(:finished?) { should eq true }
+      end
+      context '完了していないフェスについて' do
+        subject { Festival.where(path_key: 'not_finished_0').last }
+        its(:finished?) { should eq false }
+      end
+    end
+  end
+
 
   describe '#to_title' do
     include_context 'データがある場合'
