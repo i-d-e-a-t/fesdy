@@ -30,7 +30,7 @@ class Festival < ActiveRecord::Base
   # 完了したフェスの場合はtrueを返す。
   # festival_datesの各日付から判断する。
   def finished?
-    today = DateTime.now
+    today = Date.today
     festival_dates.pluck(:date).each do |date|
       return false if date >= today
     end
