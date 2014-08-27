@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
 
   private
   def prepare_for_header
-    @festivals = Festival.all
+    # フェスを新しい順に取得
+    @festivals = Festival.sort
   end
 
   # search_wordをキーにYoutube検索を行い、Video-Idを最大NUM_OF_MAX件配列で返却
