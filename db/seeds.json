@@ -58,8 +58,32 @@
           "file"      : "/lib/script/a-nation-2014.artists"
         }
       ]
-    }
+    },
 
-    
+    {
+      "name"          : "SWEET LOVE SHOWER 2014",
+      "path_key"      : "sweet-love-shower-2014",
+      "official_site" : "http://www.sweetloveshower.com",
+      "daily_info"    : [
+        {
+          "place"     : "山中湖交流プラザきらら",
+          "place_key" : "yamanashi",
+          "date"      : "20140829",
+          "file"      : "/lib/script/love-shower-2014.artists"
+        },
+        {
+          "place"     : "山中湖交流プラザきらら",
+          "place_key" : "yamanashi",
+          "date"      : "20140830",
+          "file"      : "/lib/script/love-shower-2014.artists"
+        },
+        {
+          "place"     : "山中湖交流プラザきらら",
+          "place_key" : "yamanashi",
+          "date"      : "20140831",
+          "file"      : "/lib/script/love-shower-2014.artists"
+        }
+      ]
+    }
   ]
 }
