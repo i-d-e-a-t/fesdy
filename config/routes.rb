@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :artists, controller: :artist, only: [:show]
+  resources :artists, controller: :artist, only: [:show], id: /[^\/]+/
 
   root 'fesdy#index', as: :fesdy
 end
