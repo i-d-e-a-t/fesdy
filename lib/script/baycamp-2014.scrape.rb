@@ -35,10 +35,10 @@ def scrape_artists apk, url, file = nil
   end
 
   # HTMLからartist名を取得
-  result = doc.css '#sec01 ul.profList.btn li img'
+  result = doc.css 'div#page-container h2 a'
   artists = []
   result.each do | r |
-    artists << r['alt']
+    artists << r.content
   end
 
   # Pathキーを取得して、[artist名 path_key 日付]でファイル出力
@@ -47,7 +47,7 @@ def scrape_artists apk, url, file = nil
     tmp = apk.ask name
     f.puts tmp[0] + "\t" + tmp[1] + "\t" + "20140906"
   end
-  
+
   f.close
 end
 
@@ -55,11 +55,11 @@ end
 #
 # main
 #
-love_shower_url = 'http://www.sweetloveshower.com/artist/index.html'
+target_url = 'http://baycamp.net/2014/?page_id=350'
 
-LOVE_SHOWER_OUTNAME = './love-shower-2014.artists'
+OUTPUT_FILENAME = './baycamp-2014.artists'
 
-files = [LOVE_SHOWER_OUTNAME]
+files = [OUTPUT_FILENAME]
 
 # 履歴管理用のインスタンスを生成
 old_files = []
@@ -80,7 +80,7 @@ apk = AskPathKey.new additional_rules
 # 履歴を登録
 old_files.each { |of| apk.load_history of }
 
-scrape_artists apk, love_shower_url, LOVE_SHOWER_OUTNAME 
+scrape_artists apk, target_url, OUTPUT_FILENAME
 
 # 退避したファイルを削除
 old_files.each do |of|
