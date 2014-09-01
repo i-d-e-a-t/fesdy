@@ -73,11 +73,11 @@ files.each do |fn|
   end
 end
 
-additional_rules = Hash.new(
-  %w|京都 イギリス アルゼンチン レバノン 福岡 神戸 高崎|.map do |item|
+additional_rules = Hash[
+  %w|京都 イギリス アルゼンチン レバノン 福岡 神戸 高崎|.map { |item|
     ["（from #{item}）", '']
-  end
-)
+  }.flatten
+]
 
 apk = AskPathKey.new additional_rules
 # 履歴を登録
