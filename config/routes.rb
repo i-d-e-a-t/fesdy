@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :artists, controller: :artist, only: [:show], id: /[^\/]+/
 
   root 'fesdy#index', as: :fesdy
+
+  get 'itunes/:keyword' => 'fesdy#search_itunes'
 end
