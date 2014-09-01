@@ -15,7 +15,7 @@
 
 
 .card {
-  background: gray;
+  background: white;
   box-sizing: border-box;
   height: 15rem;
   display: inline-block;  
@@ -51,13 +51,10 @@
 }
 
 .card.welcome {
-  color: white;
-  background: lighten(desaturate($color_fesdy, 60%), 20%);
+  color: black;
 }
 
 .card.festival {
-  background: white;
-
   // カード内容
   .card-contents {
     color: $color_fesdy;
@@ -72,8 +69,6 @@
 
 // 完了したフェス
 .card.festival.finished {
-  border: none;
-
   // カード内容
   .card-contents {
     color: #d0d0d0;

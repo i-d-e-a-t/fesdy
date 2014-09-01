@@ -5,24 +5,15 @@
   position: relative;
   .eye-catch {
     background: white;
-    border: 1px solid $color_fesdy;
-
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
     // trimming
     overflow: hidden;
-    .filler {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      //background: -webkit-gradient(linear,left top,right bottom,from(rgba(255,255,255,0.3)),to(rgba(255,255,255,1)));
-      z-index: 9;
-    }
   }
   .info-box {
+    box-shadow: 1px 1px 2px 1px #ccc;
     z-index: 9;
     position: relative;
     .name {
@@ -68,22 +59,23 @@
   }
 }
 button.start {
-  background: $color_fesdy;
+  background: white;
   border-radius: 0;
-  color: white;
+  box-shadow: 1px 1px 2px 1px #ccc;
+  color: $color_fesdy;
   font-size: 2.4rem;
   font-weight: normal;
   margin: 0 0 2rem 0;
 }
 button.start:hover {
-  color: white;
-  background: darken($color_fesdy, 10%);
+  color: darken($color_fesdy, 10%);
+  background: #efefef;
 }
 
 .artists {
   .festival-date {
-    border: 1px solid $color_fesdy;
     text-align: center;
+    box-shadow: 1px 1px 2px 1px #ccc;
     .info {
       padding: 2rem 0 0 0;
       font-weight: normal;
@@ -99,11 +91,12 @@ button.start:hover {
       border: 0;
       margin: 0;
       font-size: 1.8rem;
-      font-weight: lighter;
+      font-weight: normal;
       background: transparent;
       color: $color_fesdy;
     }
     &:hover {
+      background: #efefef;
       color: darken($color_fesdy, 10%);
       .study {
         color: darken($color_fesdy, 10%);
