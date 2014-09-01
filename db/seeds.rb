@@ -77,7 +77,7 @@ festivals.each do | festival |
             Artist.create do | artist |
               artist.id = artist_id
               artist.name = artist_data[0]
-              artist.path_key = artist_data[0]
+              artist.path_key = artist_data[1]
             end
             tmp_artist_id = artist_id
           else
