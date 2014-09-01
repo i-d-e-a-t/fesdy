@@ -38,7 +38,7 @@ def scrape_artists apk, url, file = nil
   result = doc.css '#contents section article p a'
   artists = []
   result.each do | r |
-    artists r.contents
+    artists << r.content
   end
 
   # Pathキーを取得して、[artist名 path_key 日付]でファイル出力
@@ -73,11 +73,10 @@ files.each do |fn|
   end
 end
 
-additional_rules = Hash[
-  %w|京都 イギリス アルゼンチン レバノン 福岡 神戸 高崎|.map { |item|
-    ["（from #{item}）", '']
-  }.flatten
-]
+additional_rules = {}
+%w|京都 イギリス アルゼンチン レバノン 福岡 神戸 高崎|.each do |item|
+  additional_rules["（from #{item}）"] = ''
+end
 
 apk = AskPathKey.new additional_rules
 # 履歴を登録
