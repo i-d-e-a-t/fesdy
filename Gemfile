@@ -20,8 +20,8 @@ gem 'twitter-bootstrap3-rails'
 
 gem 'google-api-client'
 gem 'trollop'
-
 gem 'newrelic_rpm'
+gem 'httpclient'
 
 group :development, :test do
   gem 'rspec-its'
