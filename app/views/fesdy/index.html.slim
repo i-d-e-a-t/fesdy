@@ -8,7 +8,7 @@ script(type="text/javascript")
 /
 .row
   / lg --1200px-- md --992p-- sm --768px-- xs
-  #welcome.col-lg-4.col-md-6.col-sm-12
+  #welcome.col-md-6.col-sm-12
     .card.welcome
       .card-contents
         .card-title Welcome to Fesdy !
@@ -17,7 +17,7 @@ script(type="text/javascript")
           | まずは気になるフェスをクリック！
 
   - @festivals.each do |f|
-    .col-lg-4.col-md-6.col-sm-12
+    .col-md-6.col-sm-12
       a.no-deco href="#{festival_path(id: f.path_key)}"
         - if f.finished?
           .card.festival.finished
