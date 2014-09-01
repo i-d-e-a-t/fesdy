@@ -35,16 +35,16 @@ def scrape_artists apk, url, file = nil
   end
 
   # HTMLからartist名を取得
-  result = doc.css '#sec01 ul.profList.btn li img'
+  result = doc.css '#contents section article p a'
   artists = []
   result.each do | r |
-    artists << r['alt']
+    artists r.contents
   end
 
   # Pathキーを取得して、[artist名 path_key 日付]でファイル出力
   artists.each do | artist |
     name = artist.to_s
-    tmp =apk.ask name
+    tmp = apk.ask name
     f.puts tmp[0] + "\t" + tmp[1] + "\t" + "20140921"
   end
   
