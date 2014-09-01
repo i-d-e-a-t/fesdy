@@ -22,8 +22,14 @@ script(type="text/javascript")
         - if f.finished?
           .card.festival.finished
             .card-contents
-              .card-title #{f.name}
+              .card-title
+                i.icon-ok
+                | &nbsp;
+                | #{f.name}
         - else
           .card.festival
             .card-contents
-              .card-title #{f.name}
+              .card-title
+                i.icon-music
+                | &nbsp;
+                | #{f.name}
