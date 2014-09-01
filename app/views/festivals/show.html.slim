@@ -14,8 +14,12 @@ script(type="text/javascript")
       = @festival.name
     .date
       - date_format = "%Y/%m/%d"
-      = @start_date.date.strftime(date_format) + " ~ "
-      = @end_date.date.strftime(date_format)
+      - start_date_str = @start_date.date.strftime(date_format)
+      - end_date_str   = @end_date.date.strftime(date_format)
+      - if start_date_str == end_date_str
+        = start_date_str
+      - else
+        = start_date_str + " ~ " + end_date_str
     .place
       - @places.each do |place|
         == place

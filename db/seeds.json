@@ -84,6 +84,19 @@
           "file"      : "/lib/script/love-shower-2014.artists"
         }
       ]
+    },
+    {
+      "name"          : "BAYCAMP 2014",
+      "path_key"      : "baycamp-2014",
+      "official_site" : "http://baycamp.net/2014/",
+      "daily_info"    : [
+        {
+          "place"     : "神奈川県・川崎市東扇島東公園",
+          "place_key" : "kanagawa",
+          "date"      : "20140906",
+          "file"      : "/lib/script/baycamp-2014.artists"
+        }
+      ]
     }
   ]
 }
