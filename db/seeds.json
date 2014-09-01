@@ -97,6 +97,19 @@
           "file"      : "/lib/script/baycamp-2014.artists"
         }
       ]
+    },
+    {
+      "name"          : "京都音楽博覧会 2014",
+      "path_key"      : "kyotoonpaku-2014",
+      "official_site" : "http://kyotoonpaku.net/2014/",
+      "daily_info"    : [
+        {
+          "place"     : "京都 梅小路公園 芝生広場",
+          "place_key" : "kyoto",
+          "date"      : "20140921",
+          "file"      : "/lib/script/kyotoonpaku-2014.artists"
+        }
+      ]
     }
   ]
 }
