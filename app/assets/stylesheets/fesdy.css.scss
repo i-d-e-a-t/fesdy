@@ -24,14 +24,28 @@
   
   .card-contents {
     color: rgba(255,255,255,0.8);
-    font-size: 1.8rem;
+    // 〜small〜mediumの場合
+    font-size: 1.6rem;
+    @media screen and (min-width: $bp_large) {
+      // largeより大きい場合
+      font-size: 1.8rem;
+    }
     margin: 2rem 3rem;
     position: relative;
     font-weight: lighter;
 
     .card-title {
       display: inline-block;
-      font-size: 3.6rem;
+      // 〜small〜mediumの場合
+      font-size: 2.4rem;
+      @media screen and (min-width: $bp_medium) {
+        // mediumより大きい場合
+        font-size: 3.0rem;
+      }
+      @media screen and (min-width: $bp_large) {
+        // largeより大きい場合
+        font-size: 3.6rem;
+      }
     }
   }
 }
@@ -47,7 +61,6 @@
   // カード内容
   .card-contents {
     color: $color_fesdy;
-    margin: 2rem 3rem;
   }
   &:hover {
     background: #efefef;
