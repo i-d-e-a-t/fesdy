@@ -10,9 +10,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :artists, controller: :artist, only: [:show], id: /[^\/]+/
+  resources :artists, controller: :artist, only: [:show], id: /[^\/]+/ do
+    member do
+      get 'itunes' => 'artists#search_itunes'
+    end
+  end
 
   root 'fesdy#index', as: :fesdy
-
-  get 'itunes/:keyword' => 'fesdy#search_itunes'
 end
