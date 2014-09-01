@@ -24,7 +24,6 @@
   box-shadow: 1px 1px 2px 1px #ccc;
   
   .card-contents {
-    color: rgba(255,255,255,0.8);
     // 〜small〜mediumの場合
     font-size: 1.6rem;
     @media screen and (min-width: $bp_large) {
@@ -52,7 +51,8 @@
 }
 
 .card.welcome {
-  background: $color_fesdy;
+  color: white;
+  background: lighten(desaturate($color_fesdy, 60%), 20%);
 }
 
 .card.festival {
