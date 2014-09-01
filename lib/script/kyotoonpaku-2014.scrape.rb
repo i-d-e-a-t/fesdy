@@ -73,6 +73,11 @@ files.each do |fn|
   end
 end
 
+# 他のフェスのファイルからも読み込む
+Dir::glob('lib/script/*artists*').each do |path|
+  old_files << path
+end
+
 additional_rules = {}
 %w|京都 イギリス アルゼンチン レバノン 福岡 神戸 高崎|.each do |item|
   additional_rules["（from #{item}）"] = ''
@@ -86,5 +91,5 @@ scrape_artists apk, target_fes_url, OUTPUT_FILENAME
 
 # 退避したファイルを削除
 old_files.each do |of|
-  File.delete of if File.exists? of
+  File.delete of if File.exists? of && of.match(/old$/)
 end
