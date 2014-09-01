@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :artists, controller: :artist, only: [:show], id: /[^\/]+/ do
     member do
-      get 'itunes' => 'artists#search_itunes'
+      get 'itunes' => 'artist#search_itunes'
     end
   end
 
