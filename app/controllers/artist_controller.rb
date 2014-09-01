@@ -15,7 +15,7 @@ class ArtistController < ApplicationController
   # itunesを検索し、パーシャルなHTMLで返却する。
   #
   def search_itunes
-    ItunesAdapter.search @artist.name
+    @result = ItunesAdapter.search @artist.name
     render :layout => nil
   end
 
@@ -25,8 +25,8 @@ class ArtistController < ApplicationController
   private
   def prepare_artist
     @artist = Artist.where(:path_key => params[:id]).last
-    unless @artist
-      render status: :not_found and return
+    if @artist.nil?
+      render text: 'Not Found', status: :not_found and return
     end
   end
 
