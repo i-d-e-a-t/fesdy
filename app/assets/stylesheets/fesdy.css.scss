@@ -37,19 +37,6 @@
 
 .card.welcome {
   background: $color_fesdy;
-  .card-contents {
-    // ウェルカムカードを閉じるボタン
-    .card-close {
-      color: white;
-      opacity: 0.5;
-      right: 0;
-      top: 0;
-      position: absolute;
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
 }
 
 .card.festival {
