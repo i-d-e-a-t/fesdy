@@ -34,7 +34,7 @@ html lang="en"
               i.icon-reorder
           .collapse.navbar-collapse#fesdy-contents-nav
             ul.nav.navbar-nav.navbar-right(role="navigation")
-              - @festivals.each do |festival|
+              - @festivals.slice(0, 3).each do |festival|
                 li
                   a(href="#{festival_path(id: festival.path_key)}")
                     = festival.name
