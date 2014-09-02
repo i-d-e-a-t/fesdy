@@ -32,7 +32,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
-  gem 'rake_shared_context'
 end
 
 group :production do
