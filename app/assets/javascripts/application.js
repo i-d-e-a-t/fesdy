@@ -16,6 +16,13 @@
 //= require turbolinks
 //= require_tree .
 
+function ready_for_itunes_search() {
+  var artistId = $('#itunes_search_id').val();
+  $.get('/artists/' + artistId + '/itunes', null, function(data) {
+    $('#itunes').html(data);
+  });
+}
+
 function ready_for_ytpages() {
 
   // youtube API が作成したjsをリセット

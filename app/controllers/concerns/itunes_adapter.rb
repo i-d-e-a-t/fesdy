@@ -6,16 +6,8 @@ module ItunesAdapter
     search: "https://itunes.apple.com/search"
   }
 
-  # キーワードで検索した結果をHashWithIndifferentAccessオブジェクトで返す。
-  #     option == :raw の場合
-  #         結果のJSONをそのまま返却する
-  def self.search keyword, option=nil
-    raw = self.request_search keyword
-    if option == :raw
-      return raw
-    else
-      return JSON.parse(raw).with_indifferent_access
-    end
+  def self.search keyword
+    return self.request_search keyword
   end
 
   # キーワードを引数に検索

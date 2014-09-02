@@ -1,3 +1,10 @@
-h1 #{@artist.name} を検索した結果ｗｗｗｗｗｗｗｗｗｗｗｗｗ
-pre
-  = @result
+.row
+  - @itunes_results.each do |result|
+    / TODO カラムをちゃんと決める
+    .col-md-3
+      .card.itunes-card
+        .card-contents
+          .card-title #{result[:trackName]}/#{result[:artistName]}
+          .artwork
+            img(src="#{result[:artworkUrl100]}")
+        

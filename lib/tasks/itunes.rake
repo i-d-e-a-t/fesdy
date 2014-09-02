@@ -13,6 +13,6 @@ namespace :itunes do
     puts "#  please redirect it to *.yml when you re-use"
     puts "#" + "-"*70
     require "#{Rails.root}/app/controllers/concerns/itunes_adapter.rb"
-    puts ItunesAdapter.search(args['keyword']).to_yaml
+    puts JSON.parse(ItunesAdapter.search(args['keyword'], :raw)).to_yaml
   end
 end

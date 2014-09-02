@@ -14,8 +14,13 @@ class ArtistController < ApplicationController
   #
   def search_itunes
     raw_result = ItunesAdapter.search @artist.name
+    # TODO なぜかItunesAdapterでHashに変換しても文字列で帰ってくる。moduleだから？要調査
+    raw_result = JSON.parse(raw_result).with_indifferent_access
     # 0件だったら空文字列を返す
-    render :text => '' and return if raw_result[:resultCount] == 0
+    if raw_result[:resultCount] == 0
+      render :text => ''
+      return
+    end
     @itunes_results = raw_result[:results]
     render :layout => nil
   end
