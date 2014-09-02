@@ -26,13 +26,28 @@ module CommonHelper
     date_offset = opts.get :date_offset, 0
     fes_path_key_base = opts.get :fes_path_key_base, 'awesome-festival-'
 
+    # fes_numの数のフェスを作成
     fes_num.times do |i|
       festival = Festival.create(
         name: "すごいフェス#{i}",
         path_key: "#{fes_path_key_base}#{i}"
       )
+      # 各フェスに、date_numの数のフェス開催日を作成
+      # ただし、日付は
+      # 「フェスの通番 + そのフェスのフェス開催日の通番 + オフセット」分ずれる。
+      # 例： help_fes_order 5, 3, { date_offset: -2 }
+      #
+      #    fes0
+      #      |---date0( 0 + 0 - 2 )
+      #      |---date1( 0 + 1 - 2 )
+      #      |---date2( 0 + 2 - 2 )
+      #    fes1
+      #      |---date0( 1 + 0 - 2 )
+      #      |---date1( 1 + 1 - 2 )
+      #      ...
+      #
       date_num.times do |j|
-        date_count = j + date_offset
+        date_count = i + j + date_offset
         festival_date = FestivalDate.create(
           place: "すごいメッセ#{i}-#{j}",
           # 古い順に登録する。オフセットがアレばずらす。
