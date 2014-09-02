@@ -139,6 +139,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.3.2)
+    rake_shared_context (0.2.1)
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
@@ -247,6 +248,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.1.4)
   rails_12factor
+  rake_shared_context
   rspec-its
   rspec-rails
   sass-rails (~> 4.0.3)
