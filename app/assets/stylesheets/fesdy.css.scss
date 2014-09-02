@@ -15,56 +15,49 @@
 
 
 .card {
-  background: gray;
+  background: white;
+  box-sizing: border-box;
+  height: 15rem;
   display: inline-block;  
   width: 100%;
-  height: 100%;
   margin: 0 0 2rem 0;
+  box-shadow: 1px 1px 2px 1px #ccc;
   
   .card-contents {
-    color: rgba(255,255,255,0.8);
-    font-size: 1.8rem;
+    // 〜small〜mediumの場合
+    font-size: 1.6rem;
+    @media screen and (min-width: $bp_large) {
+      // largeより大きい場合
+      font-size: 1.8rem;
+    }
     margin: 2rem 3rem;
     position: relative;
     font-weight: lighter;
 
     .card-title {
       display: inline-block;
-      font-size: 3.6rem;
-    }
-  }
-}
-
-.card.welcome {
-  background: $color_fesdy;
-  .card-contents {
-    // ウェルカムカードを閉じるボタン
-    .card-close {
-      color: white;
-      opacity: 0.5;
-      right: 0;
-      top: 0;
-      position: absolute;
-      &:hover {
-        opacity: 1;
+      // 〜small〜mediumの場合
+      font-size: 3.0rem;
+      @media screen and (min-width: $bp_small) {
+        // smallより大きい場合
+        font-size: 3.0rem;
+      }
+      @media screen and (min-width: $bp_large) {
+        // largeより大きい場合
+        font-size: 3.6rem;
       }
     }
   }
 }
 
-.card.festival {
-  background: white;
-  border: 1px solid $color_fesdy;
-  // paddingで高さを調整
-  padding: 2.5rem 0;
-  @media screen and (min-width: 76.8rem) {
-    padding: 5rem 0;
-  }
+.card.welcome {
+  color: black;
+}
 
+.card.festival {
   // カード内容
   .card-contents {
     color: $color_fesdy;
-    text-align: center;
   }
   &:hover {
     background: #efefef;
@@ -76,9 +69,6 @@
 
 // 完了したフェス
 .card.festival.finished {
-  background: #efefef;
-  border: none;
-
   // カード内容
   .card-contents {
     color: #d0d0d0;
