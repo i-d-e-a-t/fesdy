@@ -34,10 +34,14 @@ html lang="en"
               i.icon-reorder
           .collapse.navbar-collapse#fesdy-contents-nav
             ul.nav.navbar-nav.navbar-right(role="navigation")
-              - @festivals.each do |festival|
-                li
-                  a(href="#{festival_path(id: festival.path_key)}")
-                    = festival.name
+              - header_fes = 0
+              - @festivals.reverse.each do |festival|
+                - unless festival.finished?
+                  - if header_fes < 3
+                    - header_fes += 1
+                    li
+                      a(href="#{festival_path(id: festival.path_key)}")
+                        = festival.name
       .container
         .row
           .col-lg-12

@@ -8,7 +8,6 @@ script(type="text/javascript")
 /
 .fes
   .eye-catch
-    .filler
   .info-box
     h2.name
       = @festival.name
@@ -26,9 +25,9 @@ script(type="text/javascript")
         br
 a.no-deco(href="#{study_festival_path(id: @festival.path_key)}")
   button.btn.btn-lg.btn-block.start
-    | Study!
+    | Study all!
     | &nbsp;&nbsp;
-    i.icon-play
+    i.icon-expand
 
 .artists.row
   / アーティストは、開催場所・日付で分けて表示する
@@ -43,9 +42,9 @@ a.no-deco(href="#{study_festival_path(id: @festival.path_key)}")
             .place
               | #{date.place}
           .study
-            | Study!
+            | Study this date!
             | &nbsp;&nbsp;
-            i.icon-play
+            i.icon-expand
       table.table.table-condensed.table-hover.accordion-group
         thead.accordion-heading.accordion-toggle.collapsed data-toggle="collapse" data-parent=".artists" href="#artist_group_#{date.id}"
           tr
@@ -61,10 +60,9 @@ a.no-deco(href="#{study_festival_path(id: @festival.path_key)}")
                   = artist.name
 
 .row
-  .col-md-6
-    a.no-deco href="#{@festival.official_site}"
+  .col-md-12
+    a.no-deco href="#{@festival.official_site}" target="blank"
       button.btn.btn-default.to-official-site(type="button")
-        = "#{@festival.name} 公式サイトへ"
-  .col-md-6
-    button.btn.btn-default.to-top(type="button")
-      i.icon-arrow-up
+        i.icon-share-alt
+        | &nbsp;
+        | 公式サイト
