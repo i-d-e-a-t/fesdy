@@ -64,12 +64,10 @@ module CommonHelper
     )
     artists = []
     artists << Artist.create(
-      name: 'すごい奴らfeat.ヤバい奴ら',
-      path_key: 'awesome-artist-2014'
+      name: 'すごい奴らfeat.ヤバい奴ら'
     )
     artists << Artist.create(
-      name: 'amazing Artist',
-      path_key: 'amazing-artist'
+      name: 'amazing Artist'
     )
     artists.each do |artist|
       Appearance.create(
