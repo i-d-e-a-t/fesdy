@@ -1,5 +1,3 @@
-# encoding: utf-8
-require 'itunes_adapter'
 class ArtistController < ApplicationController
 
   before_action :prepare_artist
@@ -15,7 +13,10 @@ class ArtistController < ApplicationController
   # itunesを検索し、パーシャルなHTMLで返却する。
   #
   def search_itunes
-    @result = ItunesAdapter.search @artist.name
+    raw_result = ItunesAdapter.search @artist.name
+    # 0件だったら空文字列を返す
+    render :text => '' and return if raw_result[:resultCount] == 0
+    @itunes_results = raw_result[:results]
     render :layout => nil
   end
 

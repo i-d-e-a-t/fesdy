@@ -3,7 +3,7 @@ require 'httpclient'
 module ItunesAdapter
   # 検索APIのベースURL
   ITUNES_API = {
-    search: "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch"
+    search: "https://itunes.apple.com/search"
   }
 
   # キーワードで検索した結果をHashWithIndifferentAccessオブジェクトで返す。
@@ -22,7 +22,7 @@ module ItunesAdapter
   # 結果（JSON）をテキストで返却する
   def self.request_search keyword
     http_client = HTTPClient.new
-    http_client.get_content(ITUNES_API[:search], {term: keyword})
+    http_client.get_content(ITUNES_API[:search], {term: keyword, country: 'JP'})
   end
 
 end
