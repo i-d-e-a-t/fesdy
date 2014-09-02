@@ -2,16 +2,14 @@ require 'nokogiri'
 require 'open-uri'
 require 'FileUtils'
 
-# todo:出力の色の変更
-
 # urlとcssを指定するruleを渡してスクレイプする
 # (xpathでスクレイプする場合は要検討)
 def scrape_with_nokogiri(url, rule)
   begin
     doc = Nokogiri::HTML(open url)
   rescue => e
-    puts "#{e.class}".red
-    puts e.message.red
+    puts "#{e.class}"
+    puts e.message
     exit 1
   end
 
@@ -21,7 +19,7 @@ end
 # ファイル名、アーティストの配列、日付を渡して
 # ファイル出力する
 def print_to_file(file, artists, date)
-  f = File.open(file, 'w')
+  f = File.open(file, 'a')
 
   artists.each_with_index do |r|
     name = r.to_s
@@ -32,22 +30,20 @@ def print_to_file(file, artists, date)
 end
 
 # 既にファイルが存在していたときの履歴管理
-def stash_old_files(files)
-  old_files =[]
-
-  files.each do |fn|
-    if File.exits? fn
-      of = fn + '.old'
-      old_files << of
-      
-      raise "ファイルコピーに失敗: #{file}" if FileUtils.cp(fn, of)
+def stash_old_file(file)
+  if File.exist? file
+    of = file + '.old'
+    begin
+      File.rename(file, of)
+    rescue => e
+      puts "ファイル名変更に失敗: #{file}"
+      puts e.message
     end
   end
 end
 
 # 既に存在していたファイルを削除
-def delete_old_files
-  old_files.each do |of|
-    File.delete of if File.exist? of
-  end
+def delete_old_file(file)
+  old_fn = file + '.old'
+  File.delete old_fn if File.exist? old_fn
 end
