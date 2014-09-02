@@ -70,14 +70,13 @@ festivals.each do | festival |
         line.chomp!
         artist_data = line.split("\t")
         # 日付が一致したものだけ処理を行う
-        if festival_daily['date'] == artist_data[2]
+        if festival_daily['date'] == artist_data[1]
           # Artistが既に登録されていない場合は、登録を行う
-          tmp_artist = Artist.where(path_key: artist_data[1]).last
+          tmp_artist = Artist.where(path_key: artist_data[0]).last
           unless tmp_artist
             Artist.create do | artist |
               artist.id = artist_id
               artist.name = artist_data[0]
-              artist.path_key = artist_data[0]
             end
             tmp_artist_id = artist_id
           else
@@ -98,4 +97,3 @@ festivals.each do | festival |
 
   festival_id += 1
 end
-
