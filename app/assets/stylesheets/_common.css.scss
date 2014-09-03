@@ -13,6 +13,11 @@ $color_base: black;
 $color_fesdy: #8dc700;
 $radius: 0.7rem;
 
+// bootstrapのブレークポイント
+$bp_large: 1200px;
+$bp_medium: 992px;
+$bp_small: 768px;
+
 // ------------------------------------------------------------------
 // 共通スタイル
 //
@@ -89,8 +94,7 @@ img.logo {
 
 // ここでフッターの高さを指定
 #footer {
-  background-color: $color_base;
-  color: lighten($color_base, 90%);
+  box-shadow: 1px 1px 2px 1px #ccc;
   height: 6rem;
   padding: 2rem 0;
 }

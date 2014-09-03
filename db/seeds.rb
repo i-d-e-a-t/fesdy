@@ -73,14 +73,14 @@ festivals.each do | festival |
         if festival_daily['date'] == artist_data[1]
           # Artistが既に登録されていない場合は、登録を行う
           tmp_artist = Artist.where(path_key: artist_data[0]).last
-          unless tmp_artist
+          if tmp_artist
+            tmp_artist_id = tmp_artist.id
+          else
             Artist.create do | artist |
               artist.id = artist_id
               artist.name = artist_data[0]
             end
             tmp_artist_id = artist_id
-          else
-            tmp_artist_id = tmp_artist.id
           end
 
           # Appearanceはどっちにしろ登録

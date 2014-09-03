@@ -8,22 +8,32 @@ script(type="text/javascript")
 /
 .row
   / lg --1200px-- md --992p-- sm --768px-- xs
-  #welcome.col-lg-6.col-md-12
+  #welcome.col-md-6.col-sm-12
     .card.welcome
       .card-contents
         .card-title Welcome to Fesdy !
         p
           | Fesdyはフェス予習サイトです。
           | まずは気になるフェスをクリック！
-
-  - @festivals.each do |f|
-    .col-lg-6.col-md-12
+  / フェスを並び替えて表示する。
+  /    1. 未完了のものは開催が近いものを先に。
+  /    2. 完了のものは、開催が新しいものを先に。
+  - active_festivals = @festivals.collect { |f| f unless f.finished? }
+  - finished_festivals = @festivals.collect { |f| f if f.finished? }
+  - [active_festivals.reverse, finished_festivals].flatten.compact.each do |f|
+    .col-md-6.col-sm-12
       a.no-deco href="#{festival_path(id: f.path_key)}"
         - if f.finished?
           .card.festival.finished
             .card-contents
-              .card-title #{f.name}
+              .card-title
+                i.icon-ok
+                | &nbsp;
+                | #{f.name}
         - else
           .card.festival
             .card-contents
-              .card-title #{f.name}
+              .card-title
+                i.icon-music
+                | &nbsp;
+                | #{f.name}
