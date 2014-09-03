@@ -1,20 +1,19 @@
 # encoding: utf-8
-require 'json'
+require 'yaml'
 
 # ------------------------------------------------------------
 # Configファイル読み出し
 
-config_file_path = './db/seeds.json'
+config_file_path = './db/seeds.yml'
 begin
-  f = File.open(config_file_path)
-  json_data = JSON.parse(f.read)
+  yaml_data = YAML.load_file(config_file_path)
 rescue
   # Configファイルが不正な構文 => 終了する
-  puts "\e[31m seeds.json is invalid \e[0m"
+  puts "\e[31m seeds.yml is invalid \e[0m"
   exit
 end
 
-festivals = json_data['festivals']
+festivals = yaml_data['festivals']
 
 # ------------------------------------------------------------
 # 登録処理
