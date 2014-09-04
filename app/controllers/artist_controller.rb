@@ -1,5 +1,6 @@
+# /artists/*** に対応するアクションを定義する。
+# itunes検索アクションもここ
 class ArtistController < ApplicationController
-
   before_action :prepare_artist
 
   #
@@ -14,26 +15,27 @@ class ArtistController < ApplicationController
   #
   def search_itunes
     raw_result = ItunesAdapter.search @artist.name
-    # TODO なぜかItunesAdapterでHashに変換しても文字列で帰ってくる。moduleだから？要調査
+    # TODO: なぜかItunesAdapterでHashに変換しても文字列で帰ってくる。moduleだから？要調査
     raw_result = JSON.parse(raw_result).with_indifferent_access
     # 0件だったら空文字列を返す
     if raw_result[:resultCount] == 0
-      render :text => ''
+      render text: ''
       return
     end
     @itunes_results = raw_result[:results]
-    render :layout => nil
+    render layout: nil
   end
+
+  private
 
   #
   # params[:id]からアーティストを取得する
   #
-  private
   def prepare_artist
-    @artist = Artist.where(:path_key => params[:id]).last
+    @artist = Artist.where(path_key: params[:id]).last
     if @artist.nil?
-      render text: 'Not Found', status: :not_found and return
+      render text: 'Not Found', status: :not_found
+      return
     end
   end
-
 end
