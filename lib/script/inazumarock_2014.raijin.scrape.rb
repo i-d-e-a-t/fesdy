@@ -1,5 +1,5 @@
 # イナズマロックフェス2014の出演者を取得するスクリプト
-# inazumarock-2014.artists というファイルに1行1アーティストの形式で出力する。
+# inazumarock-2014.raijin.artists というファイルに1行1アーティストの形式で出力する。
 
 require 'nokogiri'
 require 'open-uri'
@@ -82,7 +82,7 @@ end
 #
 target_fes_url = 'http://inazumarock.com/'
 
-OUTPUT_FILENAME = './inazumarock-2014.artists'
+OUTPUT_FILENAME = './inazumarock-2014.raijin.artists'
 
 files = [OUTPUT_FILENAME]
 
