@@ -1,5 +1,5 @@
 # イナズマロックフェス2014の出演者を取得するスクリプト
-# inazumarock-2014.raijin.artists というファイルに1行1アーティストの形式で出力する。
+# inazumarock-2014.artists というファイルに1行1アーティストの形式で出力する。
 
 require 'nokogiri'
 require 'open-uri'
@@ -39,6 +39,18 @@ def scrape_artists(apk, url, file)
     # どうやっても取得できなかったので追加
     puts_artist f, apk, '松崎しげる', '20140914'
     puts_artist f, apk, 'Half time Old', '20140914'
+    # 手で作った風神ステージ用ファイルから各行を読み込み
+    load_fujin_stage f
+  end
+end
+
+def load_fujin_stage(f)
+  File.open('./lib/script/inazumarock-2014.fujin.artists') do |ff|
+    fujin = ff.read
+    fujin.lines.each do |fl|
+      next if fl.split("\t").length != 3
+      f.puts fl
+    end
   end
 end
 
@@ -82,7 +94,7 @@ end
 #
 target_fes_url = 'http://inazumarock.com/'
 
-OUTPUT_FILENAME = './inazumarock-2014.raijin.artists'
+OUTPUT_FILENAME = './inazumarock-2014.artists'
 
 files = [OUTPUT_FILENAME]
 

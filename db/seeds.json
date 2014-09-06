@@ -117,28 +117,16 @@
       "official_site" : "http://inazumarock.com/",
       "daily_info"    : [
         {
-          "place"     : "雷神ステージ(滋賀県草津市烏丸半島 芝生広場)",
-          "place_key" : "shiga-raijin",
+          "place"     : "滋賀県草津市烏丸半島 芝生広場",
+          "place_key" : "shiga",
           "date"      : "20140913",
-          "file"      : "/lib/script/inazumarock-2014.raijin.artists"
+          "file"      : "/lib/script/inazumarock-2014.artists"
         },
         {
-          "place"     : "風神ステージ(滋賀県草津市烏丸半島 芝生広場)",
-          "place_key" : "shiga-fujin",
-          "date"      : "20140913",
-          "file"      : "/lib/script/inazumarock-2014.fujin.artists"
-        },
-        {
-          "place"     : "雷神ステージ(滋賀県草津市烏丸半島 芝生広場)",
-          "place_key" : "shiga-raijin",
+          "place"     : "滋賀県草津市烏丸半島 芝生広場",
+          "place_key" : "shiga",
           "date"      : "20140914",
-          "file"      : "/lib/script/inazumarock-2014.raijin.artists"
-        },
-        {
-          "place"     : "風神ステージ(滋賀県草津市烏丸半島 芝生広場)",
-          "place_key" : "shiga-fujin",
-          "date"      : "20140914",
-          "file"      : "/lib/script/inazumarock-2014.fujin.artists"
+          "file"      : "/lib/script/inazumarock-2014.artists"
         }
       ]
     }
