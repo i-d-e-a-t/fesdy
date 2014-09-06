@@ -70,18 +70,27 @@
     }
   }
 }
-
+// ----------------------------------------
 // search_itunesが返却する、
 // itunes検索結果ビューのスタイリング
 .card.itunes-card {
+  height: 16rem;
+  position: relative;
   .card-contents {
     height: 100%;
+    margin: 0;
+    position: relative;
     .card-title {
-      font-size: 1.2rem;
+      font-size: 1.6rem;
+      margin: 1.2rem 0 0 1.2rem;
     }
     .artwork {
       position: absolute;
-      bottom: 0;
+      bottom: 1.2rem;
+      right: 1.2rem;
     }
+  }
+  &:hover {
+    background: #efefef;
   }
 }
