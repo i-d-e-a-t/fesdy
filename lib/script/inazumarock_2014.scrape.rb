@@ -36,6 +36,9 @@ def scrape_artists(apk, url, file)
   # 出力用ファイルをオープン
   File.open(file, 'w') do |f|
     scrape_artist_with_file apk, url, f
+    # どうやっても取得できなかったので追加
+    puts_artist f, apk, '松崎しげる', '20140914'
+    puts_artist f, apk, 'Half time Old', '20140914'
   end
 end
 
@@ -57,6 +60,7 @@ def scrape_artist_with_file(apk, url, f)
 end
 
 def puts_artist(file, apk, name, date_string)
+  return if name == ''
   name, path_key = apk.ask name.to_s
   file.puts name + "\t" + path_key + "\t" + date_string
 end
