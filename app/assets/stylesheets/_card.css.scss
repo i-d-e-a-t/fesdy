@@ -1,0 +1,50 @@
+//
+// カード
+// 
+//  カード要素の共通設定。
+//  「#####」は種類を区別するためのクラス
+//
+//  .card.#####
+//    .card-contents
+//      .card-title
+//      .card-****
+//      .card-****
+//
+
+@import "common";
+
+.card {
+  background: white;
+  box-sizing: border-box;
+  height: 15rem;
+  display: inline-block;  
+  width: 100%;
+  margin: 0 0 2rem 0;
+  box-shadow: 1px 1px 2px 1px #ccc;
+  
+  .card-contents {
+    // 〜small〜mediumの場合
+    font-size: 1.6rem;
+    @media screen and (min-width: $bp_large) {
+      // largeより大きい場合
+      font-size: 1.8rem;
+    }
+    margin: 2rem 3rem;
+    position: relative;
+    font-weight: lighter;
+
+    .card-title {
+      display: inline-block;
+      // 〜small〜mediumの場合
+      font-size: 3.0rem;
+      @media screen and (min-width: $bp_small) {
+        // smallより大きい場合
+        font-size: 3.0rem;
+      }
+      @media screen and (min-width: $bp_large) {
+        // largeより大きい場合
+        font-size: 3.6rem;
+      }
+    }
+  }
+}

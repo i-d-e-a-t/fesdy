@@ -3,6 +3,7 @@
 /
 script(type="text/javascript")
   | $(document).ready(ready_for_ytpages);
+  | $(document).ready(ready_for_itunes_search);
 /
 / HTML contents from here
 /
@@ -40,7 +41,10 @@ script(type="text/javascript")
       button.btn.btn-lg.control onclick="nextStudy()"
         | Restart&nbsp;
         i.icon-refresh
-
+/ artists#search_itunesの結果が入る
+/ TODO パーシャルに切り出す
+input#itunes_search_id type="hidden" value="#{@artist.path_key}"
+.row#itunes
 
 
 input#autoplay type="hidden" value="#{session[:study_autoplay]}"
