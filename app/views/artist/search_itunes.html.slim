@@ -10,10 +10,12 @@
   .row.itunes
     .col-md-12
       hr
-      h2.title
+      p.title
         i.icon-music
         | &nbsp;
         | iTunes
+        | &nbsp;
+        | (#{@itunes_results.length} tracks found)
       hr
   .row.itunes
     - @itunes_results.slice(0, 12).each do |result|
