@@ -86,7 +86,7 @@ files = [OUTPUT_FILENAME]
 old_files = []
 # 昔のファイルは存在するか？
 files.each do |fn|
-  next if File.exist? fn
+  next unless File.exist? fn
   of = fn + '.old'
   old_files << of
   # ファイル名にoldをつけて退避する。
