@@ -73,6 +73,12 @@
 // ----------------------------------------
 // search_itunesが返却する、
 // itunes検索結果ビューのスタイリング
+//
+
+.itunes .title {
+  text-align: center;
+}
+
 .card.itunes-card {
   height: 16rem;
   position: relative;
@@ -81,13 +87,20 @@
     margin: 0;
     position: relative;
     .card-title {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
       font-size: 1.6rem;
-      margin: 1.2rem 0 0 1.2rem;
     }
     .artwork {
       position: absolute;
       bottom: 1.2rem;
       right: 1.2rem;
+    }
+    .preview-button {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 1.2rem;
     }
   }
   &:hover {
