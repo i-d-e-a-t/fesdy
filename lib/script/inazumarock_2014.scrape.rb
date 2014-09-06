@@ -123,6 +123,5 @@ old_files.each { |of| apk.load_history of }
 scrape_artists apk, target_fes_url, OUTPUT_FILENAME
 
 # 退避したファイルを削除
-old_files.each do |of|
-  File.delete of if File.exist?(of) && of.match(/old$/)
-end
+stashed_file = OUTPUT_FILENAME + '.old'
+File.delete stashed_file if File.exist?(stashed_file)
