@@ -68,6 +68,9 @@
     @media screen and (max-width: 76.8rem) {
       height: 9rem;
     }
+    &:hover {
+      background: gray;
+    }
   }
 }
 // ----------------------------------------
