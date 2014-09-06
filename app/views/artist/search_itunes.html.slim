@@ -1,19 +1,28 @@
-.row.itunes
-  .col-md-12
+- if @itunes_results.empty?
+  .row.itunes
     hr
-    h2.title
+    p.not-found
       i.icon-music
       | &nbsp;
-      | iTunes
+      | Sorry, fesdy searched itunes. But nothing was found.
     hr
-.row.itunes
-  - @itunes_results.slice(0, 12).each do |result|
-    a href="#{result['trackViewUrl']}" target="blank"
-      .col-xs-6.col-sm-4.col-md-3.col-lg-2
-        .card.itunes-card
-          .card-contents
-            .artwork
-              img(src="#{result[:artworkUrl100]}")
-            .card-title #{result[:trackName]}/#{result[:artistName]}
-            .preview-button
-              i.icon-share
+- else
+  .row.itunes
+    .col-md-12
+      hr
+      h2.title
+        i.icon-music
+        | &nbsp;
+        | iTunes
+      hr
+  .row.itunes
+    - @itunes_results.slice(0, 12).each do |result|
+      a href="#{result['trackViewUrl']}" target="blank"
+        .col-xs-6.col-sm-4.col-md-3.col-lg-2
+          .card.itunes-card
+            .card-contents
+              .artwork
+                img(src="#{result[:artworkUrl100]}")
+              .card-title #{result[:trackName]}/#{result[:artistName]}
+              .preview-button
+                i.icon-share
