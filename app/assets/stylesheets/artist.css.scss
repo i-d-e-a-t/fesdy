@@ -57,8 +57,8 @@
       max-height: 43.2rem;
     }
   }
-
 }
+
 .study-control {
   button {
     font-weight: normal;
@@ -67,6 +67,21 @@
     border-radius: 0;
     @media screen and (max-width: 76.8rem) {
       height: 9rem;
+    }
+  }
+}
+
+// search_itunesが返却する、
+// itunes検索結果ビューのスタイリング
+.card.itunes-card {
+  .card-contents {
+    height: 100%;
+    .card-title {
+      font-size: 1.2rem;
+    }
+    .artwork {
+      position: absolute;
+      bottom: 0;
     }
   }
 }
