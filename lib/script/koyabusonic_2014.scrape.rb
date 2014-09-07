@@ -2,7 +2,7 @@
 # koyabusonic-2014.artists というファイルに
 # 1行1アーティストの形式で出力する。
 
-require './scrape_helper.rb'
+require_relative './scrape_helper.rb'
 
 OUTPUT_FILE = './koyabusonic-2014.artists'
 
