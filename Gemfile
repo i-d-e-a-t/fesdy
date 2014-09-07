@@ -9,6 +9,7 @@ group :development do
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rubocop'
 end
 
 gem 'sass-rails', '~> 4.0.3'
