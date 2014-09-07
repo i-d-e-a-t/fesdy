@@ -108,10 +108,10 @@ button.start:hover {
     font-size: 1.8rem;
     font-weight: lighter;
     padding: 2rem 0;
-    color: lighten($color_base, 70%);
+    color: $color_base_darker;
     &:hover {
-      background: lighten($color_base, 90%);
-      color: $color_base;
+      background: $color_base_lighter;
+      color: $color_base_darkest;
     }
   }
 }
