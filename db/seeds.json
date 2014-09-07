@@ -1,0 +1,134 @@
+{
+  "festivals" : 
+  [
+    {
+      "name"          : "SUMMER SONIC 2014",
+      "path_key"      : "summer-sonic-2014",
+      "official_site" : "http://www.summersonic.com/2014/",
+      "daily_info"    : [
+        {
+          "place"     : "東京：QVCマリンフィールド＆幕張メッセ",
+          "place_key" : "tokyo",
+          "date"      : "20140816",
+          "file"      : "/lib/script/summer-sonic-2014.artists.tokyo"
+        },
+        {
+          "place"     : "東京：QVCマリンフィールド＆幕張メッセ",
+          "place_key" : "tokyo",
+          "date"      : "20140817",
+          "file"      : "/lib/script/summer-sonic-2014.artists.tokyo"
+        },
+        {
+          "place"     : "大阪：舞洲サマーソニック大阪特設会場",
+          "place_key" : "osaka",
+          "date"      : "20140816",
+          "file"      : "/lib/script/summer-sonic-2014.artists.osaka"
+        },
+        {
+          "place"     : "大阪：舞洲サマーソニック大阪特設会場",
+          "place_key" : "osaka",
+          "date"      : "20140817",
+          "file"      : "/lib/script/summer-sonic-2014.artists.osaka"
+        }
+      ]
+    },
+
+
+    {
+      "name"          : "a-nation 2014",
+      "path_key"      : "a-nation-2014",
+      "official_site" : "http://a-nation.net/",
+      "daily_info"    : [
+        {
+          "place"     : "東京：味の素スタジアム",
+          "place_key" : "tokyo",
+          "date"      : "20140829",
+          "file"      : "/lib/script/a-nation-2014.artists"
+        },
+        {
+          "place"     : "東京：味の素スタジアム",
+          "place_key" : "tokyo",
+          "date"      : "20140830",
+          "file"      : "/lib/script/a-nation-2014.artists"
+        },
+        {
+          "place"     : "東京：味の素スタジアム",
+          "place_key" : "tokyo",
+          "date"      : "20140831",
+          "file"      : "/lib/script/a-nation-2014.artists"
+        }
+      ]
+    },
+
+    {
+      "name"          : "SWEET LOVE SHOWER 2014",
+      "path_key"      : "sweet-love-shower-2014",
+      "official_site" : "http://www.sweetloveshower.com",
+      "daily_info"    : [
+        {
+          "place"     : "山中湖交流プラザきらら",
+          "place_key" : "yamanashi",
+          "date"      : "20140829",
+          "file"      : "/lib/script/love-shower-2014.artists"
+        },
+        {
+          "place"     : "山中湖交流プラザきらら",
+          "place_key" : "yamanashi",
+          "date"      : "20140830",
+          "file"      : "/lib/script/love-shower-2014.artists"
+        },
+        {
+          "place"     : "山中湖交流プラザきらら",
+          "place_key" : "yamanashi",
+          "date"      : "20140831",
+          "file"      : "/lib/script/love-shower-2014.artists"
+        }
+      ]
+    },
+    {
+      "name"          : "BAYCAMP 2014",
+      "path_key"      : "baycamp-2014",
+      "official_site" : "http://baycamp.net/2014/",
+      "daily_info"    : [
+        {
+          "place"     : "神奈川県・川崎市東扇島東公園",
+          "place_key" : "kanagawa",
+          "date"      : "20140906",
+          "file"      : "/lib/script/baycamp-2014.artists"
+        }
+      ]
+    },
+    {
+      "name"          : "京都音楽博覧会 2014",
+      "path_key"      : "kyotoonpaku-2014",
+      "official_site" : "http://kyotoonpaku.net/2014/",
+      "daily_info"    : [
+        {
+          "place"     : "京都 梅小路公園 芝生広場",
+          "place_key" : "kyoto",
+          "date"      : "20140921",
+          "file"      : "/lib/script/kyotoonpaku-2014.artists"
+        }
+      ]
+    },
+    {
+      "name"          : "イナズマロックフェス 2014",
+      "path_key"      : "inazumarock-2014",
+      "official_site" : "http://inazumarock.com/",
+      "daily_info"    : [
+        {
+          "place"     : "滋賀県草津市烏丸半島 芝生広場",
+          "place_key" : "shiga",
+          "date"      : "20140913",
+          "file"      : "/lib/script/inazumarock-2014.artists"
+        },
+        {
+          "place"     : "滋賀県草津市烏丸半島 芝生広場",
+          "place_key" : "shiga",
+          "date"      : "20140914",
+          "file"      : "/lib/script/inazumarock-2014.artists"
+        }
+      ]
+    }
+  ]
+}
