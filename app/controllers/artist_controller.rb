@@ -14,6 +14,7 @@ class ArtistController < ApplicationController
     else
       render status: :not_found and return
       @yt_video_ids = get_yt_video_ids(@artist.name)
+    end
   end
 
   #
