@@ -120,3 +120,23 @@
           place_key: "osaka"
           date: "20140915"
           file: "/lib/script/koyabusonic-2014.artists"
+    -
+      name: "氣志團万博 2014"
+      path_key: "kishidanbanpaku-2014"
+      official_site: "http://www.kishidanbanpaku.com/"
+      daily_info:
+        -
+          place: "千葉県 袖ヶ浦海浜公園"
+          place_key: "chiba"
+          date: "20140913"
+          file: "/lib/script/kishidanbanpaku-2014.artists"
+        -
+          place: "千葉県 袖ヶ浦海浜公園"
+          place_key: "chiba"
+          date: "20140914"
+          file: "/lib/script/kishidanbanpaku-2014.artists"
+        -
+          place: "千葉県 袖ヶ浦海浜公園"
+          place_key: "chiba"
+          date: "20140915"
+          file: "/lib/script/kishidanbanpaku-2014.artists"
