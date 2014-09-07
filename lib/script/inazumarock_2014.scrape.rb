@@ -1,5 +1,6 @@
 # イナズマロックフェス2014の出演者を取得するスクリプト
-# inazumarock-2014.artists というファイルに1行1アーティストの形式で出力する。
+# inazumarock-2014.artists というファイルに
+# 1行1アーティストの形式で出力する。
 
 require 'nokogiri'
 require 'open-uri'
@@ -39,7 +40,7 @@ def scrape_artists(apk, url, file)
     # どうやっても取得できなかったので追加
     puts_artist f, apk, '松崎しげる', '20140914'
     puts_artist f, apk, 'Half time Old', '20140914'
-    # 手で作った風神ステージ用ファイルから各行を読み込み
+    # 手で作った風神ステージ用ファイルから各行を読込
     load_fujin_stage f
   end
 end
@@ -66,7 +67,7 @@ def scrape_artist_with_file(apk, url, f)
     artists = []
     date_string = dates[i]
     ul.css('li a img').each { |img| artists << img['alt'] }
-    # Pathキーを取得して、[artist名 path_key 日付]でファイル出力
+    # Pathキーを取得し、[artist名 path_key 日付]で出力
     artists.each { | artist | puts_artist f, apk, artist, date_string }
   end
 end

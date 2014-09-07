@@ -7,7 +7,13 @@ class ArtistController < ApplicationController
   # Artistページ
   #
   def show
-    @yt_video_ids = get_yt_video_ids(@artist.name)
+    @artist = Artist.where(:id => params[:id]).last
+    if @artist != nil
+      @yt_video_ids = get_yt_video_ids(@artist.name)
+    else
+      render status: :not_found and return
+      @yt_video_ids = get_yt_video_ids(@artist.name)
+    end
   end
 
   #
@@ -27,7 +33,7 @@ class ArtistController < ApplicationController
   # params[:id]からアーティストを取得する
   #
   def prepare_artist
-    @artist = Artist.where(path_key: params[:id]).last
+    @artist = Artist.where(id: params[:id]).last
     if @artist.nil?
       render text: 'Not Found', status: :not_found
       return

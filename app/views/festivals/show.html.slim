@@ -53,10 +53,10 @@ a.no-deco(href="#{study_festival_path(id: @festival.path_key)}")
               | &nbsp;&nbsp;
               i.icon-reorder
         tbody.accordion-body.collapse id="artist_group_#{date.id}"
-          - date.artists.sort{|a, b| a.path_key <=> b.path_key}.each do |artist|
+          - date.artists.sort{|a, b| a.name <=> b.name}.each do |artist|
             tr
               td.artist
-                a.no-deco href="#{artist_path(id: artist.path_key)}"
+                a.no-deco href="#{artist_path(id: artist.id)}"
                   = artist.name
 
 .row
