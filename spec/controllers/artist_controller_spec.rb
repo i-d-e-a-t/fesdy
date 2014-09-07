@@ -28,14 +28,14 @@ describe ArtistController, :type => :controller do
     before do
       help_create_models_for_relations
       @artist= Artist.last
-      @exist_key = @artist.path_key
-      @not_exist_key = 'it-is-not-artists-key'
+      @exist_id = @artist.id
+      @not_exist_key = '999999'
     end 
     it "catches '/artists/.../itunes'" do
-      expect(:get => "/artists/#{@exist_key}/itunes").to route_to(
+      expect(:get => "/artists/#{@exist_id}/itunes").to route_to(
         controller: 'artist',
             action: 'search_itunes',
-                id: @exist_key
+                id: "#{@exist_id}"
       )
     end
   end
