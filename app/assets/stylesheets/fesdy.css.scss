@@ -1,18 +1,18 @@
 @import "common";
 
 .card.welcome {
-  color: black;
+  color: $color_base_darkest;
 }
 
 .card.festival {
   // カード内容
   .card-contents {
-    color: $color_fesdy;
+    color: $color_main;
   }
   &:hover {
-    background: #efefef;
+    background: $color_base_lighter;
     .card-contents {
-      color: darken($color_fesdy, 10%);
+      color: $color_main_darker;
     }
   }
 }
@@ -21,9 +21,9 @@
 .card.festival.finished {
   // カード内容
   .card-contents {
-    color: #d0d0d0;
+    color: $color_base;
   }
   &:hover .card-contents {
-    color: gray;
+    color: $color_base_darker;
   }
 }
