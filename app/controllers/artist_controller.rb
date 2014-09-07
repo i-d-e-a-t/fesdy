@@ -7,7 +7,6 @@ class ArtistController < ApplicationController
   # Artistページ
   #
   def show
-    # TODO: path_key使う
     @artist = Artist.where(:id => params[:id]).last
     if @artist != nil
       @yt_video_ids = get_yt_video_ids(@artist.name)
