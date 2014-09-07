@@ -2,6 +2,14 @@
 // 色変数
 //
 
-$color_base: black;
-$color_fesdy: #8dc700;
-$radius: 0.7rem;
+$color_base_lightest: #fff;
+$color_base_lighter:  #efefef;
+$color_base:          #c1c1c1;
+$color_base_darker:   #959393;
+$color_base_darkest:  #333; // not black
+
+$color_main_lightest: #c1f14c;
+$color_main_lighter:  #b0ec1c;
+$color_main:          #8ec700;
+$color_main_darker:   #74a200;
+$color_main_darkest:  #587b00;
