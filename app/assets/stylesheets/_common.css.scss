@@ -28,11 +28,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: $color_fesdy;
+  color: $color_main;
 }
 
 a:hover {
-  color: darken($color_fesdy, 10%);
+  color: $color_main_darker
 }
 
 // 修飾なし
@@ -56,9 +56,9 @@ a.no-deco {
     border: 0;
 
     &.collapsed {
-      color: $color_base;
+      color: $color_base_darkest;
     }
-    color: $color_fesdy;
+    color: $color_main;
   }
 }
 

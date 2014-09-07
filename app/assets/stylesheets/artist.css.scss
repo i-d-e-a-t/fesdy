@@ -7,7 +7,7 @@
       font-size: 4.0rem;
       font-weight: lighter;
       text-align: center;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid $color_base_lightest;
     }
     .detail {
       text-align: center;
@@ -23,7 +23,7 @@
     text-align: center;
   }
   td {
-    color: lighten($color_base, 60%);
+    color: $color_base_darker;
     text-align: center;
   }
 
@@ -68,7 +68,7 @@
       height: 9rem;
     }
     &:hover {
-      background: gray;
+      background: $color_base_lighter;
     }
   }
 }
@@ -83,7 +83,7 @@
 
 .itunes .not-found {
   text-align: center;
-  color: gray;
+  color: $color_base_darker;
 }
 
 .card.itunes-card {
