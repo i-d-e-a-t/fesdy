@@ -70,7 +70,7 @@ festivals.each do | festival |
         # 日付が一致したものだけ処理を行う
         if festival_daily['date'] == artist_data[1]
           # Artistが既に登録されていない場合は、登録を行う
-          tmp_artist = Artist.where(path_key: artist_data[0]).last
+          tmp_artist = Artist.where(name: artist_data[0]).last
           if tmp_artist
             tmp_artist_id = tmp_artist.id
           else
