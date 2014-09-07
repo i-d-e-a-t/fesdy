@@ -1,20 +1,18 @@
-# encoding: utf-8
-require 'json'
+require 'yaml'
 
 # ------------------------------------------------------------
 # Configファイル読み出し
 
-config_file_path = './db/seeds.json'
+config_file_path = './db/seeds.yml'
 begin
-  f = File.open(config_file_path)
-  json_data = JSON.parse(f.read)
+  yaml_data = YAML.load_file(config_file_path)
 rescue
   # Configファイルが不正な構文 => 終了する
-  puts "\e[31m seeds.json is invalid \e[0m"
+  puts "\e[31m seeds.yml is invalid \e[0m"
   exit
 end
 
-festivals = json_data['festivals']
+festivals = yaml_data['festivals']
 
 # ------------------------------------------------------------
 # 登録処理
@@ -70,18 +68,17 @@ festivals.each do | festival |
         line.chomp!
         artist_data = line.split("\t")
         # 日付が一致したものだけ処理を行う
-        if festival_daily['date'] == artist_data[2]
+        if festival_daily['date'] == artist_data[1]
           # Artistが既に登録されていない場合は、登録を行う
-          tmp_artist = Artist.where(path_key: artist_data[1]).last
-          unless tmp_artist
+          tmp_artist = Artist.where(name: artist_data[0]).last
+          if tmp_artist
+            tmp_artist_id = tmp_artist.id
+          else
             Artist.create do | artist |
               artist.id = artist_id
               artist.name = artist_data[0]
-              artist.path_key = artist_data[1]
             end
             tmp_artist_id = artist_id
-          else
-            tmp_artist_id = tmp_artist.id
           end
 
           # Appearanceはどっちにしろ登録
@@ -98,4 +95,3 @@ festivals.each do | festival |
 
   festival_id += 1
 end
-
