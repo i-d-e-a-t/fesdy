@@ -1,4 +1,5 @@
 @import "common";
+@import "card";
 
 .artist-name {
   .info-box {
@@ -56,8 +57,8 @@
       max-height: 43.2rem;
     }
   }
-
 }
+
 .study-control {
   button {
     font-weight: normal;
@@ -67,5 +68,50 @@
     @media screen and (max-width: 76.8rem) {
       height: 9rem;
     }
+    &:hover {
+      background: gray;
+    }
+  }
+}
+// ----------------------------------------
+// search_itunesが返却する、
+// itunes検索結果ビューのスタイリング
+//
+
+.itunes .title {
+  text-align: center;
+}
+
+.itunes .not-found {
+  text-align: center;
+  color: gray;
+}
+
+.card.itunes-card {
+  height: 16rem;
+  position: relative;
+  .card-contents {
+    height: 100%;
+    margin: 0;
+    position: relative;
+    .card-title {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      font-size: 1.6rem;
+    }
+    .artwork {
+      position: absolute;
+      bottom: 1.2rem;
+      right: 1.2rem;
+    }
+    .preview-button {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 1.2rem;
+    }
+  }
+  &:hover {
+    background: #efefef;
   }
 }

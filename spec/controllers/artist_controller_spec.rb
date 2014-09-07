@@ -1,4 +1,3 @@
-# encoding: utf-8
 require 'rails_helper'
 
 describe ArtistController, :type => :controller do
@@ -23,6 +22,22 @@ describe ArtistController, :type => :controller do
       expect(response.status).to eq 404
     end
 
+  end
+
+  describe "#search_itunes" do
+    before do
+      help_create_models_for_relations
+      @artist= Artist.last
+      @exist_key = @artist.path_key
+      @not_exist_key = 'it-is-not-artists-key'
+    end 
+    it "catches '/artists/.../itunes'" do
+      expect(:get => "/artists/#{@exist_key}/itunes").to route_to(
+        controller: 'artist',
+            action: 'search_itunes',
+                id: @exist_key
+      )
+    end
   end
 
 
