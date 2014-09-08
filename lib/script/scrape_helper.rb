@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-require 'FileUtils'
+require 'fileutils'
 
 # フェス情報をスクレイピングして、
 # artistsファイルに出力する手助けをするモジュール。
