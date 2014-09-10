@@ -4,7 +4,7 @@
 [![Dependency Status](https://gemnasium.com/i-d-e-a-t/fesdy.svg)](https://gemnasium.com/i-d-e-a-t/fesdy)
 
 # Fesdy
-![Fesdy logo](https://github.com/i-d-e-a-t/fesdy/app/assets/images/logo-mini.png)  
+![Fesdy logo](https://raw.github.com/wiki/i-d-e-a-t/fesdy/images/logo-mini.png)
 fes + study = **Fesdy**  
 
 http://www.fesdy.info
