@@ -30,8 +30,7 @@ module ScrapeHelper
   # urlとcssを指定するruleを渡してスクレイプする
   # (xpathでスクレイプする場合は要検討)
   def scrape_with_nokogiri(url, rule)
-    doc = nokogiri_html url
-    doc.css rule
+    nokogiri_html(url).css rule
   end
 
   # urlを渡すと、HTMLを取得し、
@@ -43,32 +42,32 @@ module ScrapeHelper
   # ファイル名、アーティストの配列、日付を渡して
   # ファイル出力する
   def print_to_file(file, artists, date)
-    f = File.open(file, 'a')
-
-    artists.each_with_index do |r|
-      name = r.to_s
-      f.puts name.strip + "\t" + date
+    File.open(file, 'a') do |f|
+      artists.each do |r|
+        name = r.to_s
+        f.puts name.strip + "\t" + date
+      end
     end
-
-    f.close
   end
 
   # 既にファイルが存在していたときの履歴管理
-  def stash_old_file(file)
-    return unless File.exist? file
-    of = file + '.old'
-    begin
-      File.rename(file, of)
-    rescue => e
-      puts "ファイル名変更に失敗: #{file}"
-      puts e.message
-    end
+  def stash_old_file(filename)
+    return unless File.exist? filename
+    File.rename(filename, old_name_of(filename))
+  rescue => e
+    puts "ファイル名変更に失敗: #{file}"
+    puts e.message
   end
 
   # 既に存在していたファイルを削除
-  def delete_old_file(file)
-    old_fn = file + '.old'
+  def delete_old_file(filename)
+    old_fn = old_name_of filename
     File.delete old_fn if File.exist? old_fn
+  end
+
+  # 古いファイルの名前を返す
+  def old_name_of(name)
+    name + '.old'
   end
 end
 
