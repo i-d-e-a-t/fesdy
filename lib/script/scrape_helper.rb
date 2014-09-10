@@ -11,27 +11,26 @@ module ScrapeHelper
   # ファイル退避、スクレイピングを一括で行うメソッド
   def generate_artists_file(info)
     # ファイルを逃がす
+    stash_old_file info[:output]
     # リクエストしてスクレイピング
+    html_nodes = scrape_with_nokogiri info[:url], info[:css]
     # 結果をファイルに出力
+    print_to_file info[:output], html_nodes.map(&:content), info[:date_key]
     # ファイルを消す
-    File.open(info[:output], 'w') do |f|
-      f.puts "アーティスト\t#{info[:date_key]}"
-    end
+    delete_old_file info[:output] + '.old'
+  rescue => e
     # エラーが起きてたらエラー出力
+    puts e
     # アウトプットの場所を示す
+    puts
+    puts "  but... ScrapeHelper stashed old file at '#{info[:output]}.old'"
+    puts
   end
 
   # urlとcssを指定するruleを渡してスクレイプする
   # (xpathでスクレイプする場合は要検討)
   def scrape_with_nokogiri(url, rule)
-    begin
-      doc = nokogiri_html url
-    rescue => e
-      puts "#{e.class}"
-      puts e.message
-      exit 1
-    end
-
+    doc = nokogiri_html url
     doc.css rule
   end
 
@@ -48,7 +47,7 @@ module ScrapeHelper
 
     artists.each_with_index do |r|
       name = r.to_s
-      f.puts name + "\t" + date
+      f.puts name.strip + "\t" + date
     end
 
     f.close
