@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/i-d-e-a-t/fesdy.svg?branch=logo)](https://travis-ci.org/i-d-e-a-t/fesdy)
 [![Coverage Status](https://coveralls.io/repos/i-d-e-a-t/fesdy/badge.png)](https://coveralls.io/r/i-d-e-a-t/fesdy)
 [![Code Climate](https://codeclimate.com/github/i-d-e-a-t/fesdy/badges/gpa.svg)](https://codeclimate.com/github/i-d-e-a-t/fesdy)
+[![Dependency Status](https://gemnasium.com/i-d-e-a-t/fesdy.svg)](https://gemnasium.com/i-d-e-a-t/fesdy)
 
 # Fesdy
 http://www.fesdy.info
