@@ -8,11 +8,24 @@ require 'fileutils'
 # 本ファイルをrequireすることで
 # 自動的にincludeされるので注意
 module ScrapeHelper
+  # ファイル退避、スクレイピングを一括で行うメソッド
+  def generate_artists_file(info)
+    # ファイルを逃がす
+    # リクエストしてスクレイピング
+    # 結果をファイルに出力
+    # ファイルを消す
+    File.open(info[:output], 'w') do |f|
+      f.puts "アーティスト\t#{info[:date_key]}"
+    end
+    # エラーが起きてたらエラー出力
+    # アウトプットの場所を示す
+  end
+
   # urlとcssを指定するruleを渡してスクレイプする
   # (xpathでスクレイプする場合は要検討)
   def scrape_with_nokogiri(url, rule)
     begin
-      doc = Nokogiri::HTML(open url)
+      doc = nokogiri_html url
     rescue => e
       puts "#{e.class}"
       puts e.message
@@ -20,6 +33,12 @@ module ScrapeHelper
     end
 
     doc.css rule
+  end
+
+  # urlを渡すと、HTMLを取得し、
+  # Nokogiri::HTML::Document のインスタンスを返却
+  def nokogiri_html(url)
+    Nokogiri::HTML(open url)
   end
 
   # ファイル名、アーティストの配列、日付を渡して
