@@ -62,7 +62,6 @@ describe ScrapeHelper do
       allow(::File).to receive(:open)
         .with(@output, 'a')
         .and_yield(file_dst)
-
     end
     #
     # 共通サンプル
