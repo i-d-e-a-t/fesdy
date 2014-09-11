@@ -49,7 +49,7 @@ describe ScrapeHelper do
     it { should eq original_name + '.old' }
   end
 
-  describe '#generate_artists_file' do
+  describe '#generate' do
     #
     # 値準備
     #
@@ -95,7 +95,7 @@ describe ScrapeHelper do
           .and_return(Nokogiri::HTML HTML_SIMPLE)
 
         # 実行
-        generate_artists_file info
+        generate info
       end
       it_behaves_like 'アーティストファイルを出力'
     end
@@ -114,7 +114,7 @@ describe ScrapeHelper do
           .and_return(Nokogiri::HTML HTML_WITH_IMAGE_ALT)
 
         # 実行
-        generate_artists_file(info) do |html_node|
+        generate(info) do |html_node|
           html_node['alt']
         end
       end

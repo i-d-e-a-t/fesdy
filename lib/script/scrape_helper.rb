@@ -7,7 +7,7 @@ require 'fileutils'
 # 自動的にincludeされるので注意
 module ScrapeHelper
   # ファイル退避、スクレイピングを一括で行うメソッド
-  def generate_artists_file(info, &block)
+  def generate(info, &block)
     # ファイルを逃がす
     stash_old_file info[:output], true
     begin
