@@ -91,6 +91,7 @@ describe ScrapeHelper do
       before do
         allow_any_instance_of(Object).to receive(:nokogiri_html)
           .and_return(Nokogiri::HTML HTML_SIMPLE)
+
         # 実行
         generate_artists_file info
       end
@@ -109,11 +110,13 @@ describe ScrapeHelper do
       before do
         allow_any_instance_of(Object).to receive(:nokogiri_html)
           .and_return(Nokogiri::HTML HTML_WITH_IMAGE_ALT)
+
         # 実行
-        #generate_artists_file(info) do |html_node|
-        #end
+        generate_artists_file(info) do |html_node|
+          html_node['alt']
+        end
       end
-      #it_behaves_like 'アーティストファイルを出力'
+      it_behaves_like 'アーティストファイルを出力'
     end
   end
 end
