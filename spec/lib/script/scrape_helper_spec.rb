@@ -4,7 +4,11 @@ require File.join Rails.root, 'lib', 'script', 'scrape_helper'
 
 OUTPUT_FILENAME = 'awesome-2014.artists'
 DATE_KEY = '20990831'
-ARTISTS = ['アーティスト1  ', 'アーティスト2   ', '　　アーティスト3']
+ARTISTS = [
+  'アーティスト1  ',
+  'アーティスト2   ',
+  '　　アーティスト3'
+]
 HTML_UPPER_HALF = %(
   <html>
   <body>
@@ -19,10 +23,8 @@ HTML_UNDER_HALF = %(
 )
 
 # テスト用HTMLを作るメソッド
-def ul_html(array)
-  middle = array.map do |v|
-    yield v
-  end
+def ul_html(array, &block)
+  middle = array.map(&block)
   "#{ HTML_UPPER_HALF }\n#{ middle }\n#{ HTML_UNDER_HALF }"
 end
 
@@ -33,7 +35,7 @@ HTML_SIMPLE = ul_html(ARTISTS) do |artist|
   "<li>#{artist}</li>\n"
 end
 HTML_WITH_IMAGE_ALT = ul_html(ARTISTS) do |artist|
-  "<li><img src=\"/aaa.jpg\" alt=\"#{ artist }\" /></li>"
+  %(<li><img src="aaa.jpg" alt=#{artist} /></li>)
 end
 
 ####################################################################

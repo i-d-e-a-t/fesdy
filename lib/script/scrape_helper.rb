@@ -1,30 +1,25 @@
 require 'nokogiri'
 require 'open-uri'
 require 'fileutils'
-
-# フェス情報をスクレイピングして、
 # artistsファイルに出力する手助けをするモジュール。
 #
 # 本ファイルをrequireすることで
 # 自動的にincludeされるので注意
 module ScrapeHelper
   # ファイル退避、スクレイピングを一括で行うメソッド
-  def generate_artists_file(info)
+  def generate_artists_file(info, &block)
     # ファイルを逃がす
-    stash_old_file info[:output]
-    # リクエストしてスクレイピング
-    html_nodes = scrape_with_nokogiri info[:url], info[:css]
-    # 結果をファイルに出力
-    print_to_file info[:output], html_nodes.map(&:content), info[:date_key]
-    # ファイルを消す
-    delete_old_file info[:output] + '.old'
-  rescue => e
-    # エラーが起きてたらエラー出力
-    puts e
-    # アウトプットの場所を示す
-    puts
-    puts "  but... ScrapeHelper stashed old file at '#{info[:output]}.old'"
-    puts
+    stash_old_file info[:output], true
+    begin
+      nodes = scrape_with_nokogiri info[:url], info[:css]
+      artists = block_given? ? nodes.map(&block) : nodes.map(&:content)
+      print_to_file info[:output], artists, info[:date_key]
+      # ファイルを消す
+      delete_old_file info[:output]
+    rescue => e
+      puts e
+      puts "  But... ScrapeHelper stashed old file at '#{info[:output]}.old'"
+    end
   end
 
   # urlとcssを指定するruleを渡してスクレイプする
@@ -44,19 +39,20 @@ module ScrapeHelper
   def print_to_file(file, artists, date)
     File.open(file, 'a') do |f|
       artists.each do |r|
-        name = r.to_s.strip.gsub('　', '')
+        name = r.strip.gsub('　', '')
         f.puts name + "\t" + date
       end
     end
   end
 
   # 既にファイルが存在していたときの履歴管理
-  def stash_old_file(filename)
+  def stash_old_file(filename, exit_flag = true)
     return unless File.exist? filename
     File.rename(filename, old_name_of(filename))
   rescue => e
     puts "ファイル名変更に失敗: #{file}"
     puts e.message
+    exit 1 if exit_flag
   end
 
   # 既に存在していたファイルを削除
