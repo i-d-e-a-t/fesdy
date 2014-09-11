@@ -44,8 +44,8 @@ module ScrapeHelper
   def print_to_file(file, artists, date)
     File.open(file, 'a') do |f|
       artists.each do |r|
-        name = r.to_s
-        f.puts name.strip + "\t" + date
+        name = r.to_s.strip.gsub('　', '')
+        f.puts name + "\t" + date
       end
     end
   end
