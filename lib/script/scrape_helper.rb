@@ -7,18 +7,17 @@ require 'fileutils'
 # 自動的にincludeされるので注意
 module ScrapeHelper
   # ファイル退避、スクレイピングを一括で行うメソッド
-  def generate(info, &block)
+  def generate_artists_file(scraping_info, &block)
     # ファイルを逃がす
-    stash_old_file info[:output], true
+    stash_old_file scraping_info[:output], true
     begin
-      nodes = scrape_with_nokogiri info[:url], info[:css]
+      nodes = scrape_with_nokogiri scraping_info[:url], scraping_info[:css]
       artists = block_given? ? nodes.map(&block) : nodes.map(&:content)
-      print_to_file info[:output], artists, info[:date_key]
+      print_to_file scraping_info[:output], artists, scraping_info[:date_key]
       # ファイルを消す
-      delete_old_file info[:output]
+      delete_old_file scraping_info[:output]
     rescue => e
       puts e
-      puts "  But... ScrapeHelper stashed old file at '#{info[:output]}.old'"
     end
   end
 
