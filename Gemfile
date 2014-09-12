@@ -33,6 +33,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
+  gem 'nokogiri', require: false
 end
 
 group :production do
