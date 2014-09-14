@@ -13,9 +13,9 @@
     &:first-child {
       margin: 0;
     } 
-    background: #ddd;
+    background: $color_base_darker;
     &.now {
-      background: $color_main_lightest;
+      background: $color_main;
     }
   }
 }

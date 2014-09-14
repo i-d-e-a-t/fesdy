@@ -60,6 +60,7 @@
 
 .study-control {
   button {
+    background: $color_base;
     font-weight: normal;
     height: 12rem;
     width: 100%;
@@ -68,7 +69,7 @@
       height: 9rem;
     }
     &:hover {
-      background: $color_base_lighter;
+      background: $color_base_darker;
     }
   }
 }
