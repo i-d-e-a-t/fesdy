@@ -95,9 +95,8 @@
     margin: 0;
     position: relative;
     .card-title {
-      position: absolute;
-      top: 1.2rem;
-      left: 1.2rem;
+      position: relative;
+      margin: 1.2rem 1.2rem;
       font-size: 1.2rem;
     }
     .artwork {
