@@ -140,3 +140,13 @@
           place_key: "chiba"
           date: "20140915"
           file: "/lib/script/kishidanbanpaku-2014.artists"
+    -
+      name: "GAMAROCK 2014"
+      path_key: "gamarock-2014"
+      official_site: "http://gamarock.net/2014/music.php"
+      daily_info:
+        -
+          place: "宮城県 塩竈市みなと公園"
+          place_key: "miyagi"
+          date: "20140920"
+          file: "/lib/script/gamarock-2014.artists"
