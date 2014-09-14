@@ -1,7 +1,9 @@
 @import "common";
 
 .fes {
+  box-shadow: 1px 1px 2px 1px $color_base_darker;
   font-weight: lighter;
+  margin: 0 0 2rem 0;
   position: relative;
   .eye-catch {
     background: $color_base_lightest;
@@ -111,7 +113,6 @@ button.start:hover {
     padding: 2rem 0;
     color: $color_base_darker;
     &:hover {
-      background: $color_base_lighter;
       color: $color_base_darkest;
     }
   }
