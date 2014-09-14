@@ -15,7 +15,7 @@
     } 
     background: #ddd;
     &.now {
-      background: lighten($color_fesdy, 4%);
+      background: $color_main_lightest;
     }
   }
 }
