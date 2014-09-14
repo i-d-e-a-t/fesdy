@@ -44,6 +44,18 @@ a.no-deco {
 // ヘッダー
 //
 
+.navbar.navbar-static-top {
+  background: $color_main;
+  border: 0;
+}
+
+ul.nav.navbar-nav.navbar-right li a {
+  color: $color_main_lighter;
+  &:hover {
+    color: $color_base_lightest;
+  }
+}
+
 #header {
   height: 5rem;
   .navbar-toggle {
