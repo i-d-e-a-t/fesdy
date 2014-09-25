@@ -60,6 +60,7 @@
 
 .study-control {
   button {
+    background: $color_base;
     font-weight: normal;
     height: 12rem;
     width: 100%;
@@ -68,7 +69,7 @@
       height: 9rem;
     }
     &:hover {
-      background: $color_base_lighter;
+      background: $color_base_darker;
     }
   }
 }
@@ -94,9 +95,8 @@
     margin: 0;
     position: relative;
     .card-title {
-      position: absolute;
-      top: 1.2rem;
-      left: 1.2rem;
+      position: relative;
+      margin: 1.2rem 1.2rem;
       font-size: 1.2rem;
     }
     .artwork {
