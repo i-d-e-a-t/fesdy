@@ -26,7 +26,7 @@ gem 'httpclient'
 
 group :development, :test do
   gem 'rspec-its'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.0.2'
   gem 'simplecov', require: false
   gem 'coveralls', require: false
   gem 'pry'
